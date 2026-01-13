@@ -25,6 +25,9 @@
             margin: 30px 0;
             border-radius: 4px;
         }
+        .download-section.brunch {
+            border-left: 4px solid #e67e22;
+        }
         .download-button {
             display: inline-block;
             background: #3498db;
@@ -34,9 +37,17 @@
             border-radius: 4px;
             font-weight: 600;
             transition: background 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .download-button.brunch {
+            background: #e67e22;
         }
         .download-button:hover {
             background: #2980b9;
+        }
+        .download-button.brunch:hover {
+            background: #d35400;
         }
         .metadata {
             color: #666;
@@ -63,21 +74,34 @@
     <h1>🗽 Pulsd NYC Restaurant Export</h1>
 
     <p>
-        This page provides a downloadable CSV export of restaurants and events
+        This page provides downloadable CSV exports of restaurants and events
         from <a href="https://pulsd.com/new-york" target="_blank">Pulsd NYC</a>,
         enriched with Google Places ratings and reviews.
     </p>
 
-    <div class="download-section">
-        <h2>Latest Export</h2>
+    <div class="download-section brunch">
+        <h2>🥞 Brunch Listings</h2>
         <p>
-            <a href="pulsd-2026-01-12.csv" class="download-button" download>
-                📥 Download CSV
+            <a href="pulsd-brunch-2026-01-12.csv" class="download-button brunch" download>
+                📥 Download Brunch CSV
             </a>
         </p>
         <div class="metadata">
-            <strong>Last Updated:</strong> January 12, 2026 at 09:42 PM <br>
-            <strong>File:</strong> pulsd-2026-01-12.csv
+            <strong>Last Updated:</strong> January 12, 2026 at 10:18 PM <br>
+            <strong>File:</strong> pulsd-brunch-2026-01-12.csv
+        </div>
+    </div>
+
+    <div class="download-section">
+        <h2>🍽️ Non-Brunch Listings</h2>
+        <p>
+            <a href="pulsd-non-brunch-2026-01-12.csv" class="download-button" download>
+                📥 Download Non-Brunch CSV
+            </a>
+        </p>
+        <div class="metadata">
+            <strong>Last Updated:</strong> January 12, 2026 at 10:18 PM <br>
+            <strong>File:</strong> pulsd-non-brunch-2026-01-12.csv
         </div>
     </div>
 
@@ -88,6 +112,7 @@
             <li>Google Places ratings and review counts</li>
             <li>Pricing information where available</li>
             <li>Filtered and sorted by rating and relevance</li>
+            <li>Separate tables for brunch and non-brunch listings</li>
         </ul>
     </div>
 
