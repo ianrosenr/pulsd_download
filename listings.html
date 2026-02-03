@@ -100,10 +100,12 @@
             cursor: pointer;
         }
         .table-container {
-            overflow-x: auto;
+            overflow-x: scroll;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-height: 80vh;
+            overflow-y: auto;
         }
         table {
             width: max-content;
@@ -153,7 +155,7 @@
 </head>
 <body>
     <h1><a href="index.html">🍽️ Pulsd NYC Listings</a></h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:31 PM EST<br>
+    <div class="timestamp">Last updated: February 02, 2026 at 11:32 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
