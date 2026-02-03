@@ -225,7 +225,7 @@
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 03, 2026 at 09:45 AM EST<br>
+    <div class="timestamp">Last updated: February 03, 2026 at 09:56 AM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -252,6 +252,12 @@
                 <label><input type="checkbox" id="filterHasPrice" checked> Has Price</label>
                 <label><input type="checkbox" id="filterNoPrice" checked> No Price</label>
             </div>
+        </div>
+        <div class="filter-section">
+            <label class="filter-label">Neighborhood</label>
+            <select id="neighborhoodFilter" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; min-width: 200px;">
+                <option value="">All Neighborhoods</option>
+            </select>
         </div>
         <div class="row-count">Showing <span id="visibleCount">72</span> of 72 listings</div>
     </div>
@@ -1946,6 +1952,23 @@
         const filterOther = document.getElementById('filterOther');
         const filterHasPrice = document.getElementById('filterHasPrice');
         const filterNoPrice = document.getElementById('filterNoPrice');
+        const neighborhoodFilter = document.getElementById('neighborhoodFilter');
+
+        // Populate neighborhood dropdown from data
+        (function populateNeighborhoods() {
+            const neighborhoods = new Set();
+            rows.forEach(row => {
+                const n = row.dataset.neighborhood;
+                if (n) neighborhoods.add(n);
+            });
+            const sorted = Array.from(neighborhoods).sort();
+            sorted.forEach(n => {
+                const opt = document.createElement('option');
+                opt.value = n;
+                opt.textContent = n;
+                neighborhoodFilter.appendChild(opt);
+            });
+        })();
 
         function applyFilters() {
             const maxPrice = parseInt(slider.value);
@@ -1956,6 +1979,7 @@
             const showOther = filterOther.checked;
             const showHasPrice = filterHasPrice.checked;
             const showNoPrice = filterNoPrice.checked;
+            const selectedNeighborhood = neighborhoodFilter.value;
 
             let visible = 0;
 
@@ -1963,6 +1987,7 @@
             function shouldShow(element) {
                 const price = element.dataset.price;
                 const location = element.dataset.location;
+                const neighborhood = element.dataset.neighborhood;
                 const hasPrice = price !== '';
 
                 const priceRangeOk = !hasPrice || parseInt(price) <= maxPrice;
@@ -1970,8 +1995,9 @@
                 const locationOk = (location === 'manhattan' && showManhattan) ||
                                    (location === 'brooklyn' && showBrooklyn) ||
                                    (location === 'other' && showOther);
+                const neighborhoodOk = !selectedNeighborhood || neighborhood === selectedNeighborhood;
 
-                return priceRangeOk && priceExistsOk && locationOk;
+                return priceRangeOk && priceExistsOk && locationOk && neighborhoodOk;
             }
 
             // Apply to table rows
@@ -2002,6 +2028,7 @@
         filterOther.addEventListener('change', applyFilters);
         filterHasPrice.addEventListener('change', applyFilters);
         filterNoPrice.addEventListener('change', applyFilters);
+        neighborhoodFilter.addEventListener('change', applyFilters);
     </script>
 </body>
 </html>
