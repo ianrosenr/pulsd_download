@@ -99,6 +99,7 @@
             height: 18px;
             cursor: pointer;
         }
+        /* Table styles - desktop */
         .table-container {
             overflow-x: scroll;
             background: white;
@@ -131,7 +132,7 @@
         tr:hover {
             background: #f5f5f5;
         }
-        tr.hidden {
+        tr.hidden, .card.hidden {
             display: none;
         }
         a {
@@ -151,11 +152,78 @@
             font-size: 12px;
             margin: 10px 0;
         }
+
+        /* Card styles - mobile */
+        .cards-container {
+            display: none;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .card-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2c3e50;
+            flex: 1;
+        }
+        .card-rating {
+            font-weight: 600;
+            color: #f39c12;
+            font-size: 15px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+        .card-deal {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+        }
+        .card-price {
+            font-weight: 600;
+            color: #27ae60;
+        }
+        .card-address {
+            font-size: 12px;
+            color: #888;
+            margin-top: 6px;
+        }
+        .card-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Responsive: show cards on mobile, table on desktop */
+        @media (max-width: 768px) {
+            .table-container {
+                display: none;
+            }
+            .cards-container {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:32 PM EST<br>
+    <div class="timestamp">Last updated: February 02, 2026 at 11:36 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -991,11 +1059,879 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
         </table>
     </div>
 
+    <div class="cards-container">
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a></span>
+                <span class="card-rating">5 (32)</span>
+            </div>
+            <div class="card-deal">$49 Cocktail Brunch For Two, West Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/members-only-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">53 W 8th Street, New York, NY 10011</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a></span>
+                <span class="card-rating">4.9 (454)</span>
+            </div>
+            <div class="card-deal">$49 90Min Bottomless Brunch For Two, Chelsea</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/tara-mor-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">150 West 30th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="99" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a></span>
+                <span class="card-rating">4.8 (3894)</span>
+            </div>
+            <div class="card-deal">$99 4 Crs Bottomless Brunch For Two, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/patiala-indian-grill-and-bar-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">240 W 35th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoTTiRY1ZwokRn9SpxgNIx7M" target="_blank">Ferdi</a></span>
+                <span class="card-rating">4.8 (349)</span>
+            </div>
+            <div class="card-deal">$49 10-Cocktail Brunch For Two, West Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/ferdi-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">15 7th Avenue South, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></span>
+                <span class="card-rating">4.8 (891)</span>
+            </div>
+            <div class="card-deal">$49 SoHo Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/lindens-arlo-soho-cocktail-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2 Renwick Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></span>
+                <span class="card-rating">4.8 (16)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, Williamsburg</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/blackbird-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">428 S 5th Street, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a></span>
+                <span class="card-rating">4.8 (32)</span>
+            </div>
+            <div class="card-deal">$49 Cocktail Brunch For Two In Murray Hill</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/leslie-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">514 3rd Ave, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="39" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></span>
+                <span class="card-rating">4.8 (86)</span>
+            </div>
+            <div class="card-deal">$39: 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/barkada-social-club-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">33-05 Broadway, Astoria, NY 11106</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a></span>
+                <span class="card-rating">4.8 (338)</span>
+            </div>
+            <div class="card-deal">$39 Cocktail Brunch For Two, East Village</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/house-of-pasta-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">511 E 12th Street, New York, NY 10009</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a></span>
+                <span class="card-rating">4.8 (454)</span>
+            </div>
+            <div class="card-deal">$39 For A 3 Course Dinner Or Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/hi-sunny-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">342 7th Avenue, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></span>
+                <span class="card-rating">4.7 (3969)</span>
+            </div>
+            <div class="card-deal">$59 Fiesta Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/amor-loco-bottomless-bunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">134 W 46th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="59" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a></span>
+                <span class="card-rating">4.7 (3534)</span>
+            </div>
+            <div class="card-deal">$59: 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/charm-restaurant-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">448 Dean Street, Brooklyn, NY 11217</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></span>
+                <span class="card-rating">4.7 (608)</span>
+            </div>
+            <div class="card-deal">$59 NY Times-Praised Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/nar-restaurant-cocktail-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">34 E 20th Street, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a></span>
+                <span class="card-rating">4.7 (679)</span>
+            </div>
+            <div class="card-deal">$49 Distillery Jazz &amp; Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/great-jones-distilling-co-jazz-cocktail-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">686 Broadway, New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></span>
+                <span class="card-rating">4.7 (86)</span>
+            </div>
+            <div class="card-deal">$49 Greenwich Village Bottomless Brunch For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/ways-and-means-bottomless-restaurant-greenwich-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">167 Bleecker Street, New York, NY, 10012</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a></span>
+                <span class="card-rating">4.7 (159)</span>
+            </div>
+            <div class="card-deal">$49 90 Min Bottomless Brunch for Two, Astoria</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/porta-23-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">29-17 23rd Avenue, Queens, NY 11105</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a></span>
+                <span class="card-rating">4.7 (96)</span>
+            </div>
+            <div class="card-deal">$49 French-Style Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/les-vagabonds-cocktail-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1070 1st Avenue, New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a></span>
+                <span class="card-rating">4.7 (675)</span>
+            </div>
+            <div class="card-deal">$49 For A 2 Hour Bottomless Brunch for Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/sultan-mediterranean-cuisine-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">791 Lexington Avenue, New York NY 10065</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></span>
+                <span class="card-rating">4.7 (131)</span>
+            </div>
+            <div class="card-deal">$39 90min Bottomless Brunch For Two, Flatiron</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/john-devoys-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">377 Park Avenue South, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a></span>
+                <span class="card-rating">4.7 (314)</span>
+            </div>
+            <div class="card-deal">$39: 2 Course Dinner Or Brunch For Two w Sake</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/kamisama-ramen-dinner-restaurant-east-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">230 E 14th Street, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a></span>
+                <span class="card-rating">4.6 (1642)</span>
+            </div>
+            <div class="card-deal">54% Off A 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/skinos-mediterranean-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">123 Washington Street, New York, NY 10006</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a></span>
+                <span class="card-rating">4.6 (1465)</span>
+            </div>
+            <div class="card-deal">$59 90 Minute Bottomless Brunch For 2, Nolita</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/balzem-nolita-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">202 Mott Street, New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a></span>
+                <span class="card-rating">4.6 (337)</span>
+            </div>
+            <div class="card-deal">$49 90Min Bottomless Brunch For Two, Astoria</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/tootles-and-french-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">3615 Ditmars Boulevard , Astoria, NY 11105</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></span>
+                <span class="card-rating">4.6 (361)</span>
+            </div>
+            <div class="card-deal">$39 Boozy Brunch For 2, West Village</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/oscars-place-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">466 Hudson Street , New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="59" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJZ7jMnT5ZwokRr1LSqkFSdLk" target="_blank">Le Fanfare</a></span>
+                <span class="card-rating">4.5 (659)</span>
+            </div>
+            <div class="card-deal">$59 Michelin-Praised Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/le-fanfare-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1103 Manhattan Avenue, Brooklyn, NY 11222</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a></span>
+                <span class="card-rating">4.5 (1222)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch for Two, West Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/via-13-bottomless-brunch-restaurant-west-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">140 West 13th Street, New York, NY 10011</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></span>
+                <span class="card-rating">4.5 (2017)</span>
+            </div>
+            <div class="card-deal">$49 3 Course Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/lunella-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">173 Mulberry Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8RjtPrhZwokRVZXEfLUKtM4" target="_blank">Tia Pol</a></span>
+                <span class="card-rating">4.5 (687)</span>
+            </div>
+            <div class="card-deal">$39 90m 2 Course Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/tia-pol-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">205 10th Avenue, New York, NY 10011</div>
+        </div>
+        <div class="card" data-price="39" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a></span>
+                <span class="card-rating">4.5 (437)</span>
+            </div>
+            <div class="card-deal">$39: 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/ange-noir-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">247 Varet Street, Brooklyn, NY 11206</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></span>
+                <span class="card-rating">4.5 (992)</span>
+            </div>
+            <div class="card-deal">$39 Marvelous Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/fusion-hk-hells-kitchen-brunch" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">688 10th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></span>
+                <span class="card-rating">4.5 (1352)</span>
+            </div>
+            <div class="card-deal">$39 For A Bottomless Brunch For Two, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/bombay-grill-house-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">764 9th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a></span>
+                <span class="card-rating">4.5 (501)</span>
+            </div>
+            <div class="card-deal">$39 For A Luxurious Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/da-capo-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">322 Columbus Avenue, New York, NY 10023</div>
+        </div>
+        <div class="card" data-price="29" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></span>
+                <span class="card-rating">4.5 (1169)</span>
+            </div>
+            <div class="card-deal">$29 For A Bottomless Brunch For Two, Brooklyn</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/czen-restaurant-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">4410 Avenue H, Brooklyn, NY 11234</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a></span>
+                <span class="card-rating">4.4 (1204)</span>
+            </div>
+            <div class="card-deal">$59 90m Bottomless Brunch For Two. NoMad</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/bazar-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">31 W 26th Street, New York, NY 10010</div>
+        </div>
+        <div class="card" data-price="55" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a></span>
+                <span class="card-rating">4.4 (1337)</span>
+            </div>
+            <div class="card-deal">$55 Spanish Style Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$55</span>
+                <a href="https://pulsd.com/new-york/promotions/pil-pil-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">265 E 78th Street, New York, NY 10075</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a></span>
+                <span class="card-rating">4.4 (265)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, Williamsburg</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/casa-andrea-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">318 Grand Street , Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a></span>
+                <span class="card-rating">4.4 (1679)</span>
+            </div>
+            <div class="card-deal">$49 Gourmet 90 Min Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/the-stand-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">116 East 16th Street, New York, NY, 10003</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></span>
+                <span class="card-rating">4.4 (1004)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, G Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/madam-ji-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">154 Bleecker Street , New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="45" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a></span>
+                <span class="card-rating">4.4 (623)</span>
+            </div>
+            <div class="card-deal">$45 Luxe Cocktail Brunch For 2, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$45</span>
+                <a href="https://pulsd.com/new-york/promotions/bistango-cocktail-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">145 East 50th Street, New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></span>
+                <span class="card-rating">4.4 (421)</span>
+            </div>
+            <div class="card-deal">$39 Bottomless Brunch For Two, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/jane-doe-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">12 West 44th St, New York, NY. 10036</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></span>
+                <span class="card-rating">4.4 (86)</span>
+            </div>
+            <div class="card-deal">$39 Glamorous Cocktail Brunch For Two In SoHo</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/the-otter-brunch-restaurant-soho-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">58 Thompson Street , New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a></span>
+                <span class="card-rating">4.4 (122)</span>
+            </div>
+            <div class="card-deal">$29 For A 2 Course Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/mexiterranean-grill-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1365 1st Avenue, New York, NY 10021</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a></span>
+                <span class="card-rating">4.3 (1188)</span>
+            </div>
+            <div class="card-deal">$59 Bottomless Brunch For Two, NoMad</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/mamazul-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1155 Broadway, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></span>
+                <span class="card-rating">4.3 (648)</span>
+            </div>
+            <div class="card-deal">$49 Greenwich Village Bottomless Brunch For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/tio-pepe-bottomless-brunch-restaurant-greenwich-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">168 West 4th Street, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></span>
+                <span class="card-rating">4.3 (12)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch for Two, East Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/h-and-h-cantina-bottomless-brunch-restaurant-east-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">103 1st Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a></span>
+                <span class="card-rating">4.3 (435)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, LIC</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/dive-bar-lic-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">33-10 36th Avenue, Long Island City, NY 11106</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></span>
+                <span class="card-rating">4.3 (667)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, East Village</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/ichibantei-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">100 3rd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a></span>
+                <span class="card-rating">4.3 (550)</span>
+            </div>
+            <div class="card-deal">$49 Upper East Side Cocktail Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/amali-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">115 E 60th Street, New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a></span>
+                <span class="card-rating">4.3 (215)</span>
+            </div>
+            <div class="card-deal">$49 2Hr Bottomless Brunch For 2, Williamsburg</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/mamasushi-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">391 Hooper Street, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a></span>
+                <span class="card-rating">4.3 (1143)</span>
+            </div>
+            <div class="card-deal">$39 Bottomless Brunch For Two, UES</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/a-la-turka-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1417 2nd Avenue, New York, NY 10021</div>
+        </div>
+        <div class="card" data-price="39" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a></span>
+                <span class="card-rating">4.3 (738)</span>
+            </div>
+            <div class="card-deal">$39 90m Bottomless Brunch For 2, Williamsburg</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/mexico-2000-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">369 Broadway, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a></span>
+                <span class="card-rating">4.3 (323)</span>
+            </div>
+            <div class="card-deal">$39 Brunch For Two &amp; Cocktail Trees &amp; More</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/recreation-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">26 Ann Street, New York, NY 10038</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></span>
+                <span class="card-rating">4.3 (109)</span>
+            </div>
+            <div class="card-deal">$39 For A 2 Hour Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/au-bar-56-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">235 W 56th Street, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="29" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></span>
+                <span class="card-rating">4.3 (3262)</span>
+            </div>
+            <div class="card-deal">$29 2Crs Boozy Cocktail Brunch For 2, Hoboken</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/madd-hatter-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">221 Washington Street, Hoboken, NJ 07030</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></span>
+                <span class="card-rating">4.2 (1597)</span>
+            </div>
+            <div class="card-deal">$59 Rooftop Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/elsie-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1412 Broadway, 25th Floor, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a></span>
+                <span class="card-rating">4.2 (2588)</span>
+            </div>
+            <div class="card-deal">$49 For A 90 Minute Bottomless Brunch for Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/lagos-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">727 7th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a></span>
+                <span class="card-rating">4.2 (1904)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, FiDi</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/clinton-hall-fidi-restaurant-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">90 Washington Street, New York, NY 10006</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></span>
+                <span class="card-rating">4.2 (95)</span>
+            </div>
+            <div class="card-deal">$49 Rooftop 90 Minute Bottomless Brunch For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/boathouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">32-72 Steinway Street, Astoria, NY 11103</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a></span>
+                <span class="card-rating">4.2 (794)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/clinton-hall-36th-street-restaurant-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">16 W 36th Street, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a></span>
+                <span class="card-rating">4.2 (647)</span>
+            </div>
+            <div class="card-deal">$49 Bottomless Brunch For Two, Midtown</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/clinton-hall-51st-street-restaurant-bottomless-brunch-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">230 E 51st Street, New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a></span>
+                <span class="card-rating">4.2 (778)</span>
+            </div>
+            <div class="card-deal">$49 For A 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/la-palapa-nyc-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">77 St. Marks Place, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="45" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></span>
+                <span class="card-rating">4.2 (1577)</span>
+            </div>
+            <div class="card-deal">$45 Cocktail Brunch For Two, UWS</div>
+            <div class="card-meta">
+                <span class="card-price">$45</span>
+                <a href="https://pulsd.com/new-york/promotions/pappardella-cocktail-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">316 Columbus Avenue, New York, NY</div>
+        </div>
+        <div class="card" data-price="39" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></span>
+                <span class="card-rating">4.2 (2414)</span>
+            </div>
+            <div class="card-deal">$39 Rooftop Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/bourbon-street-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">40-12 Bell Boulevard, Bayside, NY 11361</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></span>
+                <span class="card-rating">4.2 (1082)</span>
+            </div>
+            <div class="card-deal">$29 NYT Praised 2Hour Bottomless Brunch For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/jalao-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2420 Amsterdam Avenue, New York, NY 10033</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></span>
+                <span class="card-rating">4.2 (121)</span>
+            </div>
+            <div class="card-deal">$29 Bottomless Jazz Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/the-ivy-room-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">420 Park Ave South, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></span>
+                <span class="card-rating">4.1 (1361)</span>
+            </div>
+            <div class="card-deal">$49 Epic 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/pink-taco-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">7 Times Square, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a></span>
+                <span class="card-rating">4.1 (220)</span>
+            </div>
+            <div class="card-deal">$29 For A 2 Course Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/pita-and-beyond-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">417 3rd Avenue, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a></span>
+                <span class="card-rating">4 (118)</span>
+            </div>
+            <div class="card-deal">$89 Caviar+Oysters Brunch For 2 &amp; Bubbly</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/number-one-caviar-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">14 Wall Street, New York, NY 10005</div>
+        </div>
+        <div class="card" data-price="59" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a></span>
+                <span class="card-rating">4 (840)</span>
+            </div>
+            <div class="card-deal">$59 90m Rooftop Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/lighthouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">45-15 37th Street, Queens, NY 11101</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></span>
+                <span class="card-rating">4 (443)</span>
+            </div>
+            <div class="card-deal">$49 Gorgeous Bottomless Brunch for Two</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/lowkey-garden-lounge-bottomless-brunch" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">70-15 Austin Street, Queens, NY 11375</div>
+        </div>
+        <div class="card" data-price="29" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></span>
+                <span class="card-rating">4 (125)</span>
+            </div>
+            <div class="card-deal">$29 90 Minute Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/guesthouse-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">265 Graham Avenue, Brooklyn, NY 11206</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a></span>
+                <span class="card-rating">3.8 (664)</span>
+            </div>
+            <div class="card-deal">$59 Rooftop Bottomless Brunch For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/highkey-rainforest-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">6 Platt Street, New York, NY 10038</div>
+        </div>
+    </div>
+
     <script>
         const slider = document.getElementById('priceSlider');
         const priceValue = document.getElementById('priceValue');
         const visibleCount = document.getElementById('visibleCount');
         const rows = document.querySelectorAll('#listingsTable tbody tr');
+        const cards = document.querySelectorAll('.cards-container .card');
         const filterManhattan = document.getElementById('filterManhattan');
         const filterBrooklyn = document.getElementById('filterBrooklyn');
         const filterOther = document.getElementById('filterOther');
@@ -1013,9 +1949,11 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
             const showNoPrice = filterNoPrice.checked;
 
             let visible = 0;
-            rows.forEach(row => {
-                const price = row.dataset.price;
-                const location = row.dataset.location;
+
+            // Filter function for both rows and cards
+            function shouldShow(element) {
+                const price = element.dataset.price;
+                const location = element.dataset.location;
                 const hasPrice = price !== '';
 
                 const priceRangeOk = !hasPrice || parseInt(price) <= maxPrice;
@@ -1024,13 +1962,28 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
                                    (location === 'brooklyn' && showBrooklyn) ||
                                    (location === 'other' && showOther);
 
-                if (priceRangeOk && priceExistsOk && locationOk) {
+                return priceRangeOk && priceExistsOk && locationOk;
+            }
+
+            // Apply to table rows
+            rows.forEach(row => {
+                if (shouldShow(row)) {
                     row.classList.remove('hidden');
                     visible++;
                 } else {
                     row.classList.add('hidden');
                 }
             });
+
+            // Apply to cards (same logic, but count only once)
+            cards.forEach(card => {
+                if (shouldShow(card)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
             visibleCount.textContent = visible;
         }
 

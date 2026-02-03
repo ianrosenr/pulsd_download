@@ -99,6 +99,7 @@
             height: 18px;
             cursor: pointer;
         }
+        /* Table styles - desktop */
         .table-container {
             overflow-x: scroll;
             background: white;
@@ -131,7 +132,7 @@
         tr:hover {
             background: #f5f5f5;
         }
-        tr.hidden {
+        tr.hidden, .card.hidden {
             display: none;
         }
         a {
@@ -151,11 +152,78 @@
             font-size: 12px;
             margin: 10px 0;
         }
+
+        /* Card styles - mobile */
+        .cards-container {
+            display: none;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .card-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2c3e50;
+            flex: 1;
+        }
+        .card-rating {
+            font-weight: 600;
+            color: #f39c12;
+            font-size: 15px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+        .card-deal {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+        }
+        .card-price {
+            font-weight: 600;
+            color: #27ae60;
+        }
+        .card-address {
+            font-size: 12px;
+            color: #888;
+            margin-top: 6px;
+        }
+        .card-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Responsive: show cards on mobile, table on desktop */
+        @media (max-width: 768px) {
+            .table-container {
+                display: none;
+            }
+            .cards-container {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <h1><a href="index.html">🍽️ Pulsd NYC Listings</a></h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:32 PM EST<br>
+    <div class="timestamp">Last updated: February 02, 2026 at 11:36 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -1993,11 +2061,1995 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
         </table>
     </div>
 
+    <div class="cards-container">
+        <div class="card" data-price="99" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJJ3Rw6R9ZwokRNDjXSDEOXxQ" target="_blank">Saucey Pizza Bar</a></span>
+                <span class="card-rating">5 (269)</span>
+            </div>
+            <div class="card-deal">$99 Pizza Making Class For 2 w Cocktails/Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/saucey-pizza-making-classes-restaurants-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">36-21 Review Avenue, Long Island City, NY 11101</div>
+        </div>
+        <div class="card" data-price="29" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJo2EvIVhbwokRR5XobNHAHpw" target="_blank">Industry City - Building 5</a></span>
+                <span class="card-rating">5 (3)</span>
+            </div>
+            <div class="card-deal">$29 Tickets: The 2026 Brooklyn Wine Festival</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/the-2026-brooklyn-wine-festival-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">33 35th Street, Brooklyn, NY 11232</div>
+        </div>
+        <div class="card" data-price="249" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDfRavFtbwokRijMBw1NobfM" target="_blank">6 Restaurant</a></span>
+                <span class="card-rating">4.9 (92)</span>
+            </div>
+            <div class="card-deal">$249 9 Course Chef&#x27;s Table Experience For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$249</span>
+                <a href="https://pulsd.com/new-york/promotions/6-restaurant-nyc-chefs-table-dinner" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">481 Court Street, Brooklyn, NY 11231</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaaMyON5ZwokRXMnalfJlsTg" target="_blank">Langan&#x27;s</a></span>
+                <span class="card-rating">4.9 (1304)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/langans-nyc-dinner-restaurant" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">114 West 47th Street , New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXeQ_obpZwokRjDueh_2hheM" target="_blank">By &amp; By</a></span>
+                <span class="card-rating">4.9 (56)</span>
+            </div>
+            <div class="card-deal">$69 2 Course Dinner For 2 &amp; Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/by-and-by-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">644 10th Avenue, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz1tFP_9ZwokR1NewYt9iemw" target="_blank">Burgers and Beer</a></span>
+                <span class="card-rating">4.9 (302)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For Two &amp; Cocktails, Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/burgers-beer-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">170 West 4th Street , New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXcKmIRtbwokR7XKV0tqoYYM" target="_blank">Wok In Duane</a></span>
+                <span class="card-rating">4.9 (95)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For Two &amp; Cocktails, Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/wok-in-duane-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">181 Duane Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></span>
+                <span class="card-rating">4.8 (891)</span>
+            </div>
+            <div class="card-deal">Winter Village Cabin 4Crs Dinner For 4+Drinks</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/lindens-soho-winter-cabin-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2 Renwick Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMRchbudZwokRkZaaaZO5kHA" target="_blank">The Ruby Theatre</a></span>
+                <span class="card-rating">4.8 (185)</span>
+            </div>
+            <div class="card-deal">50% Off Tickets To Drunk Shakespeare</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/drunk-shakespeare-tickets-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">35 West 39th Street, New York, NY, 10018</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh8IHOYRdwokR1LFd8h-bfAg" target="_blank">Sweets &amp; Things</a></span>
+                <span class="card-rating">4.8 (294)</span>
+            </div>
+            <div class="card-deal">CharCharms x SweetsandThings</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61513" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2709 Fulton Street, Brooklyn, NY 11207</div>
+        </div>
+        <div class="card" data-price="85" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJJa93rKRZwokRPoOmc_ta6DU" target="_blank">Cka Ka Qellue</a></span>
+                <span class="card-rating">4.8 (1682)</span>
+            </div>
+            <div class="card-deal">$85 4 Course Dinner for 2 &amp; Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$85</span>
+                <a href="https://pulsd.com/new-york/promotions/cka-ka-qellue-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">118 E 31st Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="79" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFUaWnL9ZwokR8PbqkNt-FCQ" target="_blank">Sushi Saint</a></span>
+                <span class="card-rating">4.8 (75)</span>
+            </div>
+            <div class="card-deal">$79 3Crs Sushi Dinner For 2 &amp; Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/sushi-saint-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">11-01 43rd Avenue, Long Island City, NY 11101</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD3o0w4JZwokR-WlDg3eOg0I" target="_blank">Jose Luis Mediterranean Cuisine</a></span>
+                <span class="card-rating">4.8 (689)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For 2 w Sangria Pitcher</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/jose-luis-nyc-dinner-restaurant" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">186 Avenue B, New York, NY 10009</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></span>
+                <span class="card-rating">4.8 (16)</span>
+            </div>
+            <div class="card-deal">$69 3 Course Dinner For 2 &amp; Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/blackbird-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">428 S 5th Street, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="65" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJy46hSq9bwokRFSDdaz0YmV0" target="_blank">Norimen</a></span>
+                <span class="card-rating">4.8 (59)</span>
+            </div>
+            <div class="card-deal">$65 3Crs Dinner For Two Cocktails/Wine/Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$65</span>
+                <a href="https://pulsd.com/new-york/promotions/norimen-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">24 Elizabeth Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnxEXkVNYwokRITzoANd2S14" target="_blank">Miss Nellie&#x27;s</a></span>
+                <span class="card-rating">4.8 (766)</span>
+            </div>
+            <div class="card-deal">$59 3Hr Open Bar Galentine&#x27;s Day Party + Food</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/2026-miss-nellies-galentines-day-open-bar-party-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">325 West 44th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJU_jf_XxZwokRGPLWEYVWR7w" target="_blank">Mala Hot Pot</a></span>
+                <span class="card-rating">4.8 (507)</span>
+            </div>
+            <div class="card-deal">$59 2 Course Hot Pot Dinner For 2 + Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/mala-hot-pot-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">35 W 36th Street, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></span>
+                <span class="card-rating">4.8 (86)</span>
+            </div>
+            <div class="card-deal">$49: 3 Course Dinner For Two &amp; Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/barkada-social-club-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">33-05 Broadway, Astoria, NY 11106</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOUMIx-9ZwokRNkHZdwJGR5I" target="_blank">Tipsy Shanghai</a></span>
+                <span class="card-rating">4.8 (927)</span>
+            </div>
+            <div class="card-deal">$49: 3 Course Dinner For Two w Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/tipsy-shanghai-east-village-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">104 2nd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ-ZwZ2CZZwokRj0c3MfGp5ns" target="_blank">Yasubee Authentic Ramen</a></span>
+                <span class="card-rating">4.8 (213)</span>
+            </div>
+            <div class="card-deal">$49 AYCE &amp; Bottomless Dinner For Two, Chelsea</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/yasubee-authentic-ramen-ayce-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">253 W 26th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ-ZwZ2CZZwokRj0c3MfGp5ns" target="_blank">Yasubee Authentic Ramen</a></span>
+                <span class="card-rating">4.8 (213)</span>
+            </div>
+            <div class="card-deal">$39 3 Course Dinner For Two &amp; Drinks, Chelsea</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/yasubee-authentic-ramen-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">253 W 26th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="19" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbe26PclbwokRfrb6lAnTB30" target="_blank">Kings County Distillery</a></span>
+                <span class="card-rating">4.8 (393)</span>
+            </div>
+            <div class="card-deal">$19 Top Shelf Distillery Tour &amp; Tasting</div>
+            <div class="card-meta">
+                <span class="card-price">$19</span>
+                <a href="https://pulsd.com/new-york/promotions/kings-county-distillery-top-shelf-whiskey-tasting-tour-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">299 Sands Street, Brooklyn, NY 11205</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeb_vSCRbwokRVIzbficpCeQ" target="_blank">Kiwami</a></span>
+                <span class="card-rating">4.7 (85)</span>
+            </div>
+            <div class="card-deal">20Crs Omakase w 2Hrs Bottomless Sake For Two</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/kiwami-omakase-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">141 Bridge Park Drive, Brooklyn, NY 11201</div>
+        </div>
+        <div class="card" data-price="129" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM_E9jHdbwokRol-zqevjY1o" target="_blank">Warren Street Hotel</a></span>
+                <span class="card-rating">4.7 (61)</span>
+            </div>
+            <div class="card-deal">$129 Champagne Afternoon Tea For Two, Tribeca</div>
+            <div class="card-meta">
+                <span class="card-price">$129</span>
+                <a href="https://pulsd.com/new-york/promotions/warren-street-hotel-nyc-afternoon-tea" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">86 Warren Street, New York, NY 10007</div>
+        </div>
+        <div class="card" data-price="99" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></span>
+                <span class="card-rating">4.7 (608)</span>
+            </div>
+            <div class="card-deal">$99 3 Course Dinner For 2 &amp; Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/nar-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">34 E 20th Street, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></span>
+                <span class="card-rating">4.7 (3969)</span>
+            </div>
+            <div class="card-deal">$69 3 Crs Dinner For 2 &amp; Wine/Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/amor-loco-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">134 W 46th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></span>
+                <span class="card-rating">4.7 (86)</span>
+            </div>
+            <div class="card-deal">$69: 3 Crs Dinner + Cocktails + Comedy Show</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/ways-and-means-dinner-restaurant-comedy-show-nyc--2" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">167 Bleecker Street, New York, NY, 10012</div>
+        </div>
+        <div class="card" data-price="59" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYzGsnstZwokRkcK34hMLbV0" target="_blank">Good Thanks</a></span>
+                <span class="card-rating">4.7 (328)</span>
+            </div>
+            <div class="card-deal">$59 3Crs Dinner For 2 &amp; Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/good-thanks-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">374 Graham Avenue, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOc6gA9X3wokRu5v-fpKFkBs" target="_blank">Chez Messy</a></span>
+                <span class="card-rating">4.7 (246)</span>
+            </div>
+            <div class="card-deal">$59 3Crs Dinner For 2 w Wine Bottle,Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/chez-messy-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">5 Edward M Morgan Place, New York, NY 10032</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJE9fzYv9YwokRnzR1M_R6_uU" target="_blank">The Lotus Room</a></span>
+                <span class="card-rating">4.7 (50)</span>
+            </div>
+            <div class="card-deal">$49 AYCE Dumplings &amp; Noodles For 2 +Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/the-lotus-room-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">114 West 47th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></span>
+                <span class="card-rating">4.7 (131)</span>
+            </div>
+            <div class="card-deal">$49 Dinner For Two &amp; Wine Bottle, Flatiron</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/john-devoys-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">377 Park Avenue South, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJpx_u6NZZwokR0gixoJrE5Ww" target="_blank">Tara Rose</a></span>
+                <span class="card-rating">4.7 (1119)</span>
+            </div>
+            <div class="card-deal">$39 For A Dinner For Two &amp; A Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/tara-rose-nyc-dinner-restaurant" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">384 3rd Avenue, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJTX6hP5NZwokRKiSZMT3Q1lg" target="_blank">Moustache</a></span>
+                <span class="card-rating">4.7 (801)</span>
+            </div>
+            <div class="card-deal">$29 Dinner For Two With Wines &amp; Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/moustache-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">29 7th Avenue South, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW7ilTZNZwokR7Gw48AU3Z0c" target="_blank">Le Petit Village</a></span>
+                <span class="card-rating">4.6 (357)</span>
+            </div>
+            <div class="card-deal">5 Course Wine Pairing Dinner Experience</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61524" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">173 7th Avenue South, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXRqFABbwokROtpA2HMbqL8" target="_blank">Derby Cup Coffee</a></span>
+                <span class="card-rating">4.6 (52)</span>
+            </div>
+            <div class="card-deal">Manchester City: Year of the Horse</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61523" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">37 Elizabeth Street, New York, NY, 10013</div>
+        </div>
+        <div class="card" data-price="149" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJBaxS1pVZwokRrlAgmAu4M48" target="_blank">Sushi Masu</a></span>
+                <span class="card-rating">4.6 (132)</span>
+            </div>
+            <div class="card-deal">$149 16Crs Omakase Dinner For Two w Wine/Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$149</span>
+                <a href="https://pulsd.com/new-york/promotions/sushi-masu-omakase-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">286 Columbus Avenue, New York, NY 10023</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnURzHbFZwokRqnfhlkSEPbQ" target="_blank">Zutto Nolita</a></span>
+                <span class="card-rating">4.6 (826)</span>
+            </div>
+            <div class="card-deal">$89 3 Crs Omakase Dinner For 2 + Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/zutto-nolita-omakase-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">384 Broome Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJsctiAgBZwokRRPidYZS6VzQ" target="_blank">Wonderland</a></span>
+                <span class="card-rating">4.6 (340)</span>
+            </div>
+            <div class="card-deal">$89 2 Course Dinner For 2 w Cocktails &amp; Shots</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/wonderland-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">96 2nd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJGxpCtzxawokRWS7MVDYfA8E" target="_blank">SUteiShi</a></span>
+                <span class="card-rating">4.6 (711)</span>
+            </div>
+            <div class="card-deal">$89 Omakase Sushi Dinner For 2 w Sake Carafe</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/suteishi-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">24 Peck Slip, New York, NY 10038</div>
+        </div>
+        <div class="card" data-price="79" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT6iakMdbwokRr7eIzot7L5Y" target="_blank">Farida</a></span>
+                <span class="card-rating">4.6 (2023)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For 2 &amp; Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/farida-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">32 Cedar Street, New York City, NY 10005</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJc-KD401ZwokR_wAYL4jLVCQ" target="_blank">Javitri</a></span>
+                <span class="card-rating">4.6 (244)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 &amp; Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/javitri-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">132 East 61st Street , New York, NY 10065</div>
+        </div>
+        <div class="card" data-price="65" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnfbJe1VYwokRclrtuzRUnOs" target="_blank">Public House At Merrion Row Hotel</a></span>
+                <span class="card-rating">4.6 (270)</span>
+            </div>
+            <div class="card-deal">$65 3Crs Dinner For 2 &amp; Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$65</span>
+                <a href="https://pulsd.com/new-york/promotions/public-house-at-merrion-row-hotel-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">119 W 45th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></span>
+                <span class="card-rating">4.6 (361)</span>
+            </div>
+            <div class="card-deal">$59: 3 Crs Dinner For 2 with Wines, W Village</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/oscars-place-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">466 Hudson Street , New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJw4uA_x9bwokRyR4yBROx_Pc" target="_blank">Boss Tweeds</a></span>
+                <span class="card-rating">4.6 (90)</span>
+            </div>
+            <div class="card-deal">$49 Dinner For 2 &amp; Wine Bottle/Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/boss-tweeds-dinner-restaurant-tribeca-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">41 Murray Street, New York, NY 10007</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXeUvXoZZwokRe4fgXkTAlsU" target="_blank">Tipsy Scoop Brooklyn</a></span>
+                <span class="card-rating">4.6 (366)</span>
+            </div>
+            <div class="card-deal">$49 Ice Cream Cocktail Mixology Classes</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/tipsy-scoop-ice-cream-mixology-classes-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">270 Metropolitan Avenue, Brooklyn, NY, 11211</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCx3lDtZZwokR3HTb84fDE1s" target="_blank">SPiN Midtown</a></span>
+                <span class="card-rating">4.6 (130)</span>
+            </div>
+            <div class="card-deal">$49 3 Hour Open Bar + Buffet Super Bowl Party</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/spin-midtown-super-bowl-2026-open-bar-buffet-party-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1626 Broadway, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmxlF1FNewokRpCNcaaavPWQ" target="_blank">SPiN Flatiron</a></span>
+                <span class="card-rating">4.6 (1278)</span>
+            </div>
+            <div class="card-deal">$49 3 Hour Open Bar + Buffet Super Bowl Party</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/spin-flatiron-open-bar-buffet-super-bowl-lx-party-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">48 East 23rd Street, New York, NY</div>
+        </div>
+        <div class="card" data-price="48" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMdeI3ihZwokRT6vUi5QaFjQ" target="_blank">Cafe Atelier</a></span>
+                <span class="card-rating">4.6 (232)</span>
+            </div>
+            <div class="card-deal">$48 Afternoon High Tea For Two, Tribeca</div>
+            <div class="card-meta">
+                <span class="card-price">$48</span>
+                <a href="https://pulsd.com/new-york/promotions/cafe-atelier-afternoon-high-tea-tribeca-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">112 Hudson Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="39" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDQJJHAtbwokR6Ljf1I9DUFA" target="_blank">Em Vietnamese Bistro</a></span>
+                <span class="card-rating">4.6 (932)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For Two &amp; Wine Bottle, DUMBO</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/em-vietnamese-bistro-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">57 Front Street, Brooklyn, NY 11201</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmX3EiBBZwokRCz5O-6__5E0" target="_blank">The Laurels</a></span>
+                <span class="card-rating">4.6 (304)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For Two With Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/the-laurels-dinner-restaurant-gramercy-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">231 2nd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoz4wBFFbwokRpkJ9fa2n4i8" target="_blank">Tara Kitchen</a></span>
+                <span class="card-rating">4.6 (252)</span>
+            </div>
+            <div class="card-deal">$39 For A Moroccan High Tea For Two, Tribeca</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/tara-kitchen-moroccan-high-tea-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">253 Church Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="35" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMdeI3ihZwokRT6vUi5QaFjQ" target="_blank">Cafe Atelier</a></span>
+                <span class="card-rating">4.6 (232)</span>
+            </div>
+            <div class="card-deal">$35 Wine Bottle &amp; Cheese Experience For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$35</span>
+                <a href="https://pulsd.com/new-york/promotions/cafe-atelier-wine-cheese-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">112 Hudson Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJWYuVOE5ZwokRXm292tXw5cM" target="_blank">The Mayfly</a></span>
+                <span class="card-rating">4.6 (232)</span>
+            </div>
+            <div class="card-deal">$29 LES Dinner For 2 &amp; Cocktails,Wines,Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/the-mayfly-restaurant-dinner-lower-east-side-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">269 E Houston Street, New York, NY 10002</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJF4SEq5hZwokR5qUZkP7dymw" target="_blank">Tipsy Scoop Manhattan</a></span>
+                <span class="card-rating">4.6 (1662)</span>
+            </div>
+            <div class="card-deal">$29 Boozy Sundae Making Class</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/tipsy-scoop-boozy-ice-cream-sundae-decorating-classes-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">217 E 26th Street, New York, NY 10010</div>
+        </div>
+        <div class="card" data-price="25" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJga1VXbxZwokRcZUivapDujA" target="_blank">MakiMaki</a></span>
+                <span class="card-rating">4.6 (270)</span>
+            </div>
+            <div class="card-deal">$25 2 Course Sushi Experience for Two</div>
+            <div class="card-meta">
+                <span class="card-price">$25</span>
+                <a href="https://pulsd.com/new-york/promotions/makimaki-sushi-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">360 Lexington Avenue, New York, NY 10017</div>
+        </div>
+        <div class="card" data-price="19" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJtf45qQBZwokRBArjFWGfwfg" target="_blank">Center 415</a></span>
+                <span class="card-rating">4.6 (195)</span>
+            </div>
+            <div class="card-deal">$19 Ticket: The Salon du Chocolat Festival</div>
+            <div class="card-meta">
+                <span class="card-price">$19</span>
+                <a href="https://pulsd.com/new-york/promotions/2026-salon-du-chocolat" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">415 5th Avenue, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRzstD_pYwokRQP9KCtKm3kI" target="_blank">Bustronome</a></span>
+                <span class="card-rating">4.5 (63)</span>
+            </div>
+            <div class="card-deal">6Crs Fine Dining Dinner Bus Tour Around NYC</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/bustronome-fine-dining-bus-tour-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">988 8th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFyq4ScFbwokRwMJWGE6ad1o" target="_blank">Raaka Chocolate</a></span>
+                <span class="card-rating">4.5 (189)</span>
+            </div>
+            <div class="card-deal">43% Off Hand-Rolled Truffle Making Classes</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/raaka-chocolate-truffle-making-classes-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">64 Seabring Street, Brooklyn, NY 11231</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJA5TGRw1ZwokRgkupoRF2xno" target="_blank">PacRim</a></span>
+                <span class="card-rating">4.5 (119)</span>
+            </div>
+            <div class="card-deal">18Crs Omakase Dinner For 2 &amp; Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/pacrim-omakase-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">308 E 49th Street, New York, NY 10017</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></span>
+                <span class="card-rating">4.5 (169)</span>
+            </div>
+            <div class="card-deal">3 Course Valentines Day Dinner For 2 w Bubbly</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/sahola-cafe-valentines-day-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">108 E 31st Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMSE4pYhZwokRb4by65BoRvg" target="_blank">Cappuccino Gino</a></span>
+                <span class="card-rating">4.5 (144)</span>
+            </div>
+            <div class="card-deal">House of Riva Carats &amp; Cocktails Galentine’s</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61474" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">167 Madison Avenue, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFyq4ScFbwokRwMJWGE6ad1o" target="_blank">Raaka Chocolate</a></span>
+                <span class="card-rating">4.5 (189)</span>
+            </div>
+            <div class="card-deal">43% Off Chocolate Bar Making Classes</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/raaka-chocolate-bar-making-classes-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">64 Seabring Street, Brooklyn, NY 11231</div>
+        </div>
+        <div class="card" data-price="99" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></span>
+                <span class="card-rating">4.5 (169)</span>
+            </div>
+            <div class="card-deal">$99 Chic Afternoon Tea for Two, NoMad</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/sahola-cafe-afternoon-tea-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">108 E 31st Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="99" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></span>
+                <span class="card-rating">4.5 (169)</span>
+            </div>
+            <div class="card-deal">$99 Valentine&#x27;s Floral Workshop w Champagne</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/sahola-cafe-valentines-day-floral-arrangement-workshop-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">108 E 31st Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyQrN22VbwokRkPPkgVB6K-I" target="_blank">Kahlo</a></span>
+                <span class="card-rating">4.5 (699)</span>
+            </div>
+            <div class="card-deal">$89 3 Course Dinner For Two &amp; Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/kahlo-dinner-restaurant-chelsea-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">525 West 29th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="85" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa1nQ3RpZwokRVfXEWiUopRc" target="_blank">Yara</a></span>
+                <span class="card-rating">4.5 (796)</span>
+            </div>
+            <div class="card-deal">$85: 3 Course Dinner For 2 &amp; Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$85</span>
+                <a href="https://pulsd.com/new-york/promotions/yara-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">319 E 53rd Street, New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ05f_AZ_3wokRYDq3ytLPLew" target="_blank">Alison</a></span>
+                <span class="card-rating">4.5 (531)</span>
+            </div>
+            <div class="card-deal">$79: 3 Course Dinner For Two + Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/alison-nyc-dinner-restaurant" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1651 Lexington Avenue, New York, NY 10029</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJST0cgRZawokRNvJv5mhG57E" target="_blank">Joseph&#x27;s Restaurant</a></span>
+                <span class="card-rating">4.5 (371)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For Two w Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/josephs-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">3 Hanover Square, New York, NY 10004</div>
+        </div>
+        <div class="card" data-price="75" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ_WXu66RYwokRAGIvfYW8fYk" target="_blank">Kaia Farmhouse Restaurant</a></span>
+                <span class="card-rating">4.5 (659)</span>
+            </div>
+            <div class="card-deal">$75: 3 Course Dinner For Two &amp; Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$75</span>
+                <a href="https://pulsd.com/new-york/promotions/best-south-african-restaurant-kaia-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1446 1st Avenue, New York, NY 10021</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwSslRhxZwokRBLkPiFyDWHM" target="_blank">Old Fashion Cafe</a></span>
+                <span class="card-rating">4.5 (293)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 &amp; Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/old-fashion-cafe-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">110 Thompson Street, New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></span>
+                <span class="card-rating">4.5 (2017)</span>
+            </div>
+            <div class="card-deal">$59 3 Course Dinner for 2 &amp; Carafe of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/lunella-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">173 Mulberry Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="59" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></span>
+                <span class="card-rating">4.5 (1169)</span>
+            </div>
+            <div class="card-deal">$59: 3 Course Dinner For Two &amp; Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/czen-restaurant-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">4410 Avenue H, Brooklyn, NY 11234</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJsVxkpoZZwokR74R22Gc7cSY" target="_blank">Ms Yoo</a></span>
+                <span class="card-rating">4.5 (381)</span>
+            </div>
+            <div class="card-deal">$49: 90Min AYCE Tacos &amp; Bottomless Drinks</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/ms-yoo-all-you-can-eat-bottomless-taco-thursdays-dinner" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">163 Allen Street, New York, NY 10002</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk9gLf75bwokRI2fQO4j603s" target="_blank">Pizzette</a></span>
+                <span class="card-rating">4.5 (252)</span>
+            </div>
+            <div class="card-deal">$49 Dinner For Two &amp; A Bottle of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/pizzette-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">191 Graham Avenue, Brooklyn, NY 11206</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></span>
+                <span class="card-rating">4.5 (992)</span>
+            </div>
+            <div class="card-deal">$49 Dinner For Two With 4 Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/fusion-hk-hells-kitchen-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">688 10th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></span>
+                <span class="card-rating">4.5 (1352)</span>
+            </div>
+            <div class="card-deal">$39 3 Course Dinner for Two With Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/bombay-grill-house-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">764 9th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="39" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh9x07Z1ZwokRGx3DlP1b35o" target="_blank">Kaskade</a></span>
+                <span class="card-rating">4.5 (189)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For 2 &amp; Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/kaskade-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">123 Greenpoint Avenue, Brooklyn, NY 11222</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJi0SOSF1ZwokRm5r1egtKNaE" target="_blank">Wok In The Clouds</a></span>
+                <span class="card-rating">4.5 (377)</span>
+            </div>
+            <div class="card-deal">$29 Dinner For 2 + Wines/Beers, Flatiron</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/wok-in-the-clouds-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">127 E 28th Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMYIE-KlZwokRZuFHn8jkNuo" target="_blank">Ai Fiori</a></span>
+                <span class="card-rating">4.4 (1777)</span>
+            </div>
+            <div class="card-deal">40% Off 4 Crs Dinner For Two w Cocktails/Wine</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/ai-fiori-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">400 5th Avenue, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRUXf9uBZwokR9WS3NBhSjYk" target="_blank">KYU NYC</a></span>
+                <span class="card-rating">4.4 (690)</span>
+            </div>
+            <div class="card-deal">7Crs Tasting Dinner Experience For 2 &amp; Drinks</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/kyu-tasting-dinner-experience-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">324 Lafayette Street , New York, NY 10012,</div>
+        </div>
+        <div class="card" data-price="" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3xZbsp5ZwokRRvzkWV-pP1U" target="_blank">Westside Market</a></span>
+                <span class="card-rating">4.4 (901)</span>
+            </div>
+            <div class="card-deal">Free Groceries For Everyone</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61535" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">84 3rd Avenue, New York, New York 10003</div>
+        </div>
+        <div class="card" data-price="99" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRUXf9uBZwokR9WS3NBhSjYk" target="_blank">KYU NYC</a></span>
+                <span class="card-rating">4.4 (690)</span>
+            </div>
+            <div class="card-deal">$99: 3 Course Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$99</span>
+                <a href="https://pulsd.com/new-york/promotions/kyu-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">324 Lafayette Street , New York, NY 10012,</div>
+        </div>
+        <div class="card" data-price="89" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></span>
+                <span class="card-rating">4.4 (86)</span>
+            </div>
+            <div class="card-deal">$89: 3 Course Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$89</span>
+                <a href="https://pulsd.com/new-york/promotions/the-otter-dinner-restaurant-soho-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">58 Thompson Street , New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnYSJ169ZwokRiH0bzxxTYWM" target="_blank">Ocabanon</a></span>
+                <span class="card-rating">4.4 (783)</span>
+            </div>
+            <div class="card-deal">$79 3Crs Dinner For Two &amp; Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/ocabanon-chelsea-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">245 West 29th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="79" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbTFSIKpZwokRpLi30Y22b3U" target="_blank">Alison Downtown</a></span>
+                <span class="card-rating">4.4 (57)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For 2 w A Bottle of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/alison-east-village-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">110 St Marks Place, New York, New York 10009</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSWsAjQlZwokRVLOHE_VU724" target="_blank">Rebèl Restaurant</a></span>
+                <span class="card-rating">4.4 (412)</span>
+            </div>
+            <div class="card-deal">$79 3Crs Dinner For 2 with Cocktails, &amp; Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/rebel-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">29 Clinton Street, New York, NY 10002</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3_aKBdlbwokRB4MzhiifcfE" target="_blank">Barano</a></span>
+                <span class="card-rating">4.4 (674)</span>
+            </div>
+            <div class="card-deal">$69: 3 Course Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/barano-dinner-restaurant-williamsburg-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">26 Broadway, Brooklyn, NY 11249</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSXK5RFFYwokR0FRZOB_pvDg" target="_blank">Amarone Restaurant</a></span>
+                <span class="card-rating">4.4 (1252)</span>
+            </div>
+            <div class="card-deal">$69 3 Course Dinner For Two with Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/amarone-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">686 9th Avenue , New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr0oZMbBZwokRoHkeDJOY__M" target="_blank">Biricchino</a></span>
+                <span class="card-rating">4.4 (599)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 &amp; Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/biricchino-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">260 W 29th Street , New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a></span>
+                <span class="card-rating">4.4 (1474)</span>
+            </div>
+            <div class="card-deal">$69 Endless Drinks &amp; Sushi Dinner For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/republic-latin-fusion-bottomless-drinks-and-endless-sushi-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">181 N 10th Street, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOQ8A1IlZwokRd4ZMRvOMQ3o" target="_blank">Il Cortile</a></span>
+                <span class="card-rating">4.4 (2321)</span>
+            </div>
+            <div class="card-deal">$69 MichelinGuide 3Crs Dinner For2, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/il-cortile-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">125 Mulberry Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyTuavAlZwokRVX4Av-8RbJ8" target="_blank">Flame Hibachi</a></span>
+                <span class="card-rating">4.4 (583)</span>
+            </div>
+            <div class="card-deal">$59 3 Course Hibachi Dinner For 2 w Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/flame-hibachi-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">381 3rd Avenue, New York, NY</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr-ldS1ZYwokR1UaVyDZ15I8" target="_blank">Saar</a></span>
+                <span class="card-rating">4.4 (1570)</span>
+            </div>
+            <div class="card-deal">$49 3 Course Michelin Chef Dinner For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/saar-restaurant-michelin-chef-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">241 W 51st Street, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJE9RWrjJZwokRu1p8PaPuBvs" target="_blank">Beebe&#x27;s</a></span>
+                <span class="card-rating">4.4 (465)</span>
+            </div>
+            <div class="card-deal">$49 3 Course Dinner For 2 + Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/beebes-boro-hotel-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">38-28 27th Street, Queens, NY 11101</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ52zVPfNZwokRmHrrJBCTr6Q" target="_blank">Adoro Lei</a></span>
+                <span class="card-rating">4.4 (889)</span>
+            </div>
+            <div class="card-deal">$49 2 5-Star Dinner For 2 &amp; Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/adoro-lei-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">287 Hudson Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiZBX0X9ZwokRgzMHGknAlPs" target="_blank">The Corner Chinese Restaurant</a></span>
+                <span class="card-rating">4.4 (417)</span>
+            </div>
+            <div class="card-deal">$49 2Crs Dinner For 2 + Wines/Beers/Sake</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/the-corner-chinese-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">698 9th Avenue, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJA9SAk0xZwokRnoHo3frTuTs" target="_blank">BLU33 Lounge NYC</a></span>
+                <span class="card-rating">4.4 (132)</span>
+            </div>
+            <div class="card-deal">$49 3 Hour Open Bar &amp; Buffet Super Bowl Party</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/blu33-open-bar-buffet-super-bowl-party-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">325 W 33rd Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></span>
+                <span class="card-rating">4.4 (1004)</span>
+            </div>
+            <div class="card-deal">$49 Chef&#x27;s Tasting For 2 w A Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/madam-ji-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">154 Bleecker Street , New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="45" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></span>
+                <span class="card-rating">4.4 (421)</span>
+            </div>
+            <div class="card-deal">$45 Charming Dinner For Two &amp; Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$45</span>
+                <a href="https://pulsd.com/new-york/promotions/jane-doe-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">12 West 44th St, New York, NY. 10036</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJjW7JHelZwokRnkEk29yKZHE" target="_blank">FESTIVÁL</a></span>
+                <span class="card-rating">4.4 (408)</span>
+            </div>
+            <div class="card-deal">$39 Upper East Side Oysters &amp; Martinis For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/festival-oysters-martini-restaurant-upper-east-side-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1155 2nd Avenue, New York, NY 10065</div>
+        </div>
+        <div class="card" data-price="39" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbTFSIKpZwokRpLi30Y22b3U" target="_blank">Alison Downtown</a></span>
+                <span class="card-rating">4.4 (57)</span>
+            </div>
+            <div class="card-deal">$39 Oysters &amp; Wine Experience For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/alison-east-village-oysters-wine-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">110 St Marks Place, New York, New York 10009</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPSWvoZNZwokR4W1QrECFXSQ" target="_blank">Ghandi Cafe</a></span>
+                <span class="card-rating">4.4 (533)</span>
+            </div>
+            <div class="card-deal">$29 Dinner For Two &amp; A Bottle of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/ghandi-cafe-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">283 Bleecker Street, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJY-AxVQBZwokRQa-hQDzy7o0" target="_blank">Shirokuro</a></span>
+                <span class="card-rating">4.3 (262)</span>
+            </div>
+            <div class="card-deal">15 Crs Omakase For 2 &amp; Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/shirokuro-omakase-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">103 2nd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmX1RgixawokR8Hm_owhnErQ" target="_blank">Pier 36</a></span>
+                <span class="card-rating">4.3 (8587)</span>
+            </div>
+            <div class="card-deal">29% Off 5Crs Dinner Yacht Cruise + Wines/Beer</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/nyc-water-cruises-dinner-cruise-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">299 South St, New York, NY 10002</div>
+        </div>
+        <div class="card" data-price="79" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQRO4JPtZwokRrhd95RRd_Y8" target="_blank">Adélaïde’s Salon</a></span>
+                <span class="card-rating">4.3 (74)</span>
+            </div>
+            <div class="card-deal">$79 Speakeasy Burlesque Experience For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/adelaides-salon-speakeasy-burlesque-cocktail-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">176 8th Avenue, Manhattan NY, 10011</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></span>
+                <span class="card-rating">4.3 (648)</span>
+            </div>
+            <div class="card-deal">$79: 3 Course Dinner For Two &amp; Bottle Of Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/tio-pepe-dinner-restaurant-greenwich-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">168 West 4th Street, New York, NY 10014</div>
+        </div>
+        <div class="card" data-price="79" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7cFMaqxZwokRiwwuIFN8pbA" target="_blank">DK Restaurant</a></span>
+                <span class="card-rating">4.3 (621)</span>
+            </div>
+            <div class="card-deal">$79 3 Course Dinner For Two w Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$79</span>
+                <a href="https://pulsd.com/new-york/promotions/dk-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">207 W 36th Street, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk62gNytZwokRSLZc8yzal0M" target="_blank">Blend Williamsburg</a></span>
+                <span class="card-rating">4.3 (1230)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For2 &amp; Cocktails, Wine Bottle</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/blend-williamsburg-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">291 Kent Avenue, Brooklyn, NY 11249</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9dhbu01awokRdKfkixsK10w" target="_blank">Bijan&#x27;s</a></span>
+                <span class="card-rating">4.3 (1264)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 w Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/bijans-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">81 Hoyt Street, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="69" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></span>
+                <span class="card-rating">4.3 (109)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 w Wine/Cocktails, Music</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/au-bar-56-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">235 W 56th Street, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></span>
+                <span class="card-rating">4.3 (667)</span>
+            </div>
+            <div class="card-deal">$59 3Crs Dinner For 2 w Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/ichibantei-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">100 3rd Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></span>
+                <span class="card-rating">4.3 (12)</span>
+            </div>
+            <div class="card-deal">$59 AYCE/AYCD Tacos &amp; Drinks Dinner For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/h-and-h-cantina-drinks-and-tacos-dinner-restaurant-east-village-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">103 1st Avenue, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="55" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5YxH-5ZwokRsCiFUdJez-o" target="_blank">Catria Cucina</a></span>
+                <span class="card-rating">4.3 (159)</span>
+            </div>
+            <div class="card-deal">$55 4 Course Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$55</span>
+                <a href="https://pulsd.com/new-york/promotions/catria-cucina-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">461 W 34th Street , New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ24YpVTtawokRsFPSkHjTWoA" target="_blank">Cowgirl SeaHorse</a></span>
+                <span class="card-rating">4.3 (1388)</span>
+            </div>
+            <div class="card-deal">$49 Seaport Dinner For 2 w Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/cowgirl-seahorse-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">259 Front Street, New York, NY 10038</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJvZ2vbgVZwokRVWZbMB9_J3Y" target="_blank">Salud</a></span>
+                <span class="card-rating">4.3 (91)</span>
+            </div>
+            <div class="card-deal">$49 2 Crs Dinner For Two With Wines/Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/salud-soho-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">183 Grand Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="49" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk62gNytZwokRSLZc8yzal0M" target="_blank">Blend Williamsburg</a></span>
+                <span class="card-rating">4.3 (1230)</span>
+            </div>
+            <div class="card-deal">$49 Endless Drinks &amp; Tacos For2, Williamsburg</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/blend-williamsburg-bottomless-dinner-unlimited-tacos-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">291 Kent Avenue, Brooklyn, NY 11249</div>
+        </div>
+        <div class="card" data-price="45" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiSXX0c9dwokRnlbun-AirdM" target="_blank">Shaking Crab Williamsburg</a></span>
+                <span class="card-rating">4.3 (364)</span>
+            </div>
+            <div class="card-deal">$45 Seafood Boil Feast For 2 w Cocktails/Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$45</span>
+                <a href="https://pulsd.com/new-york/promotions/shaking-crab-williamsburg-dinner-brunch-lunch-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1045 Flushing Avenue, Brooklyn, NY 11237</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl7e_7tFZwokRzj7bvfx6Fgs" target="_blank">Vue 180</a></span>
+                <span class="card-rating">4.3 (243)</span>
+            </div>
+            <div class="card-deal">$39 Rooftop Cocktails &amp; Bites Experience</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/vue-180-cocktails-bites-experience-rooftop-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">525 8th Avenue, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv9jAdJ1ZwokRN9tGem6KDXw" target="_blank">Whitmans East Village</a></span>
+                <span class="card-rating">4.3 (437)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For Two &amp; Wine/Beers, East Village</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/whitmans-east-village-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">406 E 9th Street, New York, NY 10009</div>
+        </div>
+        <div class="card" data-price="29" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></span>
+                <span class="card-rating">4.3 (3262)</span>
+            </div>
+            <div class="card-deal">$29 Touchdown Dinner For Two With Drinks</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/madd-hatter-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">221 Washington Street, Hoboken, NJ 07030</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ49OqSK1ZwokRWu1bTfmSvt0" target="_blank">Shopify</a></span>
+                <span class="card-rating">4.2 (105)</span>
+            </div>
+            <div class="card-deal">Valentony&#x27;s: Cj Hendry x Tony’s Chocolonely</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61477" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">131 Greene St, New York, NY 10012</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6oavf5YwokRVS3LGMYyn_4" target="_blank">Kate Spade</a></span>
+                <span class="card-rating">4.2 (168)</span>
+            </div>
+            <div class="card-deal">Kate Spade New York Galentine’s Celebration</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61483" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">610 5th Avenue, New York, NY, 10020</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></span>
+                <span class="card-rating">4.2 (1597)</span>
+            </div>
+            <div class="card-deal">Rooftop VDay For 2 + Champagne Bottle &amp; More</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/elsie-rooftop-valentines-day-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1412 Broadway, 25th Floor, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="196" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ__8OsCdawokRLgMZI2Ja0Mw" target="_blank">Shinsen Bowery</a></span>
+                <span class="card-rating">4.2 (337)</span>
+            </div>
+            <div class="card-deal">$196 AYCE &amp; AYCD Omakase Dinner for 2, Bowery</div>
+            <div class="card-meta">
+                <span class="card-price">$196</span>
+                <a href="https://pulsd.com/new-york/promotions/omaxkase-by-shinsen-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">44 Bowery New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="69" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></span>
+                <span class="card-rating">4.2 (95)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2, Wine Bottle, Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/boathouse-rooftop-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">32-72 Steinway Street, Astoria, NY 11103</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></span>
+                <span class="card-rating">4.2 (1577)</span>
+            </div>
+            <div class="card-deal">$59 For A Central Park Picnic Package For Two</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/pappardella-central-park-picnic" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">316 Columbus Avenue, New York, NY</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7QU5XGdZwokRZTLGoFZPk8o" target="_blank">SEA</a></span>
+                <span class="card-rating">4.2 (6065)</span>
+            </div>
+            <div class="card-deal">$49 Dinner For 2 &amp; Cocktails/Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/sea-thai-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">114 North 6th Street, New York, NY 11211</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></span>
+                <span class="card-rating">4.2 (1082)</span>
+            </div>
+            <div class="card-deal">$49 3Crs Dinner For 2 &amp; Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/jalao-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2420 Amsterdam Avenue, New York, NY 10033</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Z40cT9fwokR8aKrtGOLG0Y" target="_blank">Blend Astoria</a></span>
+                <span class="card-rating">4.2 (2202)</span>
+            </div>
+            <div class="card-deal">$49 Endless Drinks &amp; Tacos For Two, Astoria</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/blend-astoria-bottomless-drinks-and-tacos-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">37-17 30th Avenue, Astoria, NY 11103</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></span>
+                <span class="card-rating">4.2 (2414)</span>
+            </div>
+            <div class="card-deal">$49 3Crs Dinner For 2 &amp; Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/bourbon-street-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">40-12 Bell Boulevard, Bayside, NY 11361</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></span>
+                <span class="card-rating">4.2 (121)</span>
+            </div>
+            <div class="card-deal">$39 Penthouse Dinner For 2 w Cocktails/Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/the-ivy-room-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">420 Park Ave South, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="29" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></span>
+                <span class="card-rating">4.2 (1597)</span>
+            </div>
+            <div class="card-deal">$29 Ticket: Rooftop Super Bowl Open Bar Party</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/2026-elsie-rooftop-open-bar-super-bowl-party-nyc--2" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1412 Broadway, 25th Floor, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="29" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwwvaYmOU6IkRhDgGbtpRYyY" target="_blank">North Sea Tavern</a></span>
+                <span class="card-rating">4.2 (275)</span>
+            </div>
+            <div class="card-deal">$29 For A Dinner for 2 With Drinks</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/north-sea-tavern-dinner-hamptons-ny" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1271 N Sea Road, Southampton, NY 11968</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7VRAqalZwokR48bbQlnev8w" target="_blank">Serendipity 3</a></span>
+                <span class="card-rating">4.1 (6502)</span>
+            </div>
+            <div class="card-deal">The Dubai Frozen Hot Chocolate Experience</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/serendipity-3-upper-east-side-date-night-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">225 East 60th Street , New York, NY 10022</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJc0CCxY1awokRCjZ4gkpGFpc" target="_blank">Ikea Brooklyn, NY</a></span>
+                <span class="card-rating">4.1 (17521)</span>
+            </div>
+            <div class="card-deal">Lunar New Year with Ikea</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61475" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1 Beard Street, Brooklyn, NY</div>
+        </div>
+        <div class="card" data-price="69" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJtZ9GuFxfwokRfwtGVlhXr2E" target="_blank">Zikrayat</a></span>
+                <span class="card-rating">4.1 (88)</span>
+            </div>
+            <div class="card-deal">$69 3 Crs Bottomless Dinner For Two, Astoria</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/zikrayat-bottomless-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">24-17 Steinway Street , Astoria, NY 11103</div>
+        </div>
+        <div class="card" data-price="69" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3UuR-ONZwokRrKPqaJPKbxw" target="_blank">The Butchers Daughter - Williamsburg</a></span>
+                <span class="card-rating">4.1 (1092)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 + Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/the-butchers-daughter-williamsburg-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">271 Metropolitan Avenue, Brooklyn, NY 11211</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiU9lDtFZwokRWgnyfScr2GI" target="_blank">Sandbar Rooftop</a></span>
+                <span class="card-rating">4.1 (450)</span>
+            </div>
+            <div class="card-deal">$59 Rooftop Cocktails &amp; Bonfire Fondue For 2</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/sandbar-rooftop-cocktails-fondue-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">152 West 26th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Sd10JL3wokR1nvVH1K_mhE" target="_blank">Baazi</a></span>
+                <span class="card-rating">4.1 (348)</span>
+            </div>
+            <div class="card-deal">$59 3Crs Dinner For 2 w Wine Bottle/Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/baazi-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">2588 Broadway , New York, NY 10025</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></span>
+                <span class="card-rating">4.1 (1361)</span>
+            </div>
+            <div class="card-deal">$59 Celeb-Pick 3 Crs Dinner For 2 &amp; Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/pink-taco-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">7 Times Square, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="55" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJy5AiM4hZwokR17UL37uRp-U" target="_blank">Umberto&#x27;s Clam House</a></span>
+                <span class="card-rating">4.1 (1244)</span>
+            </div>
+            <div class="card-deal">$55 3 Course Dinner For Two + Sangria Pitcher</div>
+            <div class="card-meta">
+                <span class="card-price">$55</span>
+                <a href="https://pulsd.com/new-york/promotions/umbertos-clam-house-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">132 Mulberry Street, New York, NY 10013</div>
+        </div>
+        <div class="card" data-price="49" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM0NdDQtZwokRay142BXkRQg" target="_blank">Han Dynasty Long Island City</a></span>
+                <span class="card-rating">4.1 (122)</span>
+            </div>
+            <div class="card-deal">$49 3 Course Dinner For 2 &amp; Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/han-dynasty-long-island-city-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">4504 Pearson Street, Long Island City, NY 11101</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnSZZ0glZwokR9TAYKFG_t58" target="_blank">Chote Nawab</a></span>
+                <span class="card-rating">4.1 (923)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For 2 &amp; Cocktails/Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/chote-nawab-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">115 Lexington Avenue, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7ZgHuZxZwokREruK25B0UU0" target="_blank">Malai Marke</a></span>
+                <span class="card-rating">4.1 (565)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For 2 &amp; Cocktails/Wines/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/malai-marke-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">318 E 6th Street, New York, NY 10003</div>
+        </div>
+        <div class="card" data-price="39" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJGTRAZT9fwokR5nDN7FxwiKI" target="_blank">The Grand</a></span>
+                <span class="card-rating">4.1 (1668)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For 2 &amp; Cocktails/Wine/Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/the-grand-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">37-01 30th Avenue, Astoria, NY 11103</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFe7TBwBbwokRALrAye-IrcM" target="_blank">F&amp;Bar</a></span>
+                <span class="card-rating">4 (4)</span>
+            </div>
+            <div class="card-deal">Speakeasy 12 Crs Cocktail Omakase Experience</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/f-and-bar-speakeasy-omakase-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">705 Myrtle Avenue, Brooklyn, NY 11205</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJd4gIXTlZwokR1A8bEjuem20" target="_blank">La Devozione</a></span>
+                <span class="card-rating">4 (726)</span>
+            </div>
+            <div class="card-deal">Michelin Guide 4 Crs Dinner, Dessert, Drinks</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/la-devozione-the-oval-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">428 W 16th Street, New York, NY 10011</div>
+        </div>
+        <div class="card" data-price="69" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiYsEnohZwokR8oZK_TgmSjY" target="_blank">The Butcher&#x27;s Daughter - Nolita</a></span>
+                <span class="card-rating">4 (2122)</span>
+            </div>
+            <div class="card-deal">$69 3Crs Dinner For 2 + Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$69</span>
+                <a href="https://pulsd.com/new-york/promotions/the-butchers-daughter-nolita-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">19 Kenmare Street, New York NY 10012</div>
+        </div>
+        <div class="card" data-price="59" data-location="other">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></span>
+                <span class="card-rating">4 (443)</span>
+            </div>
+            <div class="card-deal">$59 3 Course Dinner For 2 With Cocktails</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/lowkey-garden-lounge-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">70-15 Austin Street, Queens, NY 11375</div>
+        </div>
+        <div class="card" data-price="49" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ__OiJFpYwokR6a1T6JuLpjI" target="_blank">Inti Restaurant</a></span>
+                <span class="card-rating">4 (523)</span>
+            </div>
+            <div class="card-deal">$49 For A 2 Course Dinner For 2 w Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$49</span>
+                <a href="https://pulsd.com/new-york/promotions/inti-restaurant-dinner-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">820 10th Avenue, New York, NY 10019</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJR1HomwdZwokRhnHT0bz7Zp0" target="_blank">Masala King</a></span>
+                <span class="card-rating">4 (970)</span>
+            </div>
+            <div class="card-deal">$39 Dinner For 2 &amp; Cocktails/Wines/Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/masala-king-nyc-dinner" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">64 E 34th Street, New York, NY 10016</div>
+        </div>
+        <div class="card" data-price="29" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></span>
+                <span class="card-rating">4 (125)</span>
+            </div>
+            <div class="card-deal">$29 Dinner For Two w Cocktails, Wines, Beers</div>
+            <div class="card-meta">
+                <span class="card-price">$29</span>
+                <a href="https://pulsd.com/new-york/promotions/guesthouse-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">265 Graham Avenue, Brooklyn, NY 11206</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJLS7K_7ZZwokR8b4MjGtTK08" target="_blank">Hotel Alameda</a></span>
+                <span class="card-rating">3.9 (939)</span>
+            </div>
+            <div class="card-deal">$59: 2 Crs Dinner For 2 With Cocktails, Wines</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/hotel-alameda-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">518 W 27th Street, New York, NY 10001</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr3ytMqpZwokR5c8zqnn6yfU" target="_blank">The Heist</a></span>
+                <span class="card-rating">3.8 (2711)</span>
+            </div>
+            <div class="card-deal">$59 3Crs Dinner For 2 &amp; Cocktails, Wine, Beer</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/the-heist-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">60 W 37th Street, New York, NY 10018</div>
+        </div>
+        <div class="card" data-price="59" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM18AbzxbwokRyun98qk5UXY" target="_blank">Bliss Terasu</a></span>
+                <span class="card-rating">3.8 (26)</span>
+            </div>
+            <div class="card-deal">$59 Japanese Dinner For Two &amp; Cocktails, Wine</div>
+            <div class="card-meta">
+                <span class="card-price">$59</span>
+                <a href="https://pulsd.com/new-york/promotions/bliss-terasu-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">6 Platt Street, New York, NY 10038</div>
+        </div>
+        <div class="card" data-price="39" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJIYR8KLtYwokRVrmyrVarDOs" target="_blank">The UES.</a></span>
+                <span class="card-rating">3.7 (683)</span>
+            </div>
+            <div class="card-deal">$39 Speakeasy Cocktail Experience For 2, UES</div>
+            <div class="card-meta">
+                <span class="card-price">$39</span>
+                <a href="https://pulsd.com/new-york/promotions/the-ues-speakeasy-cocktails-ice-cream-experience-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">1707 Second Avenue, New York, NY 10128</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwxspWE5YwokRI0Rnvt2TYg0" target="_blank">Hudson Terrace</a></span>
+                <span class="card-rating">3 (953)</span>
+            </div>
+            <div class="card-deal">.</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/29-dollars-for-an-elevated-wine-tasting-experience-a-60-dollars-value" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">621 West 46th Street, New York, NY 10036</div>
+        </div>
+        <div class="card" data-price="" data-location="brooklyn">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyWrklTNawokRov9s5-vc4ao" target="_blank">Pearl Street</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">8Crs Chefs Table Dinner For 2 + Drinks</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/pearl-street-dinner-restaurant-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">147 Front Street, Brooklyn, NY 11201</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">Tyra Banks’ Smize &amp; Dream Ice Cream Pop Up</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61220" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">New York, NY</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSWHWcMBZwokRnuiJh_NVI3A" target="_blank">Meatpacking District, New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">SKIN1004 Pop Up</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61514" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">Meatpacking District, New York, NY</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">pulsd Gift Cards</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/new-york/promotions/pulsd-gift-cards" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">New York, NY</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">Free FroYo</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61529" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">New York, NY</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">Hellman&#x27;s Sing for a Sandwich</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61512" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">New York, NY</div>
+        </div>
+        <div class="card" data-price="" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCeKP9jxZwokRfXdsKM41iZE" target="_blank">55 Delancey Street</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">Pudgy Penguins Pudgy Petals Valentine&#x27; Pop-Up</div>
+            <div class="card-meta">
+                <span class="card-price"></span>
+                <a href="https://pulsd.com/pulses/61515" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">55 Delancey Street, New York, NY, 10002</div>
+        </div>
+        <div class="card" data-price="115" data-location="manhattan">
+            <div class="card-header">
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></span>
+                <span class="card-rating"></span>
+            </div>
+            <div class="card-deal">$115 Membership To A Private Dinner Club</div>
+            <div class="card-meta">
+                <span class="card-price">$115</span>
+                <a href="https://pulsd.com/new-york/promotions/2023-tasting-collective-dinner-club-membership-nyc" target="_blank">View Deal</a>
+            </div>
+            <div class="card-address">New York, NY</div>
+        </div>
+    </div>
+
     <script>
         const slider = document.getElementById('priceSlider');
         const priceValue = document.getElementById('priceValue');
         const visibleCount = document.getElementById('visibleCount');
         const rows = document.querySelectorAll('#listingsTable tbody tr');
+        const cards = document.querySelectorAll('.cards-container .card');
         const filterManhattan = document.getElementById('filterManhattan');
         const filterBrooklyn = document.getElementById('filterBrooklyn');
         const filterOther = document.getElementById('filterOther');
@@ -2015,9 +4067,11 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
             const showNoPrice = filterNoPrice.checked;
 
             let visible = 0;
-            rows.forEach(row => {
-                const price = row.dataset.price;
-                const location = row.dataset.location;
+
+            // Filter function for both rows and cards
+            function shouldShow(element) {
+                const price = element.dataset.price;
+                const location = element.dataset.location;
                 const hasPrice = price !== '';
 
                 const priceRangeOk = !hasPrice || parseInt(price) <= maxPrice;
@@ -2026,13 +4080,28 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                                    (location === 'brooklyn' && showBrooklyn) ||
                                    (location === 'other' && showOther);
 
-                if (priceRangeOk && priceExistsOk && locationOk) {
+                return priceRangeOk && priceExistsOk && locationOk;
+            }
+
+            // Apply to table rows
+            rows.forEach(row => {
+                if (shouldShow(row)) {
                     row.classList.remove('hidden');
                     visible++;
                 } else {
                     row.classList.add('hidden');
                 }
             });
+
+            // Apply to cards (same logic, but count only once)
+            cards.forEach(card => {
+                if (shouldShow(card)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
             visibleCount.textContent = visible;
         }
 
