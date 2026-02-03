@@ -18,6 +18,60 @@
             font-size: 24px;
             margin: 10px 0;
         }
+        .filter-container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        .filter-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .price-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            outline: none;
+        }
+        .price-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .price-slider::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .price-display {
+            font-weight: 600;
+            color: #3498db;
+            min-width: 50px;
+        }
+        .row-count {
+            color: #666;
+            font-size: 12px;
+            margin-top: 8px;
+        }
         .table-container {
             overflow-x: auto;
             background: white;
@@ -48,6 +102,9 @@
         tr:hover {
             background: #f5f5f5;
         }
+        tr.hidden {
+            display: none;
+        }
         a {
             color: #3498db;
             text-decoration: none;
@@ -69,10 +126,22 @@
 </head>
 <body>
     <h1>🥞 Pulsd NYC Brunch Listings</h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:11 PM EST<br>
-    <em>Note: This page updates bi-weekly. Google ratings shown may differ from current values.</em></div>
+    <div class="timestamp">Last updated: February 02, 2026 at 11:17 PM EST<br>
+    <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
+
+    <div class="filter-container">
+        <label class="filter-label">Max Price: $<span id="priceValue">100</span></label>
+        <div class="slider-container">
+            <span>$20</span>
+            <input type="range" id="priceSlider" class="price-slider"
+                   min="20" max="100" value="100" step="10">
+            <span>$100</span>
+        </div>
+        <div class="row-count">Showing <span id="visibleCount">72</span> of 72 listings</div>
+    </div>
+
     <div class="table-container">
-        <table>
+        <table id="listingsTable">
             <thead>
                 <tr>
                     <th>Restaurant Name</th>
@@ -86,7 +155,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a></td>
                     <td>$49 Cocktail Brunch For Two, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/members-only-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -96,7 +165,7 @@
                     <td>53 W 8th Street, New York, NY 10011</td>
                     <td>People say this bar offers delicious cocktails, grilled cheese, and butter chicken. They highlight the unique concept, which combines a restaurant, fashion store, and lounge, and the fun, speakeasy vibe. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a></td>
                     <td>$49 90Min Bottomless Brunch For Two, Chelsea</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tara-mor-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -106,7 +175,7 @@
                     <td>150 West 30th Street, New York, NY 10001</td>
                     <td>People say this bar offers delicious Guinness, Irish breakfast, and creative cocktails. They highlight the fun, lively atmosphere, and the reasonable prices. They also like the friendly and attentive staff.</td>
                 </tr>
-                <tr>
+                <tr data-price="99">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a></td>
                     <td>$99 4 Crs Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/patiala-indian-grill-and-bar-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -116,7 +185,7 @@
                     <td>240 W 35th Street, New York, NY 10001</td>
                     <td>People say this restaurant serves delicious and authentic Indian food, including biryani, butter chicken, and lamb chops. They highlight the vibrant and stylish atmosphere, and the generous portions. They also like the attentive and friendly service, and the warm hospitality.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoTTiRY1ZwokRn9SpxgNIx7M" target="_blank">Ferdi</a></td>
                     <td>$49 10-Cocktail Brunch For Two, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ferdi-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -126,7 +195,7 @@
                     <td>15 7th Avenue South, New York, NY 10014</td>
                     <td>People say this Italian restaurant serves delicious, flavorful, and fresh food, including standout dishes like frutti di mare, penne alla Russa, and chicken scarpariello. They highlight the reasonable prices, especially for the dinner cocktail menu and happy hour deals, and the cozy, intimate, and welcoming atmosphere. They also like the friendly, attentive, and accommodating staff, and the personalized touches for special occasions.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></td>
                     <td>$49 SoHo Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lindens-arlo-soho-cocktail-brunch-nyc" target="_blank">View</a></td>
@@ -136,7 +205,7 @@
                     <td>2 Renwick Street, New York, NY 10013</td>
                     <td>People say this restaurant offers delicious dishes such as branzino, half chicken, and butternut squash ravioli. They highlight the fresh ingredients, flavorful combinations, and generous portions. They also like the attentive and friendly service, and the fun and lively atmosphere.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></td>
                     <td>$49 Bottomless Brunch For Two, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/blackbird-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -146,7 +215,7 @@
                     <td>428 S 5th Street, Brooklyn, NY 11211</td>
                     <td>People say this restaurant offers delicious and satisfying dishes, including vegan options and a unique Edamame Burger. They highlight the chic and chill atmosphere, and the knowledgeable staff. They also like the attentive and friendly service.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a></td>
                     <td>$49 Cocktail Brunch For Two In Murray Hill</td>
                     <td><a href="https://pulsd.com/new-york/promotions/leslie-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -156,7 +225,7 @@
                     <td>514 3rd Ave, New York, NY 10016</td>
                     <td>People say this restaurant serves delicious seafood, burgers, and cocktails, and the deviled eggs and burrata are particularly noteworthy. They highlight the cozy and welcoming atmosphere, and the beautiful presentation of the dishes. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></td>
                     <td>$39: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/barkada-social-club-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -166,7 +235,7 @@
                     <td>33-05 Broadway, Astoria, NY 11106</td>
                     <td>People say this restaurant serves delicious Filipino fusion cuisine, including dynamite, kare kare, and flan. They highlight the great drinks, fun karaoke, and lively atmosphere. They also like the attentive and friendly service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a></td>
                     <td>$39 Cocktail Brunch For Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/house-of-pasta-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -176,7 +245,7 @@
                     <td>511 E 12th Street, New York, NY 10009</td>
                     <td>People say this restaurant serves delicious pasta, including spaghetti with chili oil and octopus, and truffle cacio e pepe. They highlight the fresh, homemade pasta, the authentic flavors, and the generous portions. They also like the warm, welcoming atmosphere and the friendly, attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a></td>
                     <td>$39 For A 3 Course Dinner Or Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/hi-sunny-dinner-restaurant-nyc" target="_blank">View</a></td>
@@ -186,7 +255,7 @@
                     <td>342 7th Avenue, New York, NY 10001</td>
                     <td>People say this dim sum restaurant offers a variety of delicious dishes, including soup dumplings, noodles, and sandwiches. They highlight the affordable prices and cozy, cute atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></td>
                     <td>$59 Fiesta Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/amor-loco-bottomless-bunch-nyc" target="_blank">View</a></td>
@@ -196,7 +265,7 @@
                     <td>134 W 46th Street, New York, NY 10036</td>
                     <td>People say this Mexican restaurant serves delicious birria tacos, nachos, and margaritas. They highlight the reasonable prices, fun and lively atmosphere, and the fast and friendly service. They also like the generous portions and strong drinks.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a></td>
                     <td>$59: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/charm-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -206,7 +275,7 @@
                     <td>448 Dean Street, Brooklyn, NY 11217</td>
                     <td>People say this Caribbean restaurant serves delicious guava wings, jerk lamb, and Rasta pasta. They highlight the fun, energetic vibe, and the attentive, helpful staff. They also like the creative cocktails and the playlist.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></td>
                     <td>$59 NY Times-Praised Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/nar-restaurant-cocktail-brunch-nyc" target="_blank">View</a></td>
@@ -216,7 +285,7 @@
                     <td>34 E 20th Street, New York, NY 10003</td>
                     <td>People say this Turkish restaurant offers delicious manti, grilled octopus, and a variety of kebabs, as well as homemade baklava ice cream and other desserts. They highlight the generous portions, authentic flavors, and the cozy, inviting atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a></td>
                     <td>$49 Distillery Jazz &amp; Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/great-jones-distilling-co-jazz-cocktail-brunch-nyc" target="_blank">View</a></td>
@@ -226,7 +295,7 @@
                     <td>686 Broadway, New York, NY 10012</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></td>
                     <td>$49 Greenwich Village Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ways-and-means-bottomless-restaurant-greenwich-village-nyc" target="_blank">View</a></td>
@@ -236,7 +305,7 @@
                     <td>167 Bleecker Street, New York, NY, 10012</td>
                     <td>People say this American restaurant offers a delicious bottomless brunch with a variety of options, as well as tasty margaritas and mimosas. They highlight the affordable prices, generous portions, and chill vibe, describing it as a fun comedy show venue. They also like the friendly and attentive staff.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a></td>
                     <td>$49 90 Min Bottomless Brunch for Two, Astoria</td>
                     <td><a href="https://pulsd.com/new-york/promotions/porta-23-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -246,7 +315,7 @@
                     <td>29-17 23rd Avenue, Queens, NY 11105</td>
                     <td>People say this restaurant serves delicious smash burgers, chicken pilaf, and yucca fritters. They highlight the great cocktails, especially the caipirinha, and the tasty flan. They also like the attentive service and friendly staff.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a></td>
                     <td>$49 French-Style Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/les-vagabonds-cocktail-brunch-nyc" target="_blank">View</a></td>
@@ -256,7 +325,7 @@
                     <td>1070 1st Avenue, New York, NY 10022</td>
                     <td>Diners say this restaurant serves up delicious steak frites, French onion soup, and coq au vin, and they praise the authentic Parisian vibe and elegant, cozy atmosphere. They also highlight the impeccable service and attention to detail.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a></td>
                     <td>$49 For A 2 Hour Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/sultan-mediterranean-cuisine-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -266,7 +335,7 @@
                     <td>791 Lexington Avenue, New York NY 10065</td>
                     <td>People say this Mediterranean restaurant serves delicious Turkish food with generous portions. They highlight the reasonable prices and cozy atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></td>
                     <td>$39 90min Bottomless Brunch For Two, Flatiron</td>
                     <td><a href="https://pulsd.com/new-york/promotions/john-devoys-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -276,7 +345,7 @@
                     <td>377 Park Avenue South, New York, NY 10016</td>
                     <td>People say this bar offers delicious food, including burgers, wings, and mussels, and a great selection of cocktails. They highlight the excellent happy hour, with $1 oysters and drink specials, and the fun, lively atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a></td>
                     <td>$39: 2 Course Dinner Or Brunch For Two w Sake</td>
                     <td><a href="https://pulsd.com/new-york/promotions/kamisama-ramen-dinner-restaurant-east-village-nyc" target="_blank">View</a></td>
@@ -286,7 +355,7 @@
                     <td>230 E 14th Street, New York, NY 10003</td>
                     <td>People say this ramen restaurant serves delicious Jiro ramen, spicy ramen, and tonkotsu ramen, with flavorful broth, chewy noodles, and tender chashu pork. They highlight the generous portions, reasonable prices, and cozy atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a></td>
                     <td>54% Off A 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/skinos-mediterranean-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -296,7 +365,7 @@
                     <td>123 Washington Street, New York, NY 10006</td>
                     <td>People say this Greek restaurant serves amazing food and drinks, including mussels, lamb chops, and molten chocolate cake. They highlight the beautiful atmosphere, perfect for special occasions, and the fun, lively vibe with a DJ and belly dancer. They also like the attentive and knowledgeable service, with staff providing helpful recommendations and making guests feel welcome.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a></td>
                     <td>$59 90 Minute Bottomless Brunch For 2, Nolita</td>
                     <td><a href="https://pulsd.com/new-york/promotions/balzem-nolita-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -306,7 +375,7 @@
                     <td>202 Mott Street, New York, NY 10012</td>
                     <td>People say this Mediterranean restaurant serves delicious grilled skewers, ceviche, and manti dumplings. They highlight the fun, lively atmosphere and the reasonable prices. They also like the attentive and friendly service.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a></td>
                     <td>$49 90Min Bottomless Brunch For Two, Astoria</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tootles-and-french-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -316,7 +385,7 @@
                     <td>3615 Ditmars Boulevard , Astoria, NY 11105</td>
                     <td>People say this restaurant offers delicious dishes like roast chicken, chopped cheese sandwiches, and a charcuterie board, as well as a diverse wine selection and creative cocktails. They highlight the friendly staff, the cozy and inviting atmosphere, and the fun events like live music and wine tastings. They also like the attentive and gracious service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></td>
                     <td>$39 Boozy Brunch For 2, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/oscars-place-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -326,7 +395,7 @@
                     <td>466 Hudson Street , New York, NY 10014</td>
                     <td>People say this British restaurant serves delicious fish and chips, burgers, and English breakfast. They highlight the cozy and chill atmosphere, and the friendly and welcoming staff. They also like the reasonable prices and generous portions.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJZ7jMnT5ZwokRr1LSqkFSdLk" target="_blank">Le Fanfare</a></td>
                     <td>$59 Michelin-Praised Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/le-fanfare-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -336,7 +405,7 @@
                     <td>1103 Manhattan Avenue, Brooklyn, NY 11222</td>
                     <td>People say this Italian restaurant serves fresh, tasty, and amazing pasta, as well as delicious appetizers like asparagus, al pastor arancini, and broccoli rabe. They highlight the generous portions, the homemade bread with flavorful spread, and the attentive, friendly, and professional service. They also like the warm, inviting, and casual atmosphere, and the occasional live music.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a></td>
                     <td>$49 Bottomless Brunch for Two, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/via-13-bottomless-brunch-restaurant-west-village-nyc" target="_blank">View</a></td>
@@ -346,7 +415,7 @@
                     <td>140 West 13th Street, New York, NY 10011</td>
                     <td>People say this Italian restaurant serves delicious grilled octopus, hanger steak, and tiramisu. They highlight the great brunch deal, fun and creative family-style brunch, and the sophisticated atmosphere. They also like the attentive and friendly service.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></td>
                     <td>$49 3 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lunella-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -356,7 +425,7 @@
                     <td>173 Mulberry Street, New York, NY 10013</td>
                     <td>People say this Italian restaurant serves delicious lasagna, pasta, and pizza. They highlight the authentic Italian atmosphere and the great value of the lunch special. They also like the friendly and welcoming staff.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8RjtPrhZwokRVZXEfLUKtM4" target="_blank">Tia Pol</a></td>
                     <td>$39 90m 2 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tia-pol-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -366,7 +435,7 @@
                     <td>205 10th Avenue, New York, NY 10011</td>
                     <td>People say this Spanish restaurant serves delicious tapas, including jamon ibérico, campero, and lamb skewers, as well as a popular brunch deal with unlimited mimosas and sangria. They highlight the cozy and warm atmosphere, perfect for a casual evening or date night. They also like the friendly and welcoming service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a></td>
                     <td>$39: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ange-noir-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -376,7 +445,7 @@
                     <td>247 Varet Street, Brooklyn, NY 11206</td>
                     <td>People say this cafe offers delicious breakfast sandwiches, burritos, and crepes, as well as a variety of coffee and tea options. They highlight the reasonable prices, cozy and chill vibe, and the friendly and attentive staff. They also like the creative energy and events, such as writing groups and DJ nights.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></td>
                     <td>$39 Marvelous Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/fusion-hk-hells-kitchen-brunch" target="_blank">View</a></td>
@@ -386,7 +455,7 @@
                     <td>688 10th Avenue, New York, NY 10019</td>
                     <td>People say this bar and grill serves delicious Peruvian and Mexican food, including ceviche, lomo saltado, and arroz chaufa. They highlight the generous portions, strong drinks, and reasonable prices, especially during happy hour. They also like the lively atmosphere and friendly, attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></td>
                     <td>$39 For A Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bombay-grill-house-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -396,7 +465,7 @@
                     <td>764 9th Avenue, New York, NY 10019</td>
                     <td>People say this Indian restaurant serves delicious and authentic dishes, including chicken tikka masala, naan, and biryani. They highlight the reasonable prices, generous portions, and cozy, welcoming atmosphere. They also like the friendly, attentive, and efficient service.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a></td>
                     <td>$39 For A Luxurious Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/da-capo-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -406,7 +475,7 @@
                     <td>322 Columbus Avenue, New York, NY 10023</td>
                     <td>People say this cocktail bar offers delicious cocktails, including the Big in Japan, and a salmon burger. They highlight the chill, dark, and intimate vibe, and the friendly and knowledgeable bartenders. They also like the attentive service.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></td>
                     <td>$29 For A Bottomless Brunch For Two, Brooklyn</td>
                     <td><a href="https://pulsd.com/new-york/promotions/czen-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -416,7 +485,7 @@
                     <td>4410 Avenue H, Brooklyn, NY 11234</td>
                     <td>People say this Asian fusion restaurant offers delicious dishes, including wings, fried lobster and waffles, and oxtail dumplings. They highlight the fun drinks, great music, and vacation-like vibe. They also like the friendly and attentive staff.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a></td>
                     <td>$59 90m Bottomless Brunch For Two. NoMad</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bazar-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -428,7 +497,7 @@
 
 Other reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="55">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a></td>
                     <td>$55 Spanish Style Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pil-pil-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -440,7 +509,7 @@ Other reviews mention the food can be overpriced.</td>
 
 Some reviews mention the food can be cold.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a></td>
                     <td>$49 Bottomless Brunch For Two, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/casa-andrea-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -452,7 +521,7 @@ Some reviews mention the food can be cold.</td>
 
 Other reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a></td>
                     <td>$49 Gourmet 90 Min Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-stand-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -464,7 +533,7 @@ Other reviews mention the service can be slow.</td>
 
 Other reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></td>
                     <td>$49 Bottomless Brunch For Two, G Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/madam-ji-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -476,7 +545,7 @@ Other reviews mention the service can be slow.</td>
 
 Other reviews mention the food can be salty.</td>
                 </tr>
-                <tr>
+                <tr data-price="45">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a></td>
                     <td>$45 Luxe Cocktail Brunch For 2, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bistango-cocktail-brunch-nyc" target="_blank">View</a></td>
@@ -486,7 +555,7 @@ Other reviews mention the food can be salty.</td>
                     <td>145 East 50th Street, New York, NY 10022</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></td>
                     <td>$39 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/jane-doe-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -498,7 +567,7 @@ Other reviews mention the food can be salty.</td>
 
 Other reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></td>
                     <td>$39 Glamorous Cocktail Brunch For Two In SoHo</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-otter-brunch-restaurant-soho-nyc" target="_blank">View</a></td>
@@ -510,7 +579,7 @@ Other reviews mention the service can be slow.</td>
 
 Other reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a></td>
                     <td>$29 For A 2 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mexiterranean-grill-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -520,7 +589,7 @@ Other reviews mention the food can be overpriced.</td>
                     <td>1365 1st Avenue, New York, NY 10021</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a></td>
                     <td>$59 Bottomless Brunch For Two, NoMad</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mamazul-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -532,7 +601,7 @@ Other reviews mention the food can be overpriced.</td>
 
 Other reviews mention the portions can be small.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></td>
                     <td>$49 Greenwich Village Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tio-pepe-bottomless-brunch-restaurant-greenwich-village-nyc" target="_blank">View</a></td>
@@ -542,7 +611,7 @@ Other reviews mention the portions can be small.</td>
                     <td>168 West 4th Street, New York, NY 10014</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></td>
                     <td>$49 Bottomless Brunch for Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/h-and-h-cantina-bottomless-brunch-restaurant-east-village-nyc" target="_blank">View</a></td>
@@ -552,7 +621,7 @@ Other reviews mention the portions can be small.</td>
                     <td>103 1st Avenue, New York, NY 10003</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a></td>
                     <td>$49 Bottomless Brunch For Two, LIC</td>
                     <td><a href="https://pulsd.com/new-york/promotions/dive-bar-lic-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -564,7 +633,7 @@ Other reviews mention the portions can be small.</td>
 
 Some reviews mention the service can be inconsistent.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></td>
                     <td>$49 Bottomless Brunch For Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ichibantei-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -576,7 +645,7 @@ Some reviews mention the service can be inconsistent.</td>
 
 Other reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a></td>
                     <td>$49 Upper East Side Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/amali-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -588,7 +657,7 @@ Other reviews mention the service can be slow.</td>
 
 Other reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a></td>
                     <td>$49 2Hr Bottomless Brunch For 2, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mamasushi-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -600,7 +669,7 @@ Other reviews mention the service can be slow.</td>
 
 Some reviews mention the music can be too loud.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a></td>
                     <td>$39 Bottomless Brunch For Two, UES</td>
                     <td><a href="https://pulsd.com/new-york/promotions/a-la-turka-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -612,7 +681,7 @@ Some reviews mention the music can be too loud.</td>
 
 Some reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a></td>
                     <td>$39 90m Bottomless Brunch For 2, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mexico-2000-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -622,7 +691,7 @@ Some reviews mention the service can be slow.</td>
                     <td>369 Broadway, Brooklyn, NY 11211</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a></td>
                     <td>$39 Brunch For Two &amp; Cocktail Trees &amp; More</td>
                     <td><a href="https://pulsd.com/new-york/promotions/recreation-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -634,7 +703,7 @@ Some reviews mention the service can be slow.</td>
 
 Some reviews mention the food portions can be small.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></td>
                     <td>$39 For A 2 Hour Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/au-bar-56-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -646,7 +715,7 @@ Some reviews mention the food portions can be small.</td>
 
 Other reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></td>
                     <td>$29 2Crs Boozy Cocktail Brunch For 2, Hoboken</td>
                     <td><a href="https://pulsd.com/new-york/promotions/madd-hatter-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -658,7 +727,7 @@ Other reviews mention the food can be overpriced.</td>
 
 Other reviews mention the music can be loud.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></td>
                     <td>$59 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/elsie-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -670,7 +739,7 @@ Other reviews mention the music can be loud.</td>
 
 Some reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a></td>
                     <td>$49 For A 90 Minute Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lagos-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -682,7 +751,7 @@ Some reviews mention the food can be overpriced.</td>
 
 Some reviews mention the music can be loud.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a></td>
                     <td>$49 Bottomless Brunch For Two, FiDi</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-fidi-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -694,7 +763,7 @@ Some reviews mention the music can be loud.</td>
 
 Other reviews mention the food can be disappointing.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></td>
                     <td>$49 Rooftop 90 Minute Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/boathouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -706,7 +775,7 @@ Other reviews mention the food can be disappointing.</td>
 
 Other reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a></td>
                     <td>$49 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-36th-street-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -718,7 +787,7 @@ Other reviews mention the food can be overpriced.</td>
 
 Other reviews mention the food can be mid.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a></td>
                     <td>$49 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-51st-street-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
@@ -728,7 +797,7 @@ Other reviews mention the food can be mid.</td>
                     <td>230 E 51st Street, New York, NY 10022</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a></td>
                     <td>$49 For A 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/la-palapa-nyc-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -740,7 +809,7 @@ Other reviews mention the food can be mid.</td>
 
 Some reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="45">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></td>
                     <td>$45 Cocktail Brunch For Two, UWS</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pappardella-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -752,7 +821,7 @@ Some reviews mention the service can be slow.</td>
 
 Some reviews mention the wait times can be long.</td>
                 </tr>
-                <tr>
+                <tr data-price="39">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></td>
                     <td>$39 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bourbon-street-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -764,7 +833,7 @@ Some reviews mention the wait times can be long.</td>
 
 Other reviews mention the food can be inconsistent.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></td>
                     <td>$29 NYT Praised 2Hour Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/jalao-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -776,7 +845,7 @@ Other reviews mention the food can be inconsistent.</td>
 
 Some reviews mention the food can be bland.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></td>
                     <td>$29 Bottomless Jazz Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-ivy-room-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -788,7 +857,7 @@ Some reviews mention the food can be bland.</td>
 
 Other reviews mention the food can be mediocre.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></td>
                     <td>$49 Epic 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pink-taco-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -800,7 +869,7 @@ Other reviews mention the food can be mediocre.</td>
 
 Other reviews mention the food can be overpriced.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a></td>
                     <td>$29 For A 2 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pita-and-beyond-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -812,7 +881,7 @@ Other reviews mention the food can be overpriced.</td>
 
 Some reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="89">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a></td>
                     <td>$89 Caviar+Oysters Brunch For 2 &amp; Bubbly</td>
                     <td><a href="https://pulsd.com/new-york/promotions/number-one-caviar-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -824,7 +893,7 @@ Some reviews mention the service can be slow.</td>
 
 Other reviews mention the service can be impolite.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a></td>
                     <td>$59 90m Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lighthouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -836,7 +905,7 @@ Other reviews mention the service can be impolite.</td>
 
 Some reviews mention the service can be slow.</td>
                 </tr>
-                <tr>
+                <tr data-price="49">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></td>
                     <td>$49 Gorgeous Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lowkey-garden-lounge-bottomless-brunch" target="_blank">View</a></td>
@@ -848,7 +917,7 @@ Some reviews mention the service can be slow.</td>
 
 Some reviews mention the service can be inattentive.</td>
                 </tr>
-                <tr>
+                <tr data-price="29">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></td>
                     <td>$29 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/guesthouse-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -860,7 +929,7 @@ Some reviews mention the service can be inattentive.</td>
 
 Other reviews mention the service can be slow and the food can be incorrectly prepared.</td>
                 </tr>
-                <tr>
+                <tr data-price="59">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a></td>
                     <td>$59 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/highkey-rainforest-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
@@ -875,5 +944,29 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
             </tbody>
         </table>
     </div>
+
+    <script>
+        const slider = document.getElementById('priceSlider');
+        const priceValue = document.getElementById('priceValue');
+        const visibleCount = document.getElementById('visibleCount');
+        const rows = document.querySelectorAll('#listingsTable tbody tr');
+
+        slider.addEventListener('input', function() {
+            const maxPrice = parseInt(this.value);
+            priceValue.textContent = maxPrice;
+
+            let visible = 0;
+            rows.forEach(row => {
+                const price = row.dataset.price;
+                if (price === '' || parseInt(price) <= maxPrice) {
+                    row.classList.remove('hidden');
+                    visible++;
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+            visibleCount.textContent = visible;
+        });
+    </script>
 </body>
 </html>
