@@ -153,7 +153,7 @@
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:28 PM EST<br>
+    <div class="timestamp">Last updated: February 02, 2026 at 11:31 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -172,6 +172,13 @@
                 <label><input type="checkbox" id="filterManhattan" checked> Manhattan</label>
                 <label><input type="checkbox" id="filterBrooklyn" checked> Brooklyn</label>
                 <label><input type="checkbox" id="filterOther" checked> Other</label>
+            </div>
+        </div>
+        <div class="filter-section">
+            <label class="filter-label">Price Listed</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="filterHasPrice" checked> Has Price</label>
+                <label><input type="checkbox" id="filterNoPrice" checked> No Price</label>
             </div>
         </div>
         <div class="row-count">Showing <span id="visibleCount">72</span> of 72 listings</div>
@@ -990,6 +997,8 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
         const filterManhattan = document.getElementById('filterManhattan');
         const filterBrooklyn = document.getElementById('filterBrooklyn');
         const filterOther = document.getElementById('filterOther');
+        const filterHasPrice = document.getElementById('filterHasPrice');
+        const filterNoPrice = document.getElementById('filterNoPrice');
 
         function applyFilters() {
             const maxPrice = parseInt(slider.value);
@@ -998,18 +1007,22 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
             const showManhattan = filterManhattan.checked;
             const showBrooklyn = filterBrooklyn.checked;
             const showOther = filterOther.checked;
+            const showHasPrice = filterHasPrice.checked;
+            const showNoPrice = filterNoPrice.checked;
 
             let visible = 0;
             rows.forEach(row => {
                 const price = row.dataset.price;
                 const location = row.dataset.location;
+                const hasPrice = price !== '';
 
-                const priceOk = price === '' || parseInt(price) <= maxPrice;
+                const priceRangeOk = !hasPrice || parseInt(price) <= maxPrice;
+                const priceExistsOk = (hasPrice && showHasPrice) || (!hasPrice && showNoPrice);
                 const locationOk = (location === 'manhattan' && showManhattan) ||
                                    (location === 'brooklyn' && showBrooklyn) ||
                                    (location === 'other' && showOther);
 
-                if (priceOk && locationOk) {
+                if (priceRangeOk && priceExistsOk && locationOk) {
                     row.classList.remove('hidden');
                     visible++;
                 } else {
@@ -1023,6 +1036,8 @@ Other reviews mention the food can be mediocre and the service can be slow.</td>
         filterManhattan.addEventListener('change', applyFilters);
         filterBrooklyn.addEventListener('change', applyFilters);
         filterOther.addEventListener('change', applyFilters);
+        filterHasPrice.addEventListener('change', applyFilters);
+        filterNoPrice.addEventListener('change', applyFilters);
     </script>
 </body>
 </html>
