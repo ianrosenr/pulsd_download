@@ -101,17 +101,14 @@
         }
         /* Table styles - desktop */
         .table-container {
-            overflow-x: scroll;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-height: 80vh;
-            overflow-y: auto;
         }
         table {
-            width: max-content;
-            min-width: 100%;
+            width: 100%;
             border-collapse: collapse;
+            border-spacing: 0;
             font-size: 13px;
         }
         th {
@@ -120,8 +117,6 @@
             padding: 12px 8px;
             text-align: left;
             font-weight: 600;
-            position: sticky;
-            top: 0;
             white-space: nowrap;
         }
         td {
@@ -230,7 +225,7 @@
 </head>
 <body>
     <h1><a href="index.html">🍽️ Pulsd NYC Listings</a></h1>
-    <div class="timestamp">Last updated: February 02, 2026 at 11:39 PM EST<br>
+    <div class="timestamp">Last updated: February 03, 2026 at 08:47 AM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -272,7 +267,6 @@
                     <th>Google Rating</th>
                     <th>Google Total Ratings</th>
                     <th>Pulsd Address</th>
-                    <th>Google Review Summary</th>
                 </tr>
             </thead>
             <tbody>
@@ -284,7 +278,6 @@
                     <td class="rating">5</td>
                     <td>269</td>
                     <td class="truncate" title="36-21 Review Avenue, Long Island City, NY 11101">36-21 Review Avenue, Long Island City, NY 11101</td>
-                    <td class="truncate" title="People say this pizza restaurant offers delicious pizza, meatballs, and garlic bread, and a fun pizza-making class. They highlight the fresh ingredients, cozy and trendy atmosphere, and great vibes. They also like the friendly and attentive staff.">People say this pizza restaurant offers delicious pizza, meatballs, and garlic bread, and a fun pizza-making class. They highlight the fresh ingredients, cozy and trendy atmosphere, and great vibes. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="29" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJo2EvIVhbwokRR5XobNHAHpw" target="_blank">Industry City - Building 5</a></td>
@@ -294,7 +287,6 @@
                     <td class="rating">5</td>
                     <td>3</td>
                     <td class="truncate" title="33 35th Street, Brooklyn, NY 11232">33 35th Street, Brooklyn, NY 11232</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="249" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDfRavFtbwokRijMBw1NobfM" target="_blank">6 Restaurant</a></td>
@@ -304,7 +296,6 @@
                     <td class="rating">4.9</td>
                     <td>92</td>
                     <td class="truncate" title="481 Court Street, Brooklyn, NY 11231">481 Court Street, Brooklyn, NY 11231</td>
-                    <td class="truncate" title="People say this restaurant serves delicious dishes, including gnocchi, scallops, and a chocolate dessert. They highlight the reasonable prices, relaxed yet high-end vibe, and the attentive and friendly service. They also like the beautiful presentation of the food and the open kitchen where diners can watch the chefs cooking.">People say this restaurant serves delicious dishes, including gnocchi, scallops, and a chocolate dessert. They highlight the reasonable prices, relaxed yet high-end vibe, and the attentive and friendly service. They also like the beautiful presentation of the food and the open kitchen where diners can watch the chefs cooking.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaaMyON5ZwokRXMnalfJlsTg" target="_blank">Langan&#x27;s</a></td>
@@ -314,7 +305,6 @@
                     <td class="rating">4.9</td>
                     <td>1304</td>
                     <td class="truncate" title="114 West 47th Street , New York, NY 10036">114 West 47th Street , New York, NY 10036</td>
-                    <td class="truncate" title="People say this cocktail bar offers delicious food, including chicken lollipops, burgers, and steak frites, as well as a variety of cocktails, such as the espresso martini and Irish coffee martini. They highlight the reasonable prices, especially for the pre-fixed menu, and the fun, lively atmosphere, perfect for a pre-theater dinner or happy hour. They also like the attentive and friendly staff, and the quick service.">People say this cocktail bar offers delicious food, including chicken lollipops, burgers, and steak frites, as well as a variety of cocktails, such as the espresso martini and Irish coffee martini. They highlight the reasonable prices, especially for the pre-fixed menu, and the fun, lively atmosphere, perfect for a pre-theater dinner or happy hour. They also like the attentive and friendly staff, and the quick service.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXeQ_obpZwokRjDueh_2hheM" target="_blank">By &amp; By</a></td>
@@ -324,7 +314,6 @@
                     <td class="rating">4.9</td>
                     <td>56</td>
                     <td class="truncate" title="644 10th Avenue, New York, NY 10036">644 10th Avenue, New York, NY 10036</td>
-                    <td class="truncate" title="People say this bar offers substantial and flavorful small plates, as well as well-curated cocktails and wine. They highlight the delicious lamb sliders, curry spring rolls, and Korean beef skewers, and the unique and flavorful cocktails and mocktails. They also like the friendly and attentive service.">People say this bar offers substantial and flavorful small plates, as well as well-curated cocktails and wine. They highlight the delicious lamb sliders, curry spring rolls, and Korean beef skewers, and the unique and flavorful cocktails and mocktails. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz1tFP_9ZwokR1NewYt9iemw" target="_blank">Burgers and Beer</a></td>
@@ -334,7 +323,6 @@
                     <td class="rating">4.9</td>
                     <td>302</td>
                     <td class="truncate" title="170 West 4th Street , New York, NY 10014">170 West 4th Street , New York, NY 10014</td>
-                    <td class="truncate" title="People say this hamburger restaurant serves delicious burgers, including the specialty French onion soup burger, and offers a solid beer selection. They highlight the moderate prices, fun and cozy atmosphere, and the attentive and friendly staff. They also like the complimentary onion rings and fries.">People say this hamburger restaurant serves delicious burgers, including the specialty French onion soup burger, and offers a solid beer selection. They highlight the moderate prices, fun and cozy atmosphere, and the attentive and friendly staff. They also like the complimentary onion rings and fries.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXcKmIRtbwokR7XKV0tqoYYM" target="_blank">Wok In Duane</a></td>
@@ -344,7 +332,6 @@
                     <td class="rating">4.9</td>
                     <td>95</td>
                     <td class="truncate" title="181 Duane Street, New York, NY 10013">181 Duane Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Asian restaurant serves delicious and flavorful dishes, including the Typhoon Shelter Lobster, Mongolian Beef, and Shrimp Salad. They highlight the cozy and intimate atmosphere, and the reasonable prices. They also like the attentive and friendly service.">People say this Asian restaurant serves delicious and flavorful dishes, including the Typhoon Shelter Lobster, Mongolian Beef, and Shrimp Salad. They highlight the cozy and intimate atmosphere, and the reasonable prices. They also like the attentive and friendly service.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></td>
@@ -354,7 +341,6 @@
                     <td class="rating">4.8</td>
                     <td>891</td>
                     <td class="truncate" title="2 Renwick Street, New York, NY 10013">2 Renwick Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this restaurant offers delicious dishes such as branzino, half chicken, and butternut squash ravioli. They highlight the fresh ingredients, flavorful combinations, and generous portions. They also like the attentive and friendly service, and the fun and lively atmosphere.">People say this restaurant offers delicious dishes such as branzino, half chicken, and butternut squash ravioli. They highlight the fresh ingredients, flavorful combinations, and generous portions. They also like the attentive and friendly service, and the fun and lively atmosphere.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMRchbudZwokRkZaaaZO5kHA" target="_blank">The Ruby Theatre</a></td>
@@ -364,7 +350,6 @@
                     <td class="rating">4.8</td>
                     <td>185</td>
                     <td class="truncate" title="35 West 39th Street, New York, NY, 10018">35 West 39th Street, New York, NY, 10018</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh8IHOYRdwokR1LFd8h-bfAg" target="_blank">Sweets &amp; Things</a></td>
@@ -374,7 +359,6 @@
                     <td class="rating">4.8</td>
                     <td>294</td>
                     <td class="truncate" title="2709 Fulton Street, Brooklyn, NY 11207">2709 Fulton Street, Brooklyn, NY 11207</td>
-                    <td class="truncate" title="People say this dessert shop offers delicious tres leches cakes in a variety of flavors, including guava, cookies &amp; cream, and coconut, as well as lattes and matcha. They highlight the cakes are moist, flavorful, and not overly sweet, and the coffee is strong and flavorful. They also like the beautiful, colorful, and welcoming atmosphere, and the friendly and helpful staff.">People say this dessert shop offers delicious tres leches cakes in a variety of flavors, including guava, cookies &amp; cream, and coconut, as well as lattes and matcha. They highlight the cakes are moist, flavorful, and not overly sweet, and the coffee is strong and flavorful. They also like the beautiful, colorful, and welcoming atmosphere, and the friendly and helpful staff.</td>
                 </tr>
                 <tr data-price="85" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJJa93rKRZwokRPoOmc_ta6DU" target="_blank">Cka Ka Qellue</a></td>
@@ -384,7 +368,6 @@
                     <td class="rating">4.8</td>
                     <td>1682</td>
                     <td class="truncate" title="118 E 31st Street, New York, NY 10016">118 E 31st Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this Mediterranean restaurant serves delicious and authentic Albanian dishes, including dips, mantia, and grilled meats. They highlight the cozy and traditional atmosphere, and the friendly and attentive service. They also like the reasonable prices and generous portions.">People say this Mediterranean restaurant serves delicious and authentic Albanian dishes, including dips, mantia, and grilled meats. They highlight the cozy and traditional atmosphere, and the friendly and attentive service. They also like the reasonable prices and generous portions.</td>
                 </tr>
                 <tr data-price="79" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFUaWnL9ZwokR8PbqkNt-FCQ" target="_blank">Sushi Saint</a></td>
@@ -394,7 +377,6 @@
                     <td class="rating">4.8</td>
                     <td>75</td>
                     <td class="truncate" title="11-01 43rd Avenue, Long Island City, NY 11101">11-01 43rd Avenue, Long Island City, NY 11101</td>
-                    <td class="truncate" title="People say this restaurant serves fresh, flavorful hand rolls with creative flavor profiles. They highlight the generous portions and the chef&#x27;s passion and attentiveness. They also like the friendly and efficient service.">People say this restaurant serves fresh, flavorful hand rolls with creative flavor profiles. They highlight the generous portions and the chef&#x27;s passion and attentiveness. They also like the friendly and efficient service.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD3o0w4JZwokR-WlDg3eOg0I" target="_blank">Jose Luis Mediterranean Cuisine</a></td>
@@ -404,7 +386,6 @@
                     <td class="rating">4.8</td>
                     <td>689</td>
                     <td class="truncate" title="186 Avenue B, New York, NY 10009">186 Avenue B, New York, NY 10009</td>
-                    <td class="truncate" title="People say this Mediterranean restaurant serves delicious paella, tapas, and grilled octopus. They highlight the great happy hour deals, strong drinks, and lively patio. They also like the friendly and welcoming service.">People say this Mediterranean restaurant serves delicious paella, tapas, and grilled octopus. They highlight the great happy hour deals, strong drinks, and lively patio. They also like the friendly and welcoming service.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></td>
@@ -414,7 +395,6 @@
                     <td class="rating">4.8</td>
                     <td>16</td>
                     <td class="truncate" title="428 S 5th Street, Brooklyn, NY 11211">428 S 5th Street, Brooklyn, NY 11211</td>
-                    <td class="truncate" title="People say this restaurant offers delicious and satisfying dishes, including vegan options and a unique Edamame Burger. They highlight the chic and chill atmosphere, and the knowledgeable staff. They also like the attentive and friendly service.">People say this restaurant offers delicious and satisfying dishes, including vegan options and a unique Edamame Burger. They highlight the chic and chill atmosphere, and the knowledgeable staff. They also like the attentive and friendly service.</td>
                 </tr>
                 <tr data-price="65" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJy46hSq9bwokRFSDdaz0YmV0" target="_blank">Norimen</a></td>
@@ -424,7 +404,6 @@
                     <td class="rating">4.8</td>
                     <td>59</td>
                     <td class="truncate" title="24 Elizabeth Street, New York, NY 10013">24 Elizabeth Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Korean restaurant serves delicious tteok-galbi, donkatsu, and Korean fried chicken, along with fresh and healthy side dishes. They highlight the generous portions, reasonable prices, and the authentic, intimate, and modern atmosphere. They also like the friendly, attentive, and professional service.">People say this Korean restaurant serves delicious tteok-galbi, donkatsu, and Korean fried chicken, along with fresh and healthy side dishes. They highlight the generous portions, reasonable prices, and the authentic, intimate, and modern atmosphere. They also like the friendly, attentive, and professional service.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnxEXkVNYwokRITzoANd2S14" target="_blank">Miss Nellie&#x27;s</a></td>
@@ -434,7 +413,6 @@
                     <td class="rating">4.8</td>
                     <td>766</td>
                     <td class="truncate" title="325 West 44th Street, New York, NY 10036">325 West 44th Street, New York, NY 10036</td>
-                    <td class="truncate" title="People say this restaurant serves delicious espresso martinis, pancakes, and French dip sandwiches. They highlight the cozy and upscale atmosphere, and the attentive and friendly staff. They also like the creative cocktails and the generous portions.">People say this restaurant serves delicious espresso martinis, pancakes, and French dip sandwiches. They highlight the cozy and upscale atmosphere, and the attentive and friendly staff. They also like the creative cocktails and the generous portions.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJU_jf_XxZwokRGPLWEYVWR7w" target="_blank">Mala Hot Pot</a></td>
@@ -444,7 +422,6 @@
                     <td class="rating">4.8</td>
                     <td>507</td>
                     <td class="truncate" title="35 W 36th Street, New York, NY 10018">35 W 36th Street, New York, NY 10018</td>
-                    <td class="truncate" title="People say this hot pot restaurant offers delicious and spicy broths, fresh and high-quality meats, and a wide variety of vegetables and noodles. They highlight the reasonable prices, generous portions, and the fun, lively atmosphere. They also like the attentive service and the unique dipping sauce station.">People say this hot pot restaurant offers delicious and spicy broths, fresh and high-quality meats, and a wide variety of vegetables and noodles. They highlight the reasonable prices, generous portions, and the fun, lively atmosphere. They also like the attentive service and the unique dipping sauce station.</td>
                 </tr>
                 <tr data-price="49" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></td>
@@ -454,7 +431,6 @@
                     <td class="rating">4.8</td>
                     <td>86</td>
                     <td class="truncate" title="33-05 Broadway, Astoria, NY 11106">33-05 Broadway, Astoria, NY 11106</td>
-                    <td class="truncate" title="People say this restaurant serves delicious Filipino fusion cuisine, including dynamite, kare kare, and flan. They highlight the great drinks, fun karaoke, and lively atmosphere. They also like the attentive and friendly service.">People say this restaurant serves delicious Filipino fusion cuisine, including dynamite, kare kare, and flan. They highlight the great drinks, fun karaoke, and lively atmosphere. They also like the attentive and friendly service.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOUMIx-9ZwokRNkHZdwJGR5I" target="_blank">Tipsy Shanghai</a></td>
@@ -464,7 +440,6 @@
                     <td class="rating">4.8</td>
                     <td>927</td>
                     <td class="truncate" title="104 2nd Avenue, New York, NY 10003">104 2nd Avenue, New York, NY 10003</td>
-                    <td class="truncate" title="People say this Chinese restaurant serves delicious soup dumplings, salty pork rice, and orange beef. They highlight the reasonable prices and cozy, welcoming atmosphere. They also like the friendly and attentive service.">People say this Chinese restaurant serves delicious soup dumplings, salty pork rice, and orange beef. They highlight the reasonable prices and cozy, welcoming atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ-ZwZ2CZZwokRj0c3MfGp5ns" target="_blank">Yasubee Authentic Ramen</a></td>
@@ -474,7 +449,6 @@
                     <td class="rating">4.8</td>
                     <td>213</td>
                     <td class="truncate" title="253 W 26th Street, New York, NY 10001">253 W 26th Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this ramen restaurant serves flavorful ramen, delicious gyoza and wings, and a variety of other dishes. They highlight the reasonable prices, especially the lunch special, and the inviting, colorful atmosphere. They also like the friendly, attentive, and accommodating staff.">People say this ramen restaurant serves flavorful ramen, delicious gyoza and wings, and a variety of other dishes. They highlight the reasonable prices, especially the lunch special, and the inviting, colorful atmosphere. They also like the friendly, attentive, and accommodating staff.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ-ZwZ2CZZwokRj0c3MfGp5ns" target="_blank">Yasubee Authentic Ramen</a></td>
@@ -484,7 +458,6 @@
                     <td class="rating">4.8</td>
                     <td>213</td>
                     <td class="truncate" title="253 W 26th Street, New York, NY 10001">253 W 26th Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this ramen restaurant serves flavorful ramen, delicious gyoza and wings, and a variety of other dishes. They highlight the reasonable prices, especially the lunch special, and the inviting, colorful atmosphere. They also like the friendly, attentive, and accommodating staff.">People say this ramen restaurant serves flavorful ramen, delicious gyoza and wings, and a variety of other dishes. They highlight the reasonable prices, especially the lunch special, and the inviting, colorful atmosphere. They also like the friendly, attentive, and accommodating staff.</td>
                 </tr>
                 <tr data-price="19" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbe26PclbwokRfrb6lAnTB30" target="_blank">Kings County Distillery</a></td>
@@ -494,7 +467,6 @@
                     <td class="rating">4.8</td>
                     <td>393</td>
                     <td class="truncate" title="299 Sands Street, Brooklyn, NY 11205">299 Sands Street, Brooklyn, NY 11205</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeb_vSCRbwokRVIzbficpCeQ" target="_blank">Kiwami</a></td>
@@ -504,7 +476,6 @@
                     <td class="rating">4.7</td>
                     <td>85</td>
                     <td class="truncate" title="141 Bridge Park Drive, Brooklyn, NY 11201">141 Bridge Park Drive, Brooklyn, NY 11201</td>
-                    <td class="truncate" title="People say this Japanese restaurant offers a delicious Kiwami-Jia Omakase Nigiri Set, chicken karaage, and garlic edamame. They highlight the fresh, high-quality fish flown in from Japan, and the creative, innovative menu. They also like the beautiful, traditional decor, the attentive service, and the gorgeous waterfront views.">People say this Japanese restaurant offers a delicious Kiwami-Jia Omakase Nigiri Set, chicken karaage, and garlic edamame. They highlight the fresh, high-quality fish flown in from Japan, and the creative, innovative menu. They also like the beautiful, traditional decor, the attentive service, and the gorgeous waterfront views.</td>
                 </tr>
                 <tr data-price="129" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM_E9jHdbwokRol-zqevjY1o" target="_blank">Warren Street Hotel</a></td>
@@ -514,7 +485,6 @@
                     <td class="rating">4.7</td>
                     <td>61</td>
                     <td class="truncate" title="86 Warren Street, New York, NY 10007">86 Warren Street, New York, NY 10007</td>
-                    <td class="truncate" title="People say this hotel offers spacious, stylish rooms with unique decor, and a delicious breakfast with well-prepared dishes and excellent lattes. They highlight the quiet rooms, convenient location, and smooth check-in/out process. They also like the attentive, professional, and genuinely helpful staff.">People say this hotel offers spacious, stylish rooms with unique decor, and a delicious breakfast with well-prepared dishes and excellent lattes. They highlight the quiet rooms, convenient location, and smooth check-in/out process. They also like the attentive, professional, and genuinely helpful staff.</td>
                 </tr>
                 <tr data-price="99" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></td>
@@ -524,7 +494,6 @@
                     <td class="rating">4.7</td>
                     <td>608</td>
                     <td class="truncate" title="34 E 20th Street, New York, NY 10003">34 E 20th Street, New York, NY 10003</td>
-                    <td class="truncate" title="People say this Turkish restaurant offers delicious manti, grilled octopus, and a variety of kebabs, as well as homemade baklava ice cream and other desserts. They highlight the generous portions, authentic flavors, and the cozy, inviting atmosphere. They also like the friendly and attentive service.">People say this Turkish restaurant offers delicious manti, grilled octopus, and a variety of kebabs, as well as homemade baklava ice cream and other desserts. They highlight the generous portions, authentic flavors, and the cozy, inviting atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></td>
@@ -534,7 +503,6 @@
                     <td class="rating">4.7</td>
                     <td>3969</td>
                     <td class="truncate" title="134 W 46th Street, New York, NY 10036">134 W 46th Street, New York, NY 10036</td>
-                    <td class="truncate" title="People say this Mexican restaurant serves delicious birria tacos, nachos, and margaritas. They highlight the reasonable prices, fun and lively atmosphere, and the fast and friendly service. They also like the generous portions and strong drinks.">People say this Mexican restaurant serves delicious birria tacos, nachos, and margaritas. They highlight the reasonable prices, fun and lively atmosphere, and the fast and friendly service. They also like the generous portions and strong drinks.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></td>
@@ -544,7 +512,6 @@
                     <td class="rating">4.7</td>
                     <td>86</td>
                     <td class="truncate" title="167 Bleecker Street, New York, NY, 10012">167 Bleecker Street, New York, NY, 10012</td>
-                    <td class="truncate" title="People say this American restaurant offers a delicious bottomless brunch with a variety of options, as well as tasty margaritas and mimosas. They highlight the affordable prices, generous portions, and chill vibe, describing it as a fun comedy show venue. They also like the friendly and attentive staff.">People say this American restaurant offers a delicious bottomless brunch with a variety of options, as well as tasty margaritas and mimosas. They highlight the affordable prices, generous portions, and chill vibe, describing it as a fun comedy show venue. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="59" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYzGsnstZwokRkcK34hMLbV0" target="_blank">Good Thanks</a></td>
@@ -554,7 +521,6 @@
                     <td class="rating">4.7</td>
                     <td>328</td>
                     <td class="truncate" title="374 Graham Avenue, Brooklyn, NY 11211">374 Graham Avenue, Brooklyn, NY 11211</td>
-                    <td class="truncate" title="People say this Australian restaurant serves delicious avocado toast, mushroom toast, and burgers. They highlight the cozy atmosphere, generous portions, and good value, especially during happy hour. They also like the friendly and attentive staff.">People say this Australian restaurant serves delicious avocado toast, mushroom toast, and burgers. They highlight the cozy atmosphere, generous portions, and good value, especially during happy hour. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOc6gA9X3wokRu5v-fpKFkBs" target="_blank">Chez Messy</a></td>
@@ -564,7 +530,6 @@
                     <td class="rating">4.7</td>
                     <td>246</td>
                     <td class="truncate" title="5 Edward M Morgan Place, New York, NY 10032">5 Edward M Morgan Place, New York, NY 10032</td>
-                    <td class="truncate" title="People say this restaurant serves delicious tapas, including bang bang shrimp, filet mignon, and bacon &amp; manchego croquettes, as well as creative cocktails. They highlight the beautiful ambiance, good music, and friendly, attentive staff. They also like the warm hospitality and the management&#x27;s attention to detail.">People say this restaurant serves delicious tapas, including bang bang shrimp, filet mignon, and bacon &amp; manchego croquettes, as well as creative cocktails. They highlight the beautiful ambiance, good music, and friendly, attentive staff. They also like the warm hospitality and the management&#x27;s attention to detail.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJE9fzYv9YwokRnzR1M_R6_uU" target="_blank">The Lotus Room</a></td>
@@ -574,7 +539,6 @@
                     <td class="rating">4.7</td>
                     <td>50</td>
                     <td class="truncate" title="114 West 47th Street, New York, NY 10036">114 West 47th Street, New York, NY 10036</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></td>
@@ -584,7 +548,6 @@
                     <td class="rating">4.7</td>
                     <td>131</td>
                     <td class="truncate" title="377 Park Avenue South, New York, NY 10016">377 Park Avenue South, New York, NY 10016</td>
-                    <td class="truncate" title="People say this bar offers delicious food, including burgers, wings, and mussels, and a great selection of cocktails. They highlight the excellent happy hour, with $1 oysters and drink specials, and the fun, lively atmosphere. They also like the friendly and attentive service.">People say this bar offers delicious food, including burgers, wings, and mussels, and a great selection of cocktails. They highlight the excellent happy hour, with $1 oysters and drink specials, and the fun, lively atmosphere. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJpx_u6NZZwokR0gixoJrE5Ww" target="_blank">Tara Rose</a></td>
@@ -594,7 +557,6 @@
                     <td class="rating">4.7</td>
                     <td>1119</td>
                     <td class="truncate" title="384 3rd Avenue, New York, NY 10016">384 3rd Avenue, New York, NY 10016</td>
-                    <td class="truncate" title="People say this cocktail bar offers a wide variety of delicious food, including smoked salmon and rice cake, chicken tenders, and fig and ricotta toast, as well as great cocktails and mocktails. They highlight the fun and energetic vibe, and the reasonable prices, especially during happy hour. They also like the friendly and attentive staff.">People say this cocktail bar offers a wide variety of delicious food, including smoked salmon and rice cake, chicken tenders, and fig and ricotta toast, as well as great cocktails and mocktails. They highlight the fun and energetic vibe, and the reasonable prices, especially during happy hour. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJTX6hP5NZwokRKiSZMT3Q1lg" target="_blank">Moustache</a></td>
@@ -604,7 +566,6 @@
                     <td class="rating">4.7</td>
                     <td>801</td>
                     <td class="truncate" title="29 7th Avenue South, New York, NY 10014">29 7th Avenue South, New York, NY 10014</td>
-                    <td class="truncate" title="People say this Middle Eastern restaurant serves delicious chicken citrus soup, labneh, and lamb kebab sandwiches. They highlight the fresh ingredients, generous portions, and authentic flavors, as well as the cozy and friendly atmosphere. They also like the attentive and welcoming service.">People say this Middle Eastern restaurant serves delicious chicken citrus soup, labneh, and lamb kebab sandwiches. They highlight the fresh ingredients, generous portions, and authentic flavors, as well as the cozy and friendly atmosphere. They also like the attentive and welcoming service.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW7ilTZNZwokR7Gw48AU3Z0c" target="_blank">Le Petit Village</a></td>
@@ -614,7 +575,6 @@
                     <td class="rating">4.6</td>
                     <td>357</td>
                     <td class="truncate" title="173 7th Avenue South, New York, NY 10014">173 7th Avenue South, New York, NY 10014</td>
-                    <td class="truncate" title="People say this French restaurant serves delicious dishes, including steak frites, escargot, and duck l&#x27;orange, and offers a variety of unique and tasty cocktails. They highlight the cozy and charming atmosphere, perfect for a date night or special occasion, and the attentive and friendly service. They also like the extra touches, such as personalized notes and complimentary champagne for birthdays.">People say this French restaurant serves delicious dishes, including steak frites, escargot, and duck l&#x27;orange, and offers a variety of unique and tasty cocktails. They highlight the cozy and charming atmosphere, perfect for a date night or special occasion, and the attentive and friendly service. They also like the extra touches, such as personalized notes and complimentary champagne for birthdays.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXRqFABbwokROtpA2HMbqL8" target="_blank">Derby Cup Coffee</a></td>
@@ -624,7 +584,6 @@
                     <td class="rating">4.6</td>
                     <td>52</td>
                     <td class="truncate" title="37 Elizabeth Street, New York, NY, 10013">37 Elizabeth Street, New York, NY, 10013</td>
-                    <td class="truncate" title="People say this coffee shop serves perfectly balanced iced lattes, smooth and creamy with just the right amount of espresso kick. They highlight the unique and cool alternative vibe, and the nice seating. They also like the matcha lemonade and Americano.">People say this coffee shop serves perfectly balanced iced lattes, smooth and creamy with just the right amount of espresso kick. They highlight the unique and cool alternative vibe, and the nice seating. They also like the matcha lemonade and Americano.</td>
                 </tr>
                 <tr data-price="149" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJBaxS1pVZwokRrlAgmAu4M48" target="_blank">Sushi Masu</a></td>
@@ -634,7 +593,6 @@
                     <td class="rating">4.6</td>
                     <td>132</td>
                     <td class="truncate" title="286 Columbus Avenue, New York, NY 10023">286 Columbus Avenue, New York, NY 10023</td>
-                    <td class="truncate" title="People say this sushi restaurant offers a delicious omakase with fresh, high-quality fish and unique flavors. They highlight the reasonable price for the number of courses and the authentic, unpretentious atmosphere. They also like the attentive and welcoming service.">People say this sushi restaurant offers a delicious omakase with fresh, high-quality fish and unique flavors. They highlight the reasonable price for the number of courses and the authentic, unpretentious atmosphere. They also like the attentive and welcoming service.</td>
                 </tr>
                 <tr data-price="89" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnURzHbFZwokRqnfhlkSEPbQ" target="_blank">Zutto Nolita</a></td>
@@ -644,7 +602,6 @@
                     <td class="rating">4.6</td>
                     <td>826</td>
                     <td class="truncate" title="384 Broome Street, New York, NY 10013">384 Broome Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Japanese restaurant serves flavorful ramen, fresh sushi, and delicious appetizers like pork belly buns and gyoza. They highlight the cozy and intimate atmosphere, and the good value, especially during happy hour. They also like the friendly and attentive service.">People say this Japanese restaurant serves flavorful ramen, fresh sushi, and delicious appetizers like pork belly buns and gyoza. They highlight the cozy and intimate atmosphere, and the good value, especially during happy hour. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="89" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJsctiAgBZwokRRPidYZS6VzQ" target="_blank">Wonderland</a></td>
@@ -654,7 +611,6 @@
                     <td class="rating">4.6</td>
                     <td>340</td>
                     <td class="truncate" title="96 2nd Avenue, New York, NY 10003">96 2nd Avenue, New York, NY 10003</td>
-                    <td class="truncate" title="People say this cocktail bar offers creative and delicious drinks with unique presentations, as well as tasty food like peppercorn squid and popcorn chicken. They highlight the magical, whimsical, and romantic atmosphere, and the attentive service. They also like the complimentary welcome shots.">People say this cocktail bar offers creative and delicious drinks with unique presentations, as well as tasty food like peppercorn squid and popcorn chicken. They highlight the magical, whimsical, and romantic atmosphere, and the attentive service. They also like the complimentary welcome shots.</td>
                 </tr>
                 <tr data-price="89" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJGxpCtzxawokRWS7MVDYfA8E" target="_blank">SUteiShi</a></td>
@@ -664,7 +620,6 @@
                     <td class="rating">4.6</td>
                     <td>711</td>
                     <td class="truncate" title="24 Peck Slip, New York, NY 10038">24 Peck Slip, New York, NY 10038</td>
-                    <td class="truncate" title="People say this Japanese restaurant offers fresh and tasty sushi and sashimi, with plenty of yellowtail during restaurant week. They highlight the omakase and sashimi are prepared well, and the outdoor eating experience is lovely. They also like the friendly service and warm, quiet atmosphere.">People say this Japanese restaurant offers fresh and tasty sushi and sashimi, with plenty of yellowtail during restaurant week. They highlight the omakase and sashimi are prepared well, and the outdoor eating experience is lovely. They also like the friendly service and warm, quiet atmosphere.</td>
                 </tr>
                 <tr data-price="79" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT6iakMdbwokRr7eIzot7L5Y" target="_blank">Farida</a></td>
@@ -674,7 +629,6 @@
                     <td class="rating">4.6</td>
                     <td>2023</td>
                     <td class="truncate" title="32 Cedar Street, New York City, NY 10005">32 Cedar Street, New York City, NY 10005</td>
-                    <td class="truncate" title="People say this restaurant serves delicious Uzbek, Kazakh, and Central Asian cuisine, including plov, shashlyk, and manti. They highlight the authentic and flavorful dishes, and the generous portions. They also like the cozy and colorful atmosphere, and the friendly and attentive service.">People say this restaurant serves delicious Uzbek, Kazakh, and Central Asian cuisine, including plov, shashlyk, and manti. They highlight the authentic and flavorful dishes, and the generous portions. They also like the cozy and colorful atmosphere, and the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJc-KD401ZwokR_wAYL4jLVCQ" target="_blank">Javitri</a></td>
@@ -684,7 +638,6 @@
                     <td class="rating">4.6</td>
                     <td>244</td>
                     <td class="truncate" title="132 East 61st Street , New York, NY 10065">132 East 61st Street , New York, NY 10065</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious butter chicken, chicken biryani, and jackfruit biryani. They highlight the authentic flavors, generous portions, and reasonable prices. They also like the cozy and elegant atmosphere, and the friendly and attentive staff.">People say this Indian restaurant serves delicious butter chicken, chicken biryani, and jackfruit biryani. They highlight the authentic flavors, generous portions, and reasonable prices. They also like the cozy and elegant atmosphere, and the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="65" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnfbJe1VYwokRclrtuzRUnOs" target="_blank">Public House At Merrion Row Hotel</a></td>
@@ -694,7 +647,6 @@
                     <td class="rating">4.6</td>
                     <td>270</td>
                     <td class="truncate" title="119 W 45th Street, New York, NY 10036">119 W 45th Street, New York, NY 10036</td>
-                    <td class="truncate" title="People say this hotel offers clean and comfortable rooms, and a delicious breakfast. They highlight the convenient location near Times Square, and the friendly and helpful staff. They also like the quiet and sheltered atmosphere, despite the bustling location.">People say this hotel offers clean and comfortable rooms, and a delicious breakfast. They highlight the convenient location near Times Square, and the friendly and helpful staff. They also like the quiet and sheltered atmosphere, despite the bustling location.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></td>
@@ -704,7 +656,6 @@
                     <td class="rating">4.6</td>
                     <td>361</td>
                     <td class="truncate" title="466 Hudson Street , New York, NY 10014">466 Hudson Street , New York, NY 10014</td>
-                    <td class="truncate" title="People say this British restaurant serves delicious fish and chips, burgers, and English breakfast. They highlight the cozy and chill atmosphere, and the friendly and welcoming staff. They also like the reasonable prices and generous portions.">People say this British restaurant serves delicious fish and chips, burgers, and English breakfast. They highlight the cozy and chill atmosphere, and the friendly and welcoming staff. They also like the reasonable prices and generous portions.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJw4uA_x9bwokRyR4yBROx_Pc" target="_blank">Boss Tweeds</a></td>
@@ -714,7 +665,6 @@
                     <td class="rating">4.6</td>
                     <td>90</td>
                     <td class="truncate" title="41 Murray Street, New York, NY 10007">41 Murray Street, New York, NY 10007</td>
-                    <td class="truncate" title="People say this cocktail bar offers delicious sandwiches, filet mignon, and short ribs. They highlight the generous portions, the quality of the food, and the interesting cocktail menu. They also like the classy atmosphere and attentive service.">People say this cocktail bar offers delicious sandwiches, filet mignon, and short ribs. They highlight the generous portions, the quality of the food, and the interesting cocktail menu. They also like the classy atmosphere and attentive service.</td>
                 </tr>
                 <tr data-price="49" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXeUvXoZZwokRe4fgXkTAlsU" target="_blank">Tipsy Scoop Brooklyn</a></td>
@@ -724,7 +674,6 @@
                     <td class="rating">4.6</td>
                     <td>366</td>
                     <td class="truncate" title="270 Metropolitan Avenue, Brooklyn, NY, 11211">270 Metropolitan Avenue, Brooklyn, NY, 11211</td>
-                    <td class="truncate" title="Ice people say this ice cream shop serves up delicious boozy ice cream flights with flavors like Boozy Breakfast, Whiskey Dreams, and Mango Margarita Sorbet. They also highlight the friendly and helpful staff who offer samples and recommendations.">Ice people say this ice cream shop serves up delicious boozy ice cream flights with flavors like Boozy Breakfast, Whiskey Dreams, and Mango Margarita Sorbet. They also highlight the friendly and helpful staff who offer samples and recommendations.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCx3lDtZZwokR3HTb84fDE1s" target="_blank">SPiN Midtown</a></td>
@@ -734,7 +683,6 @@
                     <td class="rating">4.6</td>
                     <td>130</td>
                     <td class="truncate" title="1626 Broadway, New York, NY 10019">1626 Broadway, New York, NY 10019</td>
-                    <td class="truncate" title="People say this bar offers a fun and relaxing environment with ping pong, giant Jenga, and other games. They highlight the spacious venue, lively atmosphere, and the availability of food and drinks. They also like the warm and accommodating staff.">People say this bar offers a fun and relaxing environment with ping pong, giant Jenga, and other games. They highlight the spacious venue, lively atmosphere, and the availability of food and drinks. They also like the warm and accommodating staff.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmxlF1FNewokRpCNcaaavPWQ" target="_blank">SPiN Flatiron</a></td>
@@ -744,7 +692,6 @@
                     <td class="rating">4.6</td>
                     <td>1278</td>
                     <td class="truncate" title="48 East 23rd Street, New York, NY">48 East 23rd Street, New York, NY</td>
-                    <td class="truncate" title="People say this restaurant offers delicious steak, appetizers, and cookies, and is a great place for a fun gathering with drinks, food, and music. They highlight the spacious layout, the availability of ping pong and other games, and the reasonable prices. They also like the friendly and accommodating staff.">People say this restaurant offers delicious steak, appetizers, and cookies, and is a great place for a fun gathering with drinks, food, and music. They highlight the spacious layout, the availability of ping pong and other games, and the reasonable prices. They also like the friendly and accommodating staff.</td>
                 </tr>
                 <tr data-price="48" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMdeI3ihZwokRT6vUi5QaFjQ" target="_blank">Cafe Atelier</a></td>
@@ -754,7 +701,6 @@
                     <td class="rating">4.6</td>
                     <td>232</td>
                     <td class="truncate" title="112 Hudson Street, New York, NY 10013">112 Hudson Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this coffee shop offers delicious matcha lattes, flat whites, and iced tea lemonades. They highlight the generous portions, unique drink menu, and the cozy, charming atmosphere with beautiful flowers. They also like the friendly and helpful staff.">People say this coffee shop offers delicious matcha lattes, flat whites, and iced tea lemonades. They highlight the generous portions, unique drink menu, and the cozy, charming atmosphere with beautiful flowers. They also like the friendly and helpful staff.</td>
                 </tr>
                 <tr data-price="39" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDQJJHAtbwokR6Ljf1I9DUFA" target="_blank">Em Vietnamese Bistro</a></td>
@@ -764,11 +710,6 @@
                     <td class="rating">4.6</td>
                     <td>932</td>
                     <td class="truncate" title="57 Front Street, Brooklyn, NY 11201">57 Front Street, Brooklyn, NY 11201</td>
-                    <td class="truncate" title="Diners say this Vietnamese restaurant serves up delicious spring rolls, chicken wings, and beef pho. They also highlight the friendly and attentive staff, and the cozy and modern atmosphere.
-
-Some reviews mention the service can be indifferent.">Diners say this Vietnamese restaurant serves up delicious spring rolls, chicken wings, and beef pho. They also highlight the friendly and attentive staff, and the cozy and modern atmosphere.
-
-Some reviews mention the service can be indifferent.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmX3EiBBZwokRCz5O-6__5E0" target="_blank">The Laurels</a></td>
@@ -778,7 +719,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>304</td>
                     <td class="truncate" title="231 2nd Avenue, New York, NY 10003">231 2nd Avenue, New York, NY 10003</td>
-                    <td class="truncate" title="People say this bar offers a delicious brunch with dishes like biscuits and gravy, and bottomless electrolyte mimosas. They highlight the fun and cozy atmosphere, and the friendly and accommodating staff. They also like the quick service and the availability of discounts and deals.">People say this bar offers a delicious brunch with dishes like biscuits and gravy, and bottomless electrolyte mimosas. They highlight the fun and cozy atmosphere, and the friendly and accommodating staff. They also like the quick service and the availability of discounts and deals.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoz4wBFFbwokRpkJ9fa2n4i8" target="_blank">Tara Kitchen</a></td>
@@ -788,7 +728,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>252</td>
                     <td class="truncate" title="253 Church Street, New York, NY 10013">253 Church Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Moroccan restaurant serves delicious tagines, couscous, and salmon. They highlight the complex and deep flavors, and the tasty rice that pairs perfectly with the sauces. They also like the cozy, vibrant atmosphere and the friendly, attentive staff.">People say this Moroccan restaurant serves delicious tagines, couscous, and salmon. They highlight the complex and deep flavors, and the tasty rice that pairs perfectly with the sauces. They also like the cozy, vibrant atmosphere and the friendly, attentive staff.</td>
                 </tr>
                 <tr data-price="35" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMdeI3ihZwokRT6vUi5QaFjQ" target="_blank">Cafe Atelier</a></td>
@@ -798,7 +737,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>232</td>
                     <td class="truncate" title="112 Hudson Street, New York, NY 10013">112 Hudson Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this coffee shop offers delicious matcha lattes, flat whites, and iced tea lemonades. They highlight the generous portions, unique drink menu, and the cozy, charming atmosphere with beautiful flowers. They also like the friendly and helpful staff.">People say this coffee shop offers delicious matcha lattes, flat whites, and iced tea lemonades. They highlight the generous portions, unique drink menu, and the cozy, charming atmosphere with beautiful flowers. They also like the friendly and helpful staff.</td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJWYuVOE5ZwokRXm292tXw5cM" target="_blank">The Mayfly</a></td>
@@ -808,7 +746,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>232</td>
                     <td class="truncate" title="269 E Houston Street, New York, NY 10002">269 E Houston Street, New York, NY 10002</td>
-                    <td class="truncate" title="People say this bar offers great food, including nachos, wings, and flatbread, and a variety of drinks, such as pilsners and cocktails. They highlight the reasonable prices, especially during happy hour, and the chill, comfortable vibe. They also like the friendly and attentive staff.">People say this bar offers great food, including nachos, wings, and flatbread, and a variety of drinks, such as pilsners and cocktails. They highlight the reasonable prices, especially during happy hour, and the chill, comfortable vibe. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJF4SEq5hZwokR5qUZkP7dymw" target="_blank">Tipsy Scoop Manhattan</a></td>
@@ -818,7 +755,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>1662</td>
                     <td class="truncate" title="217 E 26th Street, New York, NY 10010">217 E 26th Street, New York, NY 10010</td>
-                    <td class="truncate" title="Ice people say this ice cream shop offers unique flavors like bourbon, whiskey, and Mexican hot chocolate with tequila, alongside more traditional options like cherry cheesecake. They also highlight the friendly and helpful staff, and the massive portions.">Ice people say this ice cream shop offers unique flavors like bourbon, whiskey, and Mexican hot chocolate with tequila, alongside more traditional options like cherry cheesecake. They also highlight the friendly and helpful staff, and the massive portions.</td>
                 </tr>
                 <tr data-price="25" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJga1VXbxZwokRcZUivapDujA" target="_blank">MakiMaki</a></td>
@@ -828,7 +764,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>270</td>
                     <td class="truncate" title="360 Lexington Avenue, New York, NY 10017">360 Lexington Avenue, New York, NY 10017</td>
-                    <td class="truncate" title="People say this sushi restaurant offers delicious hand rolls, sliced rolls, and soups. They highlight the fresh ingredients, generous portions, and affordable prices, as well as the clean and fast service. They also like the friendly staff and great atmosphere.">People say this sushi restaurant offers delicious hand rolls, sliced rolls, and soups. They highlight the fresh ingredients, generous portions, and affordable prices, as well as the clean and fast service. They also like the friendly staff and great atmosphere.</td>
                 </tr>
                 <tr data-price="19" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJtf45qQBZwokRBArjFWGfwfg" target="_blank">Center 415</a></td>
@@ -838,7 +773,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.6</td>
                     <td>195</td>
                     <td class="truncate" title="415 5th Avenue, New York, NY 10016">415 5th Avenue, New York, NY 10016</td>
-                    <td class="truncate" title="People say this event venue hosts a variety of events, including bike tours and scent explorations. They highlight the spacious layout and clean environment. They also like the friendly and helpful staff.">People say this event venue hosts a variety of events, including bike tours and scent explorations. They highlight the spacious layout and clean environment. They also like the friendly and helpful staff.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRzstD_pYwokRQP9KCtKm3kI" target="_blank">Bustronome</a></td>
@@ -848,7 +782,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>63</td>
                     <td class="truncate" title="988 8th Avenue, New York, NY 10019">988 8th Avenue, New York, NY 10019</td>
-                    <td class="truncate" title="People say this restaurant offers a delicious and memorable dining experience with amazing views of the city. They highlight the unique concept, the attentive and friendly service, and the romantic atmosphere. They also like the smooth and enjoyable experience from start to finish.">People say this restaurant offers a delicious and memorable dining experience with amazing views of the city. They highlight the unique concept, the attentive and friendly service, and the romantic atmosphere. They also like the smooth and enjoyable experience from start to finish.</td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFyq4ScFbwokRwMJWGE6ad1o" target="_blank">Raaka Chocolate</a></td>
@@ -858,7 +791,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>189</td>
                     <td class="truncate" title="64 Seabring Street, Brooklyn, NY 11231">64 Seabring Street, Brooklyn, NY 11231</td>
-                    <td class="truncate" title="People say this chocolate shop offers delicious, single-origin, fair-trade chocolate bars and hot chocolate cubes. They highlight the fun and educational bean-to-bar chocolate making classes, and the knowledgeable and patient instructors. They also like the wide variety of classes and the opportunity to make and take home self-made chocolate.">People say this chocolate shop offers delicious, single-origin, fair-trade chocolate bars and hot chocolate cubes. They highlight the fun and educational bean-to-bar chocolate making classes, and the knowledgeable and patient instructors. They also like the wide variety of classes and the opportunity to make and take home self-made chocolate.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJA5TGRw1ZwokRgkupoRF2xno" target="_blank">PacRim</a></td>
@@ -868,7 +800,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>119</td>
                     <td class="truncate" title="308 E 49th Street, New York, NY 10017">308 E 49th Street, New York, NY 10017</td>
-                    <td class="truncate" title="People say this sushi restaurant serves delicious and fresh sushi, as well as tasty bento boxes and gyoza. They highlight the great prices, relaxing atmosphere, and warm welcome from the staff. They also like the friendly and caring service.">People say this sushi restaurant serves delicious and fresh sushi, as well as tasty bento boxes and gyoza. They highlight the great prices, relaxing atmosphere, and warm welcome from the staff. They also like the friendly and caring service.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></td>
@@ -878,7 +809,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>169</td>
                     <td class="truncate" title="108 E 31st Street, New York, NY 10016">108 E 31st Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.">People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMSE4pYhZwokRb4by65BoRvg" target="_blank">Cappuccino Gino</a></td>
@@ -888,7 +818,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>144</td>
                     <td class="truncate" title="167 Madison Avenue, New York, NY 10016">167 Madison Avenue, New York, NY 10016</td>
-                    <td class="truncate" title="People say this espresso bar serves fantastic coffee, including espresso, cappuccino, and Americano. They highlight the cozy and charming atmosphere, and the friendly and accommodating service. They also like the eclectic music and the availability of cocktails in the evenings.">People say this espresso bar serves fantastic coffee, including espresso, cappuccino, and Americano. They highlight the cozy and charming atmosphere, and the friendly and accommodating service. They also like the eclectic music and the availability of cocktails in the evenings.</td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFyq4ScFbwokRwMJWGE6ad1o" target="_blank">Raaka Chocolate</a></td>
@@ -898,7 +827,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>189</td>
                     <td class="truncate" title="64 Seabring Street, Brooklyn, NY 11231">64 Seabring Street, Brooklyn, NY 11231</td>
-                    <td class="truncate" title="People say this chocolate shop offers delicious, single-origin, fair-trade chocolate bars and hot chocolate cubes. They highlight the fun and educational bean-to-bar chocolate making classes, and the knowledgeable and patient instructors. They also like the wide variety of classes and the opportunity to make and take home self-made chocolate.">People say this chocolate shop offers delicious, single-origin, fair-trade chocolate bars and hot chocolate cubes. They highlight the fun and educational bean-to-bar chocolate making classes, and the knowledgeable and patient instructors. They also like the wide variety of classes and the opportunity to make and take home self-made chocolate.</td>
                 </tr>
                 <tr data-price="99" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></td>
@@ -908,7 +836,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>169</td>
                     <td class="truncate" title="108 E 31st Street, New York, NY 10016">108 E 31st Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.">People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.</td>
                 </tr>
                 <tr data-price="99" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4cctNm1ZwokRYqm7SgdbQaw" target="_blank">Sahola Cafe</a></td>
@@ -918,7 +845,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>169</td>
                     <td class="truncate" title="108 E 31st Street, New York, NY 10016">108 E 31st Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.">People say this coffee shop offers delicious lattes, cappuccinos, and pastries, including croissants and apple strudel. They highlight the cozy and charming atmosphere, with unique floral decor and a peaceful patio, perfect for reading, working, or meeting up with friends. They also like the friendly and welcoming staff.</td>
                 </tr>
                 <tr data-price="89" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyQrN22VbwokRkPPkgVB6K-I" target="_blank">Kahlo</a></td>
@@ -928,11 +854,6 @@ Some reviews mention the service can be indifferent.</td>
                     <td class="rating">4.5</td>
                     <td>699</td>
                     <td class="truncate" title="525 West 29th Street, New York, NY 10001">525 West 29th Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this Mexican restaurant serves delicious and creative dishes, including tacos, guacamole, and branzino. They also highlight the beautiful and cozy atmosphere, and the friendly and attentive staff.
-
-Other reviews mention the portions can be small.">People say this Mexican restaurant serves delicious and creative dishes, including tacos, guacamole, and branzino. They also highlight the beautiful and cozy atmosphere, and the friendly and attentive staff.
-
-Other reviews mention the portions can be small.</td>
                 </tr>
                 <tr data-price="85" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa1nQ3RpZwokRVfXEWiUopRc" target="_blank">Yara</a></td>
@@ -942,7 +863,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>796</td>
                     <td class="truncate" title="319 E 53rd Street, New York, NY 10022">319 E 53rd Street, New York, NY 10022</td>
-                    <td class="truncate" title="People say this Mediterranean restaurant serves delicious, authentic Lebanese cuisine, including a mixed grill platter, shrimp, lamb tartare, and hummus. They highlight the cozy and chic atmosphere, perfect for date night, and the reasonable prices. They also like the friendly and attentive service.">People say this Mediterranean restaurant serves delicious, authentic Lebanese cuisine, including a mixed grill platter, shrimp, lamb tartare, and hummus. They highlight the cozy and chic atmosphere, perfect for date night, and the reasonable prices. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ05f_AZ_3wokRYDq3ytLPLew" target="_blank">Alison</a></td>
@@ -952,7 +872,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>531</td>
                     <td class="truncate" title="1651 Lexington Avenue, New York, NY 10029">1651 Lexington Avenue, New York, NY 10029</td>
-                    <td class="truncate" title="People say this American restaurant serves delicious and fresh food, including calamari, oysters, and salads. They highlight the good value, especially during happy hour, and the inviting atmosphere. They also like the friendly and professional staff.">People say this American restaurant serves delicious and fresh food, including calamari, oysters, and salads. They highlight the good value, especially during happy hour, and the inviting atmosphere. They also like the friendly and professional staff.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJST0cgRZawokRNvJv5mhG57E" target="_blank">Joseph&#x27;s Restaurant</a></td>
@@ -962,7 +881,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>371</td>
                     <td class="truncate" title="3 Hanover Square, New York, NY 10004">3 Hanover Square, New York, NY 10004</td>
-                    <td class="truncate" title="People say this Northern Italian restaurant serves delicious hangar steak, tricolori salad, and chicken martini. They highlight the cozy and authentic atmosphere, and the attentive service. They also like the fresh mozzarella and burrata.">People say this Northern Italian restaurant serves delicious hangar steak, tricolori salad, and chicken martini. They highlight the cozy and authentic atmosphere, and the attentive service. They also like the fresh mozzarella and burrata.</td>
                 </tr>
                 <tr data-price="75" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ_WXu66RYwokRAGIvfYW8fYk" target="_blank">Kaia Farmhouse Restaurant</a></td>
@@ -972,7 +890,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>659</td>
                     <td class="truncate" title="1446 1st Avenue, New York, NY 10021">1446 1st Avenue, New York, NY 10021</td>
-                    <td class="truncate" title="People say this wine bar offers a great selection of South African wines and delicious food, including sliders, entrees, and desserts. They highlight the relaxed vibe, perfect for a leisurely drink and/or meal, and the excellent happy hour deals. They also like the friendly and informative service.">People say this wine bar offers a great selection of South African wines and delicious food, including sliders, entrees, and desserts. They highlight the relaxed vibe, perfect for a leisurely drink and/or meal, and the excellent happy hour deals. They also like the friendly and informative service.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwSslRhxZwokRBLkPiFyDWHM" target="_blank">Old Fashion Cafe</a></td>
@@ -982,7 +899,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>293</td>
                     <td class="truncate" title="110 Thompson Street, New York, NY 10012">110 Thompson Street, New York, NY 10012</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious pasta dishes, pizza, and cocktails. They highlight the cozy and chic atmosphere, and the friendly and attentive staff. They also like the great music and the surprise piece of cake for birthdays.">People say this Italian restaurant serves delicious pasta dishes, pizza, and cocktails. They highlight the cozy and chic atmosphere, and the friendly and attentive staff. They also like the great music and the surprise piece of cake for birthdays.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></td>
@@ -992,7 +908,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>2017</td>
                     <td class="truncate" title="173 Mulberry Street, New York, NY 10013">173 Mulberry Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious lasagna, pasta, and pizza. They highlight the authentic Italian atmosphere and the great value of the lunch special. They also like the friendly and welcoming staff.">People say this Italian restaurant serves delicious lasagna, pasta, and pizza. They highlight the authentic Italian atmosphere and the great value of the lunch special. They also like the friendly and welcoming staff.</td>
                 </tr>
                 <tr data-price="59" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></td>
@@ -1002,7 +917,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>1169</td>
                     <td class="truncate" title="4410 Avenue H, Brooklyn, NY 11234">4410 Avenue H, Brooklyn, NY 11234</td>
-                    <td class="truncate" title="People say this Asian fusion restaurant offers delicious dishes, including wings, fried lobster and waffles, and oxtail dumplings. They highlight the fun drinks, great music, and vacation-like vibe. They also like the friendly and attentive staff.">People say this Asian fusion restaurant offers delicious dishes, including wings, fried lobster and waffles, and oxtail dumplings. They highlight the fun drinks, great music, and vacation-like vibe. They also like the friendly and attentive staff.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJsVxkpoZZwokR74R22Gc7cSY" target="_blank">Ms Yoo</a></td>
@@ -1012,7 +926,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>381</td>
                     <td class="truncate" title="163 Allen Street, New York, NY 10002">163 Allen Street, New York, NY 10002</td>
-                    <td class="truncate" title="People say this cocktail bar offers delicious drinks and tasty food, including nachos, tteok and cheese, and wings with chili and garlic soy sauce. They highlight the easy reservation process, the on-point decor and vibe, and the perfect music for celebratory events. They also like the kind and sociable bartenders and the welcoming staff.">People say this cocktail bar offers delicious drinks and tasty food, including nachos, tteok and cheese, and wings with chili and garlic soy sauce. They highlight the easy reservation process, the on-point decor and vibe, and the perfect music for celebratory events. They also like the kind and sociable bartenders and the welcoming staff.</td>
                 </tr>
                 <tr data-price="49" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk9gLf75bwokRI2fQO4j603s" target="_blank">Pizzette</a></td>
@@ -1022,7 +935,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>252</td>
                     <td class="truncate" title="191 Graham Avenue, Brooklyn, NY 11206">191 Graham Avenue, Brooklyn, NY 11206</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious pizza, pasta, and homemade burrata. They highlight the fun and intimate vibe, and the strong, balanced drinks. They also like the friendly and attentive service.">People say this Italian restaurant serves delicious pizza, pasta, and homemade burrata. They highlight the fun and intimate vibe, and the strong, balanced drinks. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></td>
@@ -1032,7 +944,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>992</td>
                     <td class="truncate" title="688 10th Avenue, New York, NY 10019">688 10th Avenue, New York, NY 10019</td>
-                    <td class="truncate" title="People say this bar and grill serves delicious Peruvian and Mexican food, including ceviche, lomo saltado, and arroz chaufa. They highlight the generous portions, strong drinks, and reasonable prices, especially during happy hour. They also like the lively atmosphere and friendly, attentive service.">People say this bar and grill serves delicious Peruvian and Mexican food, including ceviche, lomo saltado, and arroz chaufa. They highlight the generous portions, strong drinks, and reasonable prices, especially during happy hour. They also like the lively atmosphere and friendly, attentive service.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></td>
@@ -1042,7 +953,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>1352</td>
                     <td class="truncate" title="764 9th Avenue, New York, NY 10019">764 9th Avenue, New York, NY 10019</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious and authentic dishes, including chicken tikka masala, naan, and biryani. They highlight the reasonable prices, generous portions, and cozy, welcoming atmosphere. They also like the friendly, attentive, and efficient service.">People say this Indian restaurant serves delicious and authentic dishes, including chicken tikka masala, naan, and biryani. They highlight the reasonable prices, generous portions, and cozy, welcoming atmosphere. They also like the friendly, attentive, and efficient service.</td>
                 </tr>
                 <tr data-price="39" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh9x07Z1ZwokRGx3DlP1b35o" target="_blank">Kaskade</a></td>
@@ -1052,7 +962,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>189</td>
                     <td class="truncate" title="123 Greenpoint Avenue, Brooklyn, NY 11222">123 Greenpoint Avenue, Brooklyn, NY 11222</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJi0SOSF1ZwokRm5r1egtKNaE" target="_blank">Wok In The Clouds</a></td>
@@ -1062,7 +971,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.5</td>
                     <td>377</td>
                     <td class="truncate" title="127 E 28th Street, New York, NY 10016">127 E 28th Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this restaurant serves delicious Indo-Chinese food, including momos, chili paneer, and Hakka noodles. They highlight the reasonable prices, generous portions, and authentic flavors. They also like the friendly and attentive service.">People say this restaurant serves delicious Indo-Chinese food, including momos, chili paneer, and Hakka noodles. They highlight the reasonable prices, generous portions, and authentic flavors. They also like the friendly and attentive service.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMYIE-KlZwokRZuFHn8jkNuo" target="_blank">Ai Fiori</a></td>
@@ -1072,11 +980,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.4</td>
                     <td>1777</td>
                     <td class="truncate" title="400 5th Avenue, New York, NY 10018">400 5th Avenue, New York, NY 10018</td>
-                    <td class="truncate" title="People say this restaurant serves delicious food, including octopus, crab spaghetti, and lobster bisque. They also highlight the reasonable tasting menu prices, the nice, calm, and slightly dark atmosphere, and the attentive service.
-
-Other reviews mention the portions can be small.">People say this restaurant serves delicious food, including octopus, crab spaghetti, and lobster bisque. They also highlight the reasonable tasting menu prices, the nice, calm, and slightly dark atmosphere, and the attentive service.
-
-Other reviews mention the portions can be small.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRUXf9uBZwokR9WS3NBhSjYk" target="_blank">KYU NYC</a></td>
@@ -1086,11 +989,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.4</td>
                     <td>690</td>
                     <td class="truncate" title="324 Lafayette Street , New York, NY 10012,">324 Lafayette Street , New York, NY 10012,</td>
-                    <td class="truncate" title="People say this Asian restaurant serves delicious Korean fried chicken, tuna crispy rice, and short rib. They also highlight the attentive staff, aesthetic bar, and cozy ambiance.
-
-Other reviews mention the food can be overpriced.">People say this Asian restaurant serves delicious Korean fried chicken, tuna crispy rice, and short rib. They also highlight the attentive staff, aesthetic bar, and cozy ambiance.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3xZbsp5ZwokRRvzkWV-pP1U" target="_blank">Westside Market</a></td>
@@ -1100,11 +998,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>901</td>
                     <td class="truncate" title="84 3rd Avenue, New York, New York 10003">84 3rd Avenue, New York, New York 10003</td>
-                    <td class="truncate" title="People say this gourmet grocery store offers a wide selection of fresh produce, deli sandwiches, imported snacks, and homemade prepared foods. They also highlight the quick checkout, friendly staff, and clean location.
-
-Other reviews mention the food can be expensive.">People say this gourmet grocery store offers a wide selection of fresh produce, deli sandwiches, imported snacks, and homemade prepared foods. They also highlight the quick checkout, friendly staff, and clean location.
-
-Other reviews mention the food can be expensive.</td>
                 </tr>
                 <tr data-price="99" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJRUXf9uBZwokR9WS3NBhSjYk" target="_blank">KYU NYC</a></td>
@@ -1114,11 +1007,6 @@ Other reviews mention the food can be expensive.</td>
                     <td class="rating">4.4</td>
                     <td>690</td>
                     <td class="truncate" title="324 Lafayette Street , New York, NY 10012,">324 Lafayette Street , New York, NY 10012,</td>
-                    <td class="truncate" title="People say this Asian restaurant serves delicious Korean fried chicken, tuna crispy rice, and short rib. They also highlight the attentive staff, aesthetic bar, and cozy ambiance.
-
-Other reviews mention the food can be overpriced.">People say this Asian restaurant serves delicious Korean fried chicken, tuna crispy rice, and short rib. They also highlight the attentive staff, aesthetic bar, and cozy ambiance.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="89" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></td>
@@ -1128,11 +1016,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>86</td>
                     <td class="truncate" title="58 Thompson Street , New York, NY 10012">58 Thompson Street , New York, NY 10012</td>
-                    <td class="truncate" title="People say this seafood restaurant serves delicious dishes, including lobster rolls, halibut, and swordfish. They also highlight the classic art deco decor, spacious layout, and attentive service.
-
-Other reviews mention the food can be overpriced.">People say this seafood restaurant serves delicious dishes, including lobster rolls, halibut, and swordfish. They also highlight the classic art deco decor, spacious layout, and attentive service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnYSJ169ZwokRiH0bzxxTYWM" target="_blank">Ocabanon</a></td>
@@ -1142,7 +1025,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>783</td>
                     <td class="truncate" title="245 West 29th Street, New York, NY 10001">245 West 29th Street, New York, NY 10001</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="79" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbTFSIKpZwokRpLi30Y22b3U" target="_blank">Alison Downtown</a></td>
@@ -1152,11 +1034,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>57</td>
                     <td class="truncate" title="110 St Marks Place, New York, New York 10009">110 St Marks Place, New York, New York 10009</td>
-                    <td class="truncate" title="People say this bistro offers delicious oysters, wings, burgers, and seafood dishes. They also highlight the great happy hour, inexpensive prices, and cozy, intimate atmosphere.
-
-Other reviews mention the service can be slow.">People say this bistro offers delicious oysters, wings, burgers, and seafood dishes. They also highlight the great happy hour, inexpensive prices, and cozy, intimate atmosphere.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSWsAjQlZwokRVLOHE_VU724" target="_blank">Rebèl Restaurant</a></td>
@@ -1166,11 +1043,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.4</td>
                     <td>412</td>
                     <td class="truncate" title="29 Clinton Street, New York, NY 10002">29 Clinton Street, New York, NY 10002</td>
-                    <td class="truncate" title="Diners say this Haitian restaurant serves up delicious mussels, legume with shrimp, sos pwa, and herring. They also highlight the great music, clean atmosphere, and excellent customer service.
-
-Some reviews mention the food can be overpriced.">Diners say this Haitian restaurant serves up delicious mussels, legume with shrimp, sos pwa, and herring. They also highlight the great music, clean atmosphere, and excellent customer service.
-
-Some reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3_aKBdlbwokRB4MzhiifcfE" target="_blank">Barano</a></td>
@@ -1180,11 +1052,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>674</td>
                     <td class="truncate" title="26 Broadway, Brooklyn, NY 11249">26 Broadway, Brooklyn, NY 11249</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious pasta, pizza, and meatballs. They also highlight the cozy and romantic atmosphere, and the friendly and attentive service.
-
-Some reviews mention there can be long wait times.">People say this Italian restaurant serves delicious pasta, pizza, and meatballs. They also highlight the cozy and romantic atmosphere, and the friendly and attentive service.
-
-Some reviews mention there can be long wait times.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSXK5RFFYwokR0FRZOB_pvDg" target="_blank">Amarone Restaurant</a></td>
@@ -1194,11 +1061,6 @@ Some reviews mention there can be long wait times.</td>
                     <td class="rating">4.4</td>
                     <td>1252</td>
                     <td class="truncate" title="686 9th Avenue , New York, NY 10036">686 9th Avenue , New York, NY 10036</td>
-                    <td class="truncate" title="People say this Italian restaurant offers delicious pasta, chicken, and beef carpaccio. They also highlight the welcoming vibes, attentive staff, and great atmosphere.
-
-Other reviews mention the food can be unavailable.">People say this Italian restaurant offers delicious pasta, chicken, and beef carpaccio. They also highlight the welcoming vibes, attentive staff, and great atmosphere.
-
-Other reviews mention the food can be unavailable.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr0oZMbBZwokRoHkeDJOY__M" target="_blank">Biricchino</a></td>
@@ -1208,11 +1070,6 @@ Other reviews mention the food can be unavailable.</td>
                     <td class="rating">4.4</td>
                     <td>599</td>
                     <td class="truncate" title="260 W 29th Street , New York, NY 10001">260 W 29th Street , New York, NY 10001</td>
-                    <td class="truncate" title="Diners say this Italian restaurant serves up delicious pasta, including the pappardelle pasta funghi, and breaded chicken with arugula. They also highlight the friendly and helpful staff, and the cozy and welcoming atmosphere.
-
-Some reviews mention the service can be slow.">Diners say this Italian restaurant serves up delicious pasta, including the pappardelle pasta funghi, and breaded chicken with arugula. They also highlight the friendly and helpful staff, and the cozy and welcoming atmosphere.
-
-Some reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a></td>
@@ -1222,11 +1079,6 @@ Some reviews mention the service can be slow.</td>
                     <td class="rating">4.4</td>
                     <td>1474</td>
                     <td class="truncate" title="181 N 10th Street, Brooklyn, NY 11211">181 N 10th Street, Brooklyn, NY 11211</td>
-                    <td class="truncate" title="Diners say this Latin American restaurant serves up delicious birria tacos, short rib empanadas, and tres leches cake, and they praise the bottomless mimosas and lively weekend brunch. They also highlight the vibrant atmosphere with great music and DJs, and the attentive service.
-
-Some reviews mention the food can be overpriced.">Diners say this Latin American restaurant serves up delicious birria tacos, short rib empanadas, and tres leches cake, and they praise the bottomless mimosas and lively weekend brunch. They also highlight the vibrant atmosphere with great music and DJs, and the attentive service.
-
-Some reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOQ8A1IlZwokRd4ZMRvOMQ3o" target="_blank">Il Cortile</a></td>
@@ -1236,11 +1088,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>2321</td>
                     <td class="truncate" title="125 Mulberry Street, New York, NY 10013">125 Mulberry Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious pasta, pizza, and other authentic Italian dishes. They also highlight the warm and inviting atmosphere, especially in the indoor courtyard, and the attentive, old-school service.
-
-Other reviews mention the food can be overpriced.">People say this Italian restaurant serves delicious pasta, pizza, and other authentic Italian dishes. They also highlight the warm and inviting atmosphere, especially in the indoor courtyard, and the attentive, old-school service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyTuavAlZwokRVX4Av-8RbJ8" target="_blank">Flame Hibachi</a></td>
@@ -1250,11 +1097,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>583</td>
                     <td class="truncate" title="381 3rd Avenue, New York, NY">381 3rd Avenue, New York, NY</td>
-                    <td class="truncate" title="People say this Japanese restaurant offers delicious hibachi, sushi, and tangerine chicken. They also highlight the fun and exciting atmosphere, and the friendly and attentive service.
-
-Other reviews mention the food can be salty.">People say this Japanese restaurant offers delicious hibachi, sushi, and tangerine chicken. They also highlight the fun and exciting atmosphere, and the friendly and attentive service.
-
-Other reviews mention the food can be salty.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr-ldS1ZYwokR1UaVyDZ15I8" target="_blank">Saar</a></td>
@@ -1264,11 +1106,6 @@ Other reviews mention the food can be salty.</td>
                     <td class="rating">4.4</td>
                     <td>1570</td>
                     <td class="truncate" title="241 W 51st Street, New York, NY 10019">241 W 51st Street, New York, NY 10019</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious butter chicken, garlic naan, and goat biryani. They also highlight the generous portions, reasonable pricing, and convenient location near theaters.
-
-Other reviews mention the food can be bland.">People say this Indian restaurant serves delicious butter chicken, garlic naan, and goat biryani. They also highlight the generous portions, reasonable pricing, and convenient location near theaters.
-
-Other reviews mention the food can be bland.</td>
                 </tr>
                 <tr data-price="49" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJE9RWrjJZwokRu1p8PaPuBvs" target="_blank">Beebe&#x27;s</a></td>
@@ -1278,11 +1115,6 @@ Other reviews mention the food can be bland.</td>
                     <td class="rating">4.4</td>
                     <td>465</td>
                     <td class="truncate" title="38-28 27th Street, Queens, NY 11101">38-28 27th Street, Queens, NY 11101</td>
-                    <td class="truncate" title="People say this pizza restaurant serves great pizza. They also highlight the nice, clean environment and attentive service.
-
-Other reviews mention the food can be cold.">People say this pizza restaurant serves great pizza. They also highlight the nice, clean environment and attentive service.
-
-Other reviews mention the food can be cold.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ52zVPfNZwokRmHrrJBCTr6Q" target="_blank">Adoro Lei</a></td>
@@ -1292,11 +1124,6 @@ Other reviews mention the food can be cold.</td>
                     <td class="rating">4.4</td>
                     <td>889</td>
                     <td class="truncate" title="287 Hudson Street, New York, NY 10013">287 Hudson Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this pizza restaurant offers delicious pizza and pasta dishes, and a fun pizza-making experience. They also highlight the great music, festive atmosphere, and attentive service.
-
-Other reviews mention the food can be overpriced.">People say this pizza restaurant offers delicious pizza and pasta dishes, and a fun pizza-making experience. They also highlight the great music, festive atmosphere, and attentive service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiZBX0X9ZwokRgzMHGknAlPs" target="_blank">The Corner Chinese Restaurant</a></td>
@@ -1306,11 +1133,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.4</td>
                     <td>417</td>
                     <td class="truncate" title="698 9th Avenue, New York, NY 10036">698 9th Avenue, New York, NY 10036</td>
-                    <td class="truncate" title="Diners say this Chinese restaurant serves up delicious sesame chicken, wonton soup, and sweet and sour pork with huge portions that are great for leftovers. They also highlight the friendly and attentive service, reasonable prices, and clean and stylish atmosphere.
-
-Some reviews mention the food can be bland.">Diners say this Chinese restaurant serves up delicious sesame chicken, wonton soup, and sweet and sour pork with huge portions that are great for leftovers. They also highlight the friendly and attentive service, reasonable prices, and clean and stylish atmosphere.
-
-Some reviews mention the food can be bland.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJA9SAk0xZwokRnoHo3frTuTs" target="_blank">BLU33 Lounge NYC</a></td>
@@ -1320,11 +1142,6 @@ Some reviews mention the food can be bland.</td>
                     <td class="rating">4.4</td>
                     <td>132</td>
                     <td class="truncate" title="325 W 33rd Street, New York, NY 10001">325 W 33rd Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this cocktail bar offers delicious drinks, including Japanese whiskey, and a stunning rooftop view of the city skyline. They also highlight the friendly and attentive service, and the cozy and intimate atmosphere.
-
-Other reviews mention the drinks can be expensive.">People say this cocktail bar offers delicious drinks, including Japanese whiskey, and a stunning rooftop view of the city skyline. They also highlight the friendly and attentive service, and the cozy and intimate atmosphere.
-
-Other reviews mention the drinks can be expensive.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></td>
@@ -1334,11 +1151,6 @@ Other reviews mention the drinks can be expensive.</td>
                     <td class="rating">4.4</td>
                     <td>1004</td>
                     <td class="truncate" title="154 Bleecker Street , New York, NY 10012">154 Bleecker Street , New York, NY 10012</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious dishes, including lamb burger, samosa chaat, and wedding feast. They also highlight the warm, friendly, and attentive service, and the cozy, beautiful, and vibrant atmosphere.
-
-Other reviews mention the food can be salty.">People say this Indian restaurant serves delicious dishes, including lamb burger, samosa chaat, and wedding feast. They also highlight the warm, friendly, and attentive service, and the cozy, beautiful, and vibrant atmosphere.
-
-Other reviews mention the food can be salty.</td>
                 </tr>
                 <tr data-price="45" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></td>
@@ -1348,11 +1160,6 @@ Other reviews mention the food can be salty.</td>
                     <td class="rating">4.4</td>
                     <td>421</td>
                     <td class="truncate" title="12 West 44th St, New York, NY. 10036">12 West 44th St, New York, NY. 10036</td>
-                    <td class="truncate" title="People say this bar offers delicious oysters, fish and chips, and home fries. They also highlight the great happy hour deals, including $1 oysters, and the cozy, inviting atmosphere.
-
-Other reviews mention the service can be slow.">People say this bar offers delicious oysters, fish and chips, and home fries. They also highlight the great happy hour deals, including $1 oysters, and the cozy, inviting atmosphere.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJjW7JHelZwokRnkEk29yKZHE" target="_blank">FESTIVÁL</a></td>
@@ -1362,11 +1169,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.4</td>
                     <td>408</td>
                     <td class="truncate" title="1155 2nd Avenue, New York, NY 10065">1155 2nd Avenue, New York, NY 10065</td>
-                    <td class="truncate" title="Diners say this new American restaurant serves up delicious burgers, oysters, and espresso martinis. They also highlight the friendly staff, great service, and cozy, eclectic vibes.
-
-Some reviews mention the prices can be high.">Diners say this new American restaurant serves up delicious burgers, oysters, and espresso martinis. They also highlight the friendly staff, great service, and cozy, eclectic vibes.
-
-Some reviews mention the prices can be high.</td>
                 </tr>
                 <tr data-price="39" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJbTFSIKpZwokRpLi30Y22b3U" target="_blank">Alison Downtown</a></td>
@@ -1376,11 +1178,6 @@ Some reviews mention the prices can be high.</td>
                     <td class="rating">4.4</td>
                     <td>57</td>
                     <td class="truncate" title="110 St Marks Place, New York, New York 10009">110 St Marks Place, New York, New York 10009</td>
-                    <td class="truncate" title="People say this bistro offers delicious oysters, wings, burgers, and seafood dishes. They also highlight the great happy hour, inexpensive prices, and cozy, intimate atmosphere.
-
-Other reviews mention the service can be slow.">People say this bistro offers delicious oysters, wings, burgers, and seafood dishes. They also highlight the great happy hour, inexpensive prices, and cozy, intimate atmosphere.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPSWvoZNZwokR4W1QrECFXSQ" target="_blank">Ghandi Cafe</a></td>
@@ -1390,11 +1187,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.4</td>
                     <td>533</td>
                     <td class="truncate" title="283 Bleecker Street, New York, NY 10014">283 Bleecker Street, New York, NY 10014</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious dishes like samosa chaat, chicken tikka masala, and lamb biryani. They also highlight the affordable prices, comfortable vibe, and friendly service.
-
-Other reviews mention the food can be spicy.">People say this Indian restaurant serves delicious dishes like samosa chaat, chicken tikka masala, and lamb biryani. They also highlight the affordable prices, comfortable vibe, and friendly service.
-
-Other reviews mention the food can be spicy.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJY-AxVQBZwokRQa-hQDzy7o0" target="_blank">Shirokuro</a></td>
@@ -1404,7 +1196,6 @@ Other reviews mention the food can be spicy.</td>
                     <td class="rating">4.3</td>
                     <td>262</td>
                     <td class="truncate" title="103 2nd Avenue, New York, NY 10003">103 2nd Avenue, New York, NY 10003</td>
-                    <td class="truncate" title="Diners say this Japanese restaurant serves up delicious omakase, with many raving about the fresh sushi, especially the eel rolls and uni sushi. They also highlight the unique and immersive 2D black-and-white design, making it feel like stepping into a living piece of art.">Diners say this Japanese restaurant serves up delicious omakase, with many raving about the fresh sushi, especially the eel rolls and uni sushi. They also highlight the unique and immersive 2D black-and-white design, making it feel like stepping into a living piece of art.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJmX1RgixawokR8Hm_owhnErQ" target="_blank">Pier 36</a></td>
@@ -1414,11 +1205,6 @@ Other reviews mention the food can be spicy.</td>
                     <td class="rating">4.3</td>
                     <td>8587</td>
                     <td class="truncate" title="299 South St, New York, NY 10002">299 South St, New York, NY 10002</td>
-                    <td class="truncate" title="People say this event venue offers boat tours with breathtaking views of the Statue of Liberty, Manhattan skyline, and Brooklyn Bridge. They also highlight the fun and lively atmosphere, especially on party cruises, and the attentive staff.
-
-Some reviews mention the food can be disappointing.">People say this event venue offers boat tours with breathtaking views of the Statue of Liberty, Manhattan skyline, and Brooklyn Bridge. They also highlight the fun and lively atmosphere, especially on party cruises, and the attentive staff.
-
-Some reviews mention the food can be disappointing.</td>
                 </tr>
                 <tr data-price="79" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQRO4JPtZwokRrhd95RRd_Y8" target="_blank">Adélaïde’s Salon</a></td>
@@ -1428,7 +1214,6 @@ Some reviews mention the food can be disappointing.</td>
                     <td class="rating">4.3</td>
                     <td>74</td>
                     <td class="truncate" title="176 8th Avenue, Manhattan NY, 10011">176 8th Avenue, Manhattan NY, 10011</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></td>
@@ -1438,7 +1223,6 @@ Some reviews mention the food can be disappointing.</td>
                     <td class="rating">4.3</td>
                     <td>648</td>
                     <td class="truncate" title="168 West 4th Street, New York, NY 10014">168 West 4th Street, New York, NY 10014</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="79" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7cFMaqxZwokRiwwuIFN8pbA" target="_blank">DK Restaurant</a></td>
@@ -1448,11 +1232,6 @@ Some reviews mention the food can be disappointing.</td>
                     <td class="rating">4.3</td>
                     <td>621</td>
                     <td class="truncate" title="207 W 36th Street, New York, NY 10018">207 W 36th Street, New York, NY 10018</td>
-                    <td class="truncate" title="People say this steakhouse serves delicious porterhouse, ribeye, and seafood dishes, as well as tasty sides like whipped potatoes and Brussels sprouts. They also highlight the friendly and welcoming staff, the old-school steakhouse atmosphere, and the reasonable prices.
-
-Other reviews mention the service can be slow.">People say this steakhouse serves delicious porterhouse, ribeye, and seafood dishes, as well as tasty sides like whipped potatoes and Brussels sprouts. They also highlight the friendly and welcoming staff, the old-school steakhouse atmosphere, and the reasonable prices.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk62gNytZwokRSLZc8yzal0M" target="_blank">Blend Williamsburg</a></td>
@@ -1462,11 +1241,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.3</td>
                     <td>1230</td>
                     <td class="truncate" title="291 Kent Avenue, Brooklyn, NY 11249">291 Kent Avenue, Brooklyn, NY 11249</td>
-                    <td class="truncate" title="People say this Latin American restaurant serves delicious skirt steak, salmon, and arepas. They also highlight the fun, energetic vibe, the beautiful rooftop, and the friendly, attentive staff.
-
-Other reviews mention the food can be cold.">People say this Latin American restaurant serves delicious skirt steak, salmon, and arepas. They also highlight the fun, energetic vibe, the beautiful rooftop, and the friendly, attentive staff.
-
-Other reviews mention the food can be cold.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9dhbu01awokRdKfkixsK10w" target="_blank">Bijan&#x27;s</a></td>
@@ -1476,11 +1250,6 @@ Other reviews mention the food can be cold.</td>
                     <td class="rating">4.3</td>
                     <td>1264</td>
                     <td class="truncate" title="81 Hoyt Street, Brooklyn, NY 11211">81 Hoyt Street, Brooklyn, NY 11211</td>
-                    <td class="truncate" title="People say this restaurant serves delicious Persian beef stew with saffron rice, lamb stew, and Persian kebabs. They also highlight the cozy atmosphere, friendly service, and well-made cocktails.
-
-Other reviews mention the food can be overpriced.">People say this restaurant serves delicious Persian beef stew with saffron rice, lamb stew, and Persian kebabs. They also highlight the cozy atmosphere, friendly service, and well-made cocktails.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="69" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></td>
@@ -1490,11 +1259,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.3</td>
                     <td>109</td>
                     <td class="truncate" title="235 W 56th Street, New York, NY 10019">235 W 56th Street, New York, NY 10019</td>
-                    <td class="truncate" title="People say this restaurant offers delicious food and drinks, including crab cakes, beef carpaccio, and creative cocktails. They also highlight the cozy, elegant, and romantic atmosphere, as well as the attentive and friendly service.
-
-Other reviews mention the food can be overpriced.">People say this restaurant offers delicious food and drinks, including crab cakes, beef carpaccio, and creative cocktails. They also highlight the cozy, elegant, and romantic atmosphere, as well as the attentive and friendly service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></td>
@@ -1504,11 +1268,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.3</td>
                     <td>667</td>
                     <td class="truncate" title="100 3rd Avenue, New York, NY 10003">100 3rd Avenue, New York, NY 10003</td>
-                    <td class="truncate" title="People say this Japanese restaurant serves delicious noodle soup, tuna rice bowls, and matcha pudding. They also highlight the generous portions, reasonable prices, and chill, dark vibe with a large movie projector.
-
-Other reviews mention the service can be slow.">People say this Japanese restaurant serves delicious noodle soup, tuna rice bowls, and matcha pudding. They also highlight the generous portions, reasonable prices, and chill, dark vibe with a large movie projector.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></td>
@@ -1518,7 +1277,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.3</td>
                     <td>12</td>
                     <td class="truncate" title="103 1st Avenue, New York, NY 10003">103 1st Avenue, New York, NY 10003</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="55" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5YxH-5ZwokRsCiFUdJez-o" target="_blank">Catria Cucina</a></td>
@@ -1528,11 +1286,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.3</td>
                     <td>159</td>
                     <td class="truncate" title="461 W 34th Street , New York, NY 10001">461 W 34th Street , New York, NY 10001</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious dishes like branzino, rigatoni vodka, and almond cake. They also highlight the comfortable and modern ambiance, and the kind, helpful, and accommodating service.
-
-Other reviews mention the food can be bland.">People say this Italian restaurant serves delicious dishes like branzino, rigatoni vodka, and almond cake. They also highlight the comfortable and modern ambiance, and the kind, helpful, and accommodating service.
-
-Other reviews mention the food can be bland.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ24YpVTtawokRsFPSkHjTWoA" target="_blank">Cowgirl SeaHorse</a></td>
@@ -1542,7 +1295,6 @@ Other reviews mention the food can be bland.</td>
                     <td class="rating">4.3</td>
                     <td>1388</td>
                     <td class="truncate" title="259 Front Street, New York, NY 10038">259 Front Street, New York, NY 10038</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJvZ2vbgVZwokRVWZbMB9_J3Y" target="_blank">Salud</a></td>
@@ -1552,11 +1304,6 @@ Other reviews mention the food can be bland.</td>
                     <td class="rating">4.3</td>
                     <td>91</td>
                     <td class="truncate" title="183 Grand Street, New York, NY 10013">183 Grand Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this restaurant offers great food and drinks, including a phenomenal mojito and a delicious octopus dish. They also highlight the lively but not overwhelming atmosphere, the friendly and attentive staff, and the cozy, bohemian vibe.
-
-Other reviews mention the menu can be limited.">People say this restaurant offers great food and drinks, including a phenomenal mojito and a delicious octopus dish. They also highlight the lively but not overwhelming atmosphere, the friendly and attentive staff, and the cozy, bohemian vibe.
-
-Other reviews mention the menu can be limited.</td>
                 </tr>
                 <tr data-price="49" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJk62gNytZwokRSLZc8yzal0M" target="_blank">Blend Williamsburg</a></td>
@@ -1566,11 +1313,6 @@ Other reviews mention the menu can be limited.</td>
                     <td class="rating">4.3</td>
                     <td>1230</td>
                     <td class="truncate" title="291 Kent Avenue, Brooklyn, NY 11249">291 Kent Avenue, Brooklyn, NY 11249</td>
-                    <td class="truncate" title="People say this Latin American restaurant serves delicious skirt steak, salmon, and arepas. They also highlight the fun, energetic vibe, the beautiful rooftop, and the friendly, attentive staff.
-
-Other reviews mention the food can be cold.">People say this Latin American restaurant serves delicious skirt steak, salmon, and arepas. They also highlight the fun, energetic vibe, the beautiful rooftop, and the friendly, attentive staff.
-
-Other reviews mention the food can be cold.</td>
                 </tr>
                 <tr data-price="45" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiSXX0c9dwokRnlbun-AirdM" target="_blank">Shaking Crab Williamsburg</a></td>
@@ -1580,11 +1322,6 @@ Other reviews mention the food can be cold.</td>
                     <td class="rating">4.3</td>
                     <td>364</td>
                     <td class="truncate" title="1045 Flushing Avenue, Brooklyn, NY 11237">1045 Flushing Avenue, Brooklyn, NY 11237</td>
-                    <td class="truncate" title="People say this seafood restaurant serves fresh and delicious seafood boils, lobster mac and cheese, and banana pudding. They also highlight the friendly and attentive staff, the upbeat music, and the ability to customize seafood boils.
-
-Other reviews mention the food can be overpriced.">People say this seafood restaurant serves fresh and delicious seafood boils, lobster mac and cheese, and banana pudding. They also highlight the friendly and attentive staff, the upbeat music, and the ability to customize seafood boils.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl7e_7tFZwokRzj7bvfx6Fgs" target="_blank">Vue 180</a></td>
@@ -1594,11 +1331,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.3</td>
                     <td>243</td>
                     <td class="truncate" title="525 8th Avenue, New York, NY 10018">525 8th Avenue, New York, NY 10018</td>
-                    <td class="truncate" title="People say this bar offers delicious cocktails, especially the signature ones, and a beautiful city view. They also highlight the stylish interior, cozy atmosphere, and attentive staff.
-
-Other reviews mention the food can be disappointing.">People say this bar offers delicious cocktails, especially the signature ones, and a beautiful city view. They also highlight the stylish interior, cozy atmosphere, and attentive staff.
-
-Other reviews mention the food can be disappointing.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv9jAdJ1ZwokRN9tGem6KDXw" target="_blank">Whitmans East Village</a></td>
@@ -1608,7 +1340,6 @@ Other reviews mention the food can be disappointing.</td>
                     <td class="rating">4.3</td>
                     <td>437</td>
                     <td class="truncate" title="406 E 9th Street, New York, NY 10009">406 E 9th Street, New York, NY 10009</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="29" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></td>
@@ -1618,11 +1349,6 @@ Other reviews mention the food can be disappointing.</td>
                     <td class="rating">4.3</td>
                     <td>3262</td>
                     <td class="truncate" title="221 Washington Street, Hoboken, NJ 07030">221 Washington Street, Hoboken, NJ 07030</td>
-                    <td class="truncate" title="People say this bar and grill offers delicious food, including the CBR quesadilla, and fantastic fishbowl drinks. They also highlight the fun, lively atmosphere, great music, and attentive service.
-
-Other reviews mention the music can be loud.">People say this bar and grill offers delicious food, including the CBR quesadilla, and fantastic fishbowl drinks. They also highlight the fun, lively atmosphere, great music, and attentive service.
-
-Other reviews mention the music can be loud.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ49OqSK1ZwokRWu1bTfmSvt0" target="_blank">Shopify</a></td>
@@ -1632,11 +1358,6 @@ Other reviews mention the music can be loud.</td>
                     <td class="rating">4.2</td>
                     <td>105</td>
                     <td class="truncate" title="131 Greene St, New York, NY 10012">131 Greene St, New York, NY 10012</td>
-                    <td class="truncate" title="People say this event venue offers a thoughtfully designed space filled with natural sunlight, greenery, and an adaptable layout perfect for events. They also highlight the convenient location near the subway and the opportunity to connect with incredible brands.
-
-Some reviews mention the guest experience can be disappointing.">People say this event venue offers a thoughtfully designed space filled with natural sunlight, greenery, and an adaptable layout perfect for events. They also highlight the convenient location near the subway and the opportunity to connect with incredible brands.
-
-Some reviews mention the guest experience can be disappointing.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6oavf5YwokRVS3LGMYyn_4" target="_blank">Kate Spade</a></td>
@@ -1646,7 +1367,6 @@ Some reviews mention the guest experience can be disappointing.</td>
                     <td class="rating">4.2</td>
                     <td>168</td>
                     <td class="truncate" title="610 5th Avenue, New York, NY, 10020">610 5th Avenue, New York, NY, 10020</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></td>
@@ -1656,11 +1376,6 @@ Some reviews mention the guest experience can be disappointing.</td>
                     <td class="rating">4.2</td>
                     <td>1597</td>
                     <td class="truncate" title="1412 Broadway, 25th Floor, New York, NY 10018">1412 Broadway, 25th Floor, New York, NY 10018</td>
-                    <td class="truncate" title="People say this lounge offers amazing food and strong drinks. They also highlight the beautiful venue, great views, and fun atmosphere, especially during themed nights.
-
-Some reviews mention the food can be overpriced.">People say this lounge offers amazing food and strong drinks. They also highlight the beautiful venue, great views, and fun atmosphere, especially during themed nights.
-
-Some reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="196" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ__8OsCdawokRLgMZI2Ja0Mw" target="_blank">Shinsen Bowery</a></td>
@@ -1670,11 +1385,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4.2</td>
                     <td>337</td>
                     <td class="truncate" title="44 Bowery New York, NY 10013">44 Bowery New York, NY 10013</td>
-                    <td class="truncate" title="People say this sushi restaurant offers delicious food and great cocktails. They also highlight the friendly and helpful staff, and the chill, grooving atmosphere with good music.
-
-Other reviews mention the food can be expensive.">People say this sushi restaurant offers delicious food and great cocktails. They also highlight the friendly and helpful staff, and the chill, grooving atmosphere with good music.
-
-Other reviews mention the food can be expensive.</td>
                 </tr>
                 <tr data-price="69" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></td>
@@ -1684,11 +1394,6 @@ Other reviews mention the food can be expensive.</td>
                     <td class="rating">4.2</td>
                     <td>95</td>
                     <td class="truncate" title="32-72 Steinway Street, Astoria, NY 11103">32-72 Steinway Street, Astoria, NY 11103</td>
-                    <td class="truncate" title="People say this restaurant offers delicious braised short ribs, ribeye steak, and lamb chops, as well as a variety of drinks and hookah flavors. They also highlight the beautiful decor, stunning rooftop views, and attentive service.
-
-Other reviews mention the food can be overpriced.">People say this restaurant offers delicious braised short ribs, ribeye steak, and lamb chops, as well as a variety of drinks and hookah flavors. They also highlight the beautiful decor, stunning rooftop views, and attentive service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></td>
@@ -1698,11 +1403,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.2</td>
                     <td>1577</td>
                     <td class="truncate" title="316 Columbus Avenue, New York, NY">316 Columbus Avenue, New York, NY</td>
-                    <td class="truncate" title="Diners say this Italian restaurant serves up delicious gluten-free pasta, lasagna, and chicken parmesan, and they praise the meatballs and tiramisu. They also highlight the friendly and attentive service, and the cozy and classy atmosphere.
-
-Some reviews mention the wait times can be long.">Diners say this Italian restaurant serves up delicious gluten-free pasta, lasagna, and chicken parmesan, and they praise the meatballs and tiramisu. They also highlight the friendly and attentive service, and the cozy and classy atmosphere.
-
-Some reviews mention the wait times can be long.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7QU5XGdZwokRZTLGoFZPk8o" target="_blank">SEA</a></td>
@@ -1712,11 +1412,6 @@ Some reviews mention the wait times can be long.</td>
                     <td class="rating">4.2</td>
                     <td>6065</td>
                     <td class="truncate" title="114 North 6th Street, New York, NY 11211">114 North 6th Street, New York, NY 11211</td>
-                    <td class="truncate" title="People say this Thai restaurant serves delicious dishes like pad thai, crispy duck, and pineapple fried rice. They also highlight the fun, energetic atmosphere with a DJ and a pond, and the friendly, efficient service.
-
-Other reviews mention the food can be bland.">People say this Thai restaurant serves delicious dishes like pad thai, crispy duck, and pineapple fried rice. They also highlight the fun, energetic atmosphere with a DJ and a pond, and the friendly, efficient service.
-
-Other reviews mention the food can be bland.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></td>
@@ -1726,11 +1421,6 @@ Other reviews mention the food can be bland.</td>
                     <td class="rating">4.2</td>
                     <td>1082</td>
                     <td class="truncate" title="2420 Amsterdam Avenue, New York, NY 10033">2420 Amsterdam Avenue, New York, NY 10033</td>
-                    <td class="truncate" title="People say this restaurant serves delicious skirt steak, chicharron, and yuca fries. They also highlight the lively and colorful atmosphere, and the friendly and attentive service.
-
-Some reviews mention the food can be bland.">People say this restaurant serves delicious skirt steak, chicharron, and yuca fries. They also highlight the lively and colorful atmosphere, and the friendly and attentive service.
-
-Some reviews mention the food can be bland.</td>
                 </tr>
                 <tr data-price="49" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Z40cT9fwokR8aKrtGOLG0Y" target="_blank">Blend Astoria</a></td>
@@ -1740,11 +1430,6 @@ Some reviews mention the food can be bland.</td>
                     <td class="rating">4.2</td>
                     <td>2202</td>
                     <td class="truncate" title="37-17 30th Avenue, Astoria, NY 11103">37-17 30th Avenue, Astoria, NY 11103</td>
-                    <td class="truncate" title="People say this Latin American restaurant serves delicious food and drinks. They also highlight the great portions, reasonable prices, and lively atmosphere.
-
-Other reviews mention the service can be slow.">People say this Latin American restaurant serves delicious food and drinks. They also highlight the great portions, reasonable prices, and lively atmosphere.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="49" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></td>
@@ -1754,11 +1439,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.2</td>
                     <td>2414</td>
                     <td class="truncate" title="40-12 Bell Boulevard, Bayside, NY 11361">40-12 Bell Boulevard, Bayside, NY 11361</td>
-                    <td class="truncate" title="People say this Cajun restaurant offers delicious pizza, salads, and drinks. They also highlight the reasonable prices, great rooftop, and friendly staff.
-
-Other reviews mention the food can be inconsistent.">People say this Cajun restaurant offers delicious pizza, salads, and drinks. They also highlight the reasonable prices, great rooftop, and friendly staff.
-
-Other reviews mention the food can be inconsistent.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></td>
@@ -1768,11 +1448,6 @@ Other reviews mention the food can be inconsistent.</td>
                     <td class="rating">4.2</td>
                     <td>121</td>
                     <td class="truncate" title="420 Park Ave South, New York, NY 10016">420 Park Ave South, New York, NY 10016</td>
-                    <td class="truncate" title="People say this restaurant offers delicious steak and fries, and tasty tagliatelle. They also highlight the beautiful, intimate atmosphere, the live music, and the attentive service.
-
-Other reviews mention the food can be mediocre.">People say this restaurant offers delicious steak and fries, and tasty tagliatelle. They also highlight the beautiful, intimate atmosphere, the live music, and the attentive service.
-
-Other reviews mention the food can be mediocre.</td>
                 </tr>
                 <tr data-price="29" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></td>
@@ -1782,11 +1457,6 @@ Other reviews mention the food can be mediocre.</td>
                     <td class="rating">4.2</td>
                     <td>1597</td>
                     <td class="truncate" title="1412 Broadway, 25th Floor, New York, NY 10018">1412 Broadway, 25th Floor, New York, NY 10018</td>
-                    <td class="truncate" title="People say this lounge offers amazing food and strong drinks. They also highlight the beautiful venue, great views, and fun atmosphere, especially during themed nights.
-
-Some reviews mention the food can be overpriced.">People say this lounge offers amazing food and strong drinks. They also highlight the beautiful venue, great views, and fun atmosphere, especially during themed nights.
-
-Some reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="29" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwwvaYmOU6IkRhDgGbtpRYyY" target="_blank">North Sea Tavern</a></td>
@@ -1796,7 +1466,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4.2</td>
                     <td>275</td>
                     <td class="truncate" title="1271 N Sea Road, Southampton, NY 11968">1271 N Sea Road, Southampton, NY 11968</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7VRAqalZwokR48bbQlnev8w" target="_blank">Serendipity 3</a></td>
@@ -1806,11 +1475,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4.1</td>
                     <td>6502</td>
                     <td class="truncate" title="225 East 60th Street , New York, NY 10022">225 East 60th Street , New York, NY 10022</td>
-                    <td class="truncate" title="People say this American restaurant serves delicious frozen hot chocolate, banana splits, and sundaes. They also highlight the fun, whimsical atmosphere, and the friendly, attentive staff.
-
-Other reviews mention the food can be pricey.">People say this American restaurant serves delicious frozen hot chocolate, banana splits, and sundaes. They also highlight the fun, whimsical atmosphere, and the friendly, attentive staff.
-
-Other reviews mention the food can be pricey.</td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJc0CCxY1awokRCjZ4gkpGFpc" target="_blank">Ikea Brooklyn, NY</a></td>
@@ -1820,11 +1484,6 @@ Other reviews mention the food can be pricey.</td>
                     <td class="rating">4.1</td>
                     <td>17521</td>
                     <td class="truncate" title="1 Beard Street, Brooklyn, NY">1 Beard Street, Brooklyn, NY</td>
-                    <td class="truncate" title="People say this furniture store offers a wide selection of home goods, including Swedish meatballs, and has a cafeteria with affordable food. They also highlight the spacious layout, ample parking, and friendly staff.
-
-Some reviews mention the delivery service can be unreliable.">People say this furniture store offers a wide selection of home goods, including Swedish meatballs, and has a cafeteria with affordable food. They also highlight the spacious layout, ample parking, and friendly staff.
-
-Some reviews mention the delivery service can be unreliable.</td>
                 </tr>
                 <tr data-price="69" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJtZ9GuFxfwokRfwtGVlhXr2E" target="_blank">Zikrayat</a></td>
@@ -1834,11 +1493,6 @@ Some reviews mention the delivery service can be unreliable.</td>
                     <td class="rating">4.1</td>
                     <td>88</td>
                     <td class="truncate" title="24-17 Steinway Street , Astoria, NY 11103">24-17 Steinway Street , Astoria, NY 11103</td>
-                    <td class="truncate" title="People say this Middle Eastern restaurant offers a great buffet with delicious food. They also highlight the friendly staff, welcoming hospitality, and entertaining live music and belly dancing.
-
-Other reviews mention the service can be slow.">People say this Middle Eastern restaurant offers a great buffet with delicious food. They also highlight the friendly staff, welcoming hospitality, and entertaining live music and belly dancing.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="69" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3UuR-ONZwokRrKPqaJPKbxw" target="_blank">The Butchers Daughter - Williamsburg</a></td>
@@ -1848,11 +1502,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.1</td>
                     <td>1092</td>
                     <td class="truncate" title="271 Metropolitan Avenue, Brooklyn, NY 11211">271 Metropolitan Avenue, Brooklyn, NY 11211</td>
-                    <td class="truncate" title="People say this vegetarian restaurant offers delicious and creative dishes, including avocado toast, dragon fruit bowls, and mushroom calamari. They also highlight the beautiful, airy, and welcoming atmosphere, and the friendly and attentive service.
-
-Other reviews mention the portions can be small.">People say this vegetarian restaurant offers delicious and creative dishes, including avocado toast, dragon fruit bowls, and mushroom calamari. They also highlight the beautiful, airy, and welcoming atmosphere, and the friendly and attentive service.
-
-Other reviews mention the portions can be small.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiU9lDtFZwokRWgnyfScr2GI" target="_blank">Sandbar Rooftop</a></td>
@@ -1862,11 +1511,6 @@ Other reviews mention the portions can be small.</td>
                     <td class="rating">4.1</td>
                     <td>450</td>
                     <td class="truncate" title="152 West 26th Street, New York, NY 10001">152 West 26th Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this lounge offers great cocktails and desserts, and a small food menu with pizzas and shareables. They also highlight the amazing views of the city, including the Empire State Building, and the relaxed, beachy vibe.
-
-Other reviews mention the service can be slow.">People say this lounge offers great cocktails and desserts, and a small food menu with pizzas and shareables. They also highlight the amazing views of the city, including the Empire State Building, and the relaxed, beachy vibe.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Sd10JL3wokR1nvVH1K_mhE" target="_blank">Baazi</a></td>
@@ -1876,11 +1520,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.1</td>
                     <td>348</td>
                     <td class="truncate" title="2588 Broadway , New York, NY 10025">2588 Broadway , New York, NY 10025</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious and flavorful dishes, including biryani, kebabs, and shrimp mirchi. They also highlight the creative menu, diverse flavors, and satisfying portions.
-
-Other reviews mention the service can be slow.">People say this Indian restaurant serves delicious and flavorful dishes, including biryani, kebabs, and shrimp mirchi. They also highlight the creative menu, diverse flavors, and satisfying portions.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></td>
@@ -1890,11 +1529,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.1</td>
                     <td>1361</td>
                     <td class="truncate" title="7 Times Square, New York, NY 10036">7 Times Square, New York, NY 10036</td>
-                    <td class="truncate" title="People say this Mexican restaurant serves delicious tacos, nachos, and street corn. They also highlight the fun, lively atmosphere and the friendly, attentive service.
-
-Other reviews mention the food can be overpriced.">People say this Mexican restaurant serves delicious tacos, nachos, and street corn. They also highlight the fun, lively atmosphere and the friendly, attentive service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="55" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJy5AiM4hZwokR17UL37uRp-U" target="_blank">Umberto&#x27;s Clam House</a></td>
@@ -1904,11 +1538,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.1</td>
                     <td>1244</td>
                     <td class="truncate" title="132 Mulberry Street, New York, NY 10013">132 Mulberry Street, New York, NY 10013</td>
-                    <td class="truncate" title="People say this Italian restaurant serves delicious baked clams, lobster ravioli, and pasta with meatballs. They also highlight the great atmosphere and drinks.
-
-Other reviews mention the service can be slow.">People say this Italian restaurant serves delicious baked clams, lobster ravioli, and pasta with meatballs. They also highlight the great atmosphere and drinks.
-
-Other reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="49" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM0NdDQtZwokRay142BXkRQg" target="_blank">Han Dynasty Long Island City</a></td>
@@ -1918,11 +1547,6 @@ Other reviews mention the service can be slow.</td>
                     <td class="rating">4.1</td>
                     <td>122</td>
                     <td class="truncate" title="4504 Pearson Street, Long Island City, NY 11101">4504 Pearson Street, Long Island City, NY 11101</td>
-                    <td class="truncate" title="People say this Chinese restaurant serves delicious Dan Dan noodles, dry pepper chicken, and tofu pot. They also highlight the good value, spacious dining area with beautiful art, and attentive service.
-
-Other reviews mention the food can be overpriced.">People say this Chinese restaurant serves delicious Dan Dan noodles, dry pepper chicken, and tofu pot. They also highlight the good value, spacious dining area with beautiful art, and attentive service.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnSZZ0glZwokR9TAYKFG_t58" target="_blank">Chote Nawab</a></td>
@@ -1932,11 +1556,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4.1</td>
                     <td>923</td>
                     <td class="truncate" title="115 Lexington Avenue, New York, NY 10016">115 Lexington Avenue, New York, NY 10016</td>
-                    <td class="truncate" title="People say this Indian restaurant serves flavorful dishes with plenty of options, including vegan and vegetarian choices. They also highlight the fast service, attentive staff, and modern, bright design.
-
-Other reviews mention the food can be pre-made and reheated.">People say this Indian restaurant serves flavorful dishes with plenty of options, including vegan and vegetarian choices. They also highlight the fast service, attentive staff, and modern, bright design.
-
-Other reviews mention the food can be pre-made and reheated.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7ZgHuZxZwokREruK25B0UU0" target="_blank">Malai Marke</a></td>
@@ -1946,7 +1565,6 @@ Other reviews mention the food can be pre-made and reheated.</td>
                     <td class="rating">4.1</td>
                     <td>565</td>
                     <td class="truncate" title="318 E 6th Street, New York, NY 10003">318 E 6th Street, New York, NY 10003</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="39" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJGTRAZT9fwokR5nDN7FxwiKI" target="_blank">The Grand</a></td>
@@ -1956,11 +1574,6 @@ Other reviews mention the food can be pre-made and reheated.</td>
                     <td class="rating">4.1</td>
                     <td>1668</td>
                     <td class="truncate" title="37-01 30th Avenue, Astoria, NY 11103">37-01 30th Avenue, Astoria, NY 11103</td>
-                    <td class="truncate" title="People say this restaurant serves good food, including mac and cheese balls, chicken and waffles, and burgers. They also highlight the friendly and attentive service, and the chill and inviting vibe.
-
-Other reviews mention the food can be overpriced.">People say this restaurant serves good food, including mac and cheese balls, chicken and waffles, and burgers. They also highlight the friendly and attentive service, and the chill and inviting vibe.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFe7TBwBbwokRALrAye-IrcM" target="_blank">F&amp;Bar</a></td>
@@ -1970,7 +1583,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4</td>
                     <td>4</td>
                     <td class="truncate" title="705 Myrtle Avenue, Brooklyn, NY 11205">705 Myrtle Avenue, Brooklyn, NY 11205</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJd4gIXTlZwokR1A8bEjuem20" target="_blank">La Devozione</a></td>
@@ -1980,11 +1592,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4</td>
                     <td>726</td>
                     <td class="truncate" title="428 W 16th Street, New York, NY 10011">428 W 16th Street, New York, NY 10011</td>
-                    <td class="truncate" title="People say this Italian restaurant serves authentic pasta dishes with rich, comforting flavors. They also highlight the warm and inviting atmosphere, the open live kitchen, and the friendly and attentive staff.
-
-Other reviews mention the food can be overpriced.">People say this Italian restaurant serves authentic pasta dishes with rich, comforting flavors. They also highlight the warm and inviting atmosphere, the open live kitchen, and the friendly and attentive staff.
-
-Other reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="69" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJiYsEnohZwokR8oZK_TgmSjY" target="_blank">The Butcher&#x27;s Daughter - Nolita</a></td>
@@ -1994,11 +1601,6 @@ Other reviews mention the food can be overpriced.</td>
                     <td class="rating">4</td>
                     <td>2122</td>
                     <td class="truncate" title="19 Kenmare Street, New York NY 10012">19 Kenmare Street, New York NY 10012</td>
-                    <td class="truncate" title="Diners say this vegetarian restaurant serves up delicious avocado toast, fresh juices, and a standout vegan burrito. They also highlight the charming and cozy atmosphere, especially the outdoor terrace, and the friendly and attentive service.
-
-Some reviews mention the food can be overpriced.">Diners say this vegetarian restaurant serves up delicious avocado toast, fresh juices, and a standout vegan burrito. They also highlight the charming and cozy atmosphere, especially the outdoor terrace, and the friendly and attentive service.
-
-Some reviews mention the food can be overpriced.</td>
                 </tr>
                 <tr data-price="59" data-location="other">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></td>
@@ -2008,11 +1610,6 @@ Some reviews mention the food can be overpriced.</td>
                     <td class="rating">4</td>
                     <td>443</td>
                     <td class="truncate" title="70-15 Austin Street, Queens, NY 11375">70-15 Austin Street, Queens, NY 11375</td>
-                    <td class="truncate" title="People say this restaurant serves up delicious omelets and amazing food and drinks, and they praise the great happy hour deals. They also highlight the incredible vibes, with many mentioning the excellent music and beautiful, jungle-themed atmosphere.
-
-Some reviews mention the service can be inattentive.">People say this restaurant serves up delicious omelets and amazing food and drinks, and they praise the great happy hour deals. They also highlight the incredible vibes, with many mentioning the excellent music and beautiful, jungle-themed atmosphere.
-
-Some reviews mention the service can be inattentive.</td>
                 </tr>
                 <tr data-price="49" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ__OiJFpYwokR6a1T6JuLpjI" target="_blank">Inti Restaurant</a></td>
@@ -2022,11 +1619,6 @@ Some reviews mention the service can be inattentive.</td>
                     <td class="rating">4</td>
                     <td>523</td>
                     <td class="truncate" title="820 10th Avenue, New York, NY 10019">820 10th Avenue, New York, NY 10019</td>
-                    <td class="truncate" title="Diners say this Peruvian restaurant serves up delicious lomo saltado, Peruvian chicken, and pisco sours. They also highlight the lively atmosphere with great music, friendly staff, and beautiful artwork.
-
-Some reviews mention the service can be slow.">Diners say this Peruvian restaurant serves up delicious lomo saltado, Peruvian chicken, and pisco sours. They also highlight the lively atmosphere with great music, friendly staff, and beautiful artwork.
-
-Some reviews mention the service can be slow.</td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJR1HomwdZwokRhnHT0bz7Zp0" target="_blank">Masala King</a></td>
@@ -2036,11 +1628,6 @@ Some reviews mention the service can be slow.</td>
                     <td class="rating">4</td>
                     <td>970</td>
                     <td class="truncate" title="64 E 34th Street, New York, NY 10016">64 E 34th Street, New York, NY 10016</td>
-                    <td class="truncate" title="People say this Indian restaurant serves delicious, authentic curries, butter chicken, and naan. They also highlight the generous portion sizes, fresh ingredients, and kind service.
-
-Other reviews mention the food can be slow.">People say this Indian restaurant serves delicious, authentic curries, butter chicken, and naan. They also highlight the generous portion sizes, fresh ingredients, and kind service.
-
-Other reviews mention the food can be slow.</td>
                 </tr>
                 <tr data-price="29" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></td>
@@ -2050,11 +1637,6 @@ Other reviews mention the food can be slow.</td>
                     <td class="rating">4</td>
                     <td>125</td>
                     <td class="truncate" title="265 Graham Avenue, Brooklyn, NY 11206">265 Graham Avenue, Brooklyn, NY 11206</td>
-                    <td class="truncate" title="People say this bar and grill offers amazing food, on-point drinks and towers, and a great atmosphere.
-
-Other reviews mention the service can be slow and the food can be incorrectly prepared.">People say this bar and grill offers amazing food, on-point drinks and towers, and a great atmosphere.
-
-Other reviews mention the service can be slow and the food can be incorrectly prepared.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJLS7K_7ZZwokR8b4MjGtTK08" target="_blank">Hotel Alameda</a></td>
@@ -2064,11 +1646,6 @@ Other reviews mention the service can be slow and the food can be incorrectly pr
                     <td class="rating">3.9</td>
                     <td>939</td>
                     <td class="truncate" title="518 W 27th Street, New York, NY 10001">518 W 27th Street, New York, NY 10001</td>
-                    <td class="truncate" title="People say this hotel offers a unique, minimalist, and modern design, and the staff can be friendly and helpful.
-
-Other reviews mention the rooms can be small and the beds can be uncomfortable.">People say this hotel offers a unique, minimalist, and modern design, and the staff can be friendly and helpful.
-
-Other reviews mention the rooms can be small and the beds can be uncomfortable.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr3ytMqpZwokR5c8zqnn6yfU" target="_blank">The Heist</a></td>
@@ -2078,11 +1655,6 @@ Other reviews mention the rooms can be small and the beds can be uncomfortable.<
                     <td class="rating">3.8</td>
                     <td>2711</td>
                     <td class="truncate" title="60 W 37th Street, New York, NY 10018">60 W 37th Street, New York, NY 10018</td>
-                    <td class="truncate" title="People say this hotel offers a complimentary breakfast, snacks, and drinks, and is conveniently located near major attractions and transportation.
-
-Other reviews mention the rooms can be small and the elevators can be slow.">People say this hotel offers a complimentary breakfast, snacks, and drinks, and is conveniently located near major attractions and transportation.
-
-Other reviews mention the rooms can be small and the elevators can be slow.</td>
                 </tr>
                 <tr data-price="59" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJM18AbzxbwokRyun98qk5UXY" target="_blank">Bliss Terasu</a></td>
@@ -2092,7 +1664,6 @@ Other reviews mention the rooms can be small and the elevators can be slow.</td>
                     <td class="rating">3.8</td>
                     <td>26</td>
                     <td class="truncate" title="6 Platt Street, New York, NY 10038">6 Platt Street, New York, NY 10038</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="39" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJIYR8KLtYwokRVrmyrVarDOs" target="_blank">The UES.</a></td>
@@ -2102,11 +1673,6 @@ Other reviews mention the rooms can be small and the elevators can be slow.</td>
                     <td class="rating">3.7</td>
                     <td>683</td>
                     <td class="truncate" title="1707 Second Avenue, New York, NY 10128">1707 Second Avenue, New York, NY 10128</td>
-                    <td class="truncate" title="People say this ice cream shop offers a fun speakeasy concept.
-
-Other reviews mention the service can be slow and the staff can be inattentive.">People say this ice cream shop offers a fun speakeasy concept.
-
-Other reviews mention the service can be slow and the staff can be inattentive.</td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwxspWE5YwokRI0Rnvt2TYg0" target="_blank">Hudson Terrace</a></td>
@@ -2116,11 +1682,6 @@ Other reviews mention the service can be slow and the staff can be inattentive.<
                     <td class="rating">3</td>
                     <td>953</td>
                     <td class="truncate" title="621 West 46th Street, New York, NY 10036">621 West 46th Street, New York, NY 10036</td>
-                    <td class="truncate" title="People say this nightclub offers a fun and energetic atmosphere with great music and a lively crowd.
-
-Other reviews mention the drinks can be overpriced and the service can be slow.">People say this nightclub offers a fun and energetic atmosphere with great music and a lively crowd.
-
-Other reviews mention the drinks can be overpriced and the service can be slow.</td>
                 </tr>
                 <tr data-price="" data-location="brooklyn">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJyWrklTNawokRov9s5-vc4ao" target="_blank">Pearl Street</a></td>
@@ -2130,7 +1691,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="147 Front Street, Brooklyn, NY 11201">147 Front Street, Brooklyn, NY 11201</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></td>
@@ -2140,7 +1700,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="New York, NY">New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJSWHWcMBZwokRnuiJh_NVI3A" target="_blank">Meatpacking District, New York, NY</a></td>
@@ -2150,7 +1709,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="Meatpacking District, New York, NY">Meatpacking District, New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></td>
@@ -2160,7 +1718,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="New York, NY">New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></td>
@@ -2170,7 +1727,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="New York, NY">New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></td>
@@ -2180,7 +1736,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="New York, NY">New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCeKP9jxZwokRfXdsKM41iZE" target="_blank">55 Delancey Street</a></td>
@@ -2190,7 +1745,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="55 Delancey Street, New York, NY, 10002">55 Delancey Street, New York, NY, 10002</td>
-                    <td class="truncate" title=""></td>
                 </tr>
                 <tr data-price="115" data-location="manhattan">
                     <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJOwg_06VPwokRYv534QaPC8g" target="_blank">New York, NY</a></td>
@@ -2200,7 +1754,6 @@ Other reviews mention the drinks can be overpriced and the service can be slow.<
                     <td></td>
                     <td></td>
                     <td class="truncate" title="New York, NY">New York, NY</td>
-                    <td class="truncate" title=""></td>
                 </tr>
             </tbody>
         </table>
