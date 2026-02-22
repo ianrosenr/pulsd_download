@@ -99,6 +99,22 @@
             height: 18px;
             cursor: pointer;
         }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+            background: #e0e0e0;
+            vertical-align: middle;
+        }
+        .badge-new {
+            color: #27ae60;
+        }
+        .badge-existing {
+            color: #f39c12;
+        }
         .borough-group {
             margin-bottom: 12px;
         }
@@ -258,7 +274,7 @@
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 22, 2026 at 10:24 AM EST<br>
+    <div class="timestamp">Last updated: February 22, 2026 at 10:55 AM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -276,6 +292,13 @@
             <div class="checkbox-group">
                 <label><input type="checkbox" id="filterHasPrice" checked> Has Price</label>
                 <label><input type="checkbox" id="filterNoPrice" checked> No Price</label>
+            </div>
+        </div>
+        <div class="filter-section">
+            <label class="filter-label">Status</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="filterNew" checked> New</label>
+                <label><input type="checkbox" id="filterExisting" checked> Existing</label>
             </div>
         </div>
         <div class="filter-section">
@@ -301,8 +324,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Cocktail Brunch For Two, West Village">$49 Cocktail Brunch For Two, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/members-only-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -312,8 +335,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 90Min Bottomless Brunch For Two, Chelsea">$49 90Min Bottomless Brunch For Two, Chelsea</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tara-mor-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -323,8 +346,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Cocktail Brunch For Two In Murray Hill">$49 Cocktail Brunch For Two In Murray Hill</td>
                     <td><a href="https://pulsd.com/new-york/promotions/leslie-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -334,8 +357,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="99" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a></td>
+                <tr data-price="99" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$99 4 Crs Bottomless Brunch For Two, Midtown">$99 4 Crs Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/patiala-indian-grill-and-bar-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>99</td>
@@ -345,8 +368,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, Williamsburg">$49 Bottomless Brunch For Two, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/blackbird-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -356,8 +379,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 SoHo Cocktail Brunch For Two">$49 SoHo Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lindens-arlo-soho-cocktail-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -367,8 +390,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Cocktail Brunch For Two, East Village">$39 Cocktail Brunch For Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/house-of-pasta-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -378,8 +401,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39: 90 Minute Bottomless Brunch For Two">$39: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/barkada-social-club-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -389,8 +412,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 Fiesta Bottomless Brunch For Two">$59 Fiesta Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/amor-loco-bottomless-bunch-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -400,8 +423,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59: 90 Minute Bottomless Brunch For Two">$59: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/charm-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -411,8 +434,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 NY Times-Praised Cocktail Brunch For Two">$59 NY Times-Praised Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/nar-restaurant-cocktail-brunch-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -422,8 +445,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Distillery Jazz &amp; Cocktail Brunch For Two">$49 Distillery Jazz &amp; Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/great-jones-distilling-co-jazz-cocktail-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -433,8 +456,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Greenwich Village Bottomless Brunch For 2">$49 Greenwich Village Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ways-and-means-bottomless-restaurant-greenwich-village-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -444,8 +467,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Queens">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Queens" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 90 Min Bottomless Brunch for Two, Astoria">$49 90 Min Bottomless Brunch for Two, Astoria</td>
                     <td><a href="https://pulsd.com/new-york/promotions/porta-23-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -455,8 +478,8 @@
                     <td></td>
                     <td>Queens</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 French-Style Cocktail Brunch For Two">$49 French-Style Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/les-vagabonds-cocktail-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -466,8 +489,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 For A 2 Hour Bottomless Brunch for Two">$49 For A 2 Hour Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/sultan-mediterranean-cuisine-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -477,8 +500,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="42" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeRjfjoxZwokRNLbxJPsZE-k" target="_blank">Le Jardin Bistro</a></td>
+                <tr data-price="42" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeRjfjoxZwokRNLbxJPsZE-k" target="_blank">Le Jardin Bistro</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$42 For A Cocktail Brunch For Two, LES">$42 For A Cocktail Brunch For Two, LES</td>
                     <td><a href="https://pulsd.com/new-york/promotions/le-jardin-bistro-nyc-brunch-restaurant" target="_blank">View</a></td>
                     <td>42</td>
@@ -488,8 +511,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 90min Bottomless Brunch For Two, Flatiron">$39 90min Bottomless Brunch For Two, Flatiron</td>
                     <td><a href="https://pulsd.com/new-york/promotions/john-devoys-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -499,8 +522,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39: 2 Course Dinner Or Brunch For Two w Sake">$39: 2 Course Dinner Or Brunch For Two w Sake</td>
                     <td><a href="https://pulsd.com/new-york/promotions/kamisama-ramen-dinner-restaurant-east-village-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -510,8 +533,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 For A 3 Course Dinner Or Brunch For Two">$39 For A 3 Course Dinner Or Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/hi-sunny-dinner-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -521,8 +544,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a></td>
+                <tr data-price="" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="54% Off A 90 Minute Bottomless Brunch For Two">54% Off A 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/skinos-mediterranean-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td></td>
@@ -532,8 +555,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 90 Minute Bottomless Brunch For 2, Nolita">$59 90 Minute Bottomless Brunch For 2, Nolita</td>
                     <td><a href="https://pulsd.com/new-york/promotions/balzem-nolita-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -543,8 +566,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 90Min Bottomless Brunch For Two, Astoria">$49 90Min Bottomless Brunch For Two, Astoria</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tootles-and-french-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -554,8 +577,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Boozy Brunch For 2, West Village">$39 Boozy Brunch For 2, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/oscars-place-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -565,8 +588,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch for Two, West Village">$49 Bottomless Brunch for Two, West Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/via-13-bottomless-brunch-restaurant-west-village-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -576,8 +599,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 3 Course Bottomless Brunch For Two">$49 3 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lunella-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -587,8 +610,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Marvelous Cocktail Brunch For Two">$39 Marvelous Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/fusion-hk-hells-kitchen-brunch" target="_blank">View</a></td>
                     <td>39</td>
@@ -598,8 +621,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39: 90 Minute Bottomless Brunch For Two">$39: 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ange-noir-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -609,8 +632,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 For A Luxurious Brunch For Two">$39 For A Luxurious Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/da-capo-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -620,8 +643,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 For A Bottomless Brunch For Two, Midtown">$39 For A Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bombay-grill-house-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -631,8 +654,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 For A Bottomless Brunch For Two, Brooklyn">$29 For A Bottomless Brunch For Two, Brooklyn</td>
                     <td><a href="https://pulsd.com/new-york/promotions/czen-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -642,8 +665,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHbDNDHxZwokRxYe2RtH9WEI" target="_blank">Creatures Rooftop</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHbDNDHxZwokRxYe2RtH9WEI" target="_blank">Creatures Rooftop</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 Rooftop Bottomless Brunch For 2, Chelsea">$59 Rooftop Bottomless Brunch For 2, Chelsea</td>
                     <td><a href="https://pulsd.com/new-york/promotions/creatures-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -653,8 +676,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 Bottomless Brunch For Two, NoMad">$59 Bottomless Brunch For Two, NoMad</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mamazul-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -664,8 +687,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 90m Bottomless Brunch For Two. NoMad">$59 90m Bottomless Brunch For Two. NoMad</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bazar-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -675,8 +698,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="55" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a></td>
+                <tr data-price="55" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$55 Spanish Style Bottomless Brunch For Two">$55 Spanish Style Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pil-pil-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>55</td>
@@ -686,8 +709,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, Williamsburg">$49 Bottomless Brunch For Two, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/casa-andrea-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -697,8 +720,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="Williamsburg" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a></td>
+                <tr data-price="49" data-neighborhood="Williamsburg" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 For A 90 Minute Bottomless Brunch For Two">$49 For A 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/republic-latin-fusion-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -708,8 +731,8 @@
                     <td>Williamsburg</td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Gourmet 90 Min Bottomless Brunch For Two">$49 Gourmet 90 Min Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-stand-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -719,8 +742,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, G Village">$49 Bottomless Brunch For Two, G Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/madam-ji-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -730,8 +753,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 2Hr Bottomless Brunch For 2, Williamsburg">$49 2Hr Bottomless Brunch For 2, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mamasushi-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -741,8 +764,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="45" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a></td>
+                <tr data-price="45" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$45 Luxe Cocktail Brunch For 2, Midtown">$45 Luxe Cocktail Brunch For 2, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bistango-cocktail-brunch-nyc" target="_blank">View</a></td>
                     <td>45</td>
@@ -752,8 +775,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Bottomless Brunch For Two, Midtown">$39 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/jane-doe-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -763,8 +786,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Brunch For Two &amp; Cocktail Trees &amp; More">$39 Brunch For Two &amp; Cocktail Trees &amp; More</td>
                     <td><a href="https://pulsd.com/new-york/promotions/recreation-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -774,8 +797,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 For A 2 Course Bottomless Brunch For Two">$29 For A 2 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mexiterranean-grill-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -785,8 +808,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Greenwich Village Bottomless Brunch For 2">$49 Greenwich Village Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/tio-pepe-bottomless-brunch-restaurant-greenwich-village-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -796,8 +819,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, LIC">$49 Bottomless Brunch For Two, LIC</td>
                     <td><a href="https://pulsd.com/new-york/promotions/dive-bar-lic-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -807,8 +830,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, East Village">$49 Bottomless Brunch For Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/ichibantei-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -818,8 +841,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Upper East Side Cocktail Brunch For Two">$49 Upper East Side Cocktail Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/amali-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -829,8 +852,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Bottomless Brunch For Two, UES">$39 Bottomless Brunch For Two, UES</td>
                     <td><a href="https://pulsd.com/new-york/promotions/a-la-turka-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -840,8 +863,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Glamorous Cocktail Brunch For Two In SoHo">$39 Glamorous Cocktail Brunch For Two In SoHo</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-otter-brunch-restaurant-soho-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -851,8 +874,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 For A 2 Hour Bottomless Brunch For Two">$39 For A 2 Hour Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/au-bar-56-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -862,8 +885,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 90m Bottomless Brunch For 2, Williamsburg">$39 90m Bottomless Brunch For 2, Williamsburg</td>
                     <td><a href="https://pulsd.com/new-york/promotions/mexico-2000-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -873,8 +896,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 2Crs Boozy Cocktail Brunch For 2, Hoboken">$29 2Crs Boozy Cocktail Brunch For 2, Hoboken</td>
                     <td><a href="https://pulsd.com/new-york/promotions/madd-hatter-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -884,8 +907,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 Rooftop Bottomless Brunch For Two">$59 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/elsie-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -895,8 +918,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 For A 90 Minute Bottomless Brunch for Two">$49 For A 90 Minute Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lagos-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -906,8 +929,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, FiDi">$49 Bottomless Brunch For Two, FiDi</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-fidi-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -917,8 +940,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, Midtown">$49 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-36th-street-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -928,8 +951,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch For Two, Midtown">$49 Bottomless Brunch For Two, Midtown</td>
                     <td><a href="https://pulsd.com/new-york/promotions/clinton-hall-51st-street-restaurant-bottomless-brunch-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -939,8 +962,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 For A 90 Minute Bottomless Brunch For Two">$49 For A 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/la-palapa-nyc-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -950,8 +973,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="45" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></td>
+                <tr data-price="45" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$45 Cocktail Brunch For Two, UWS">$45 Cocktail Brunch For Two, UWS</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pappardella-cocktail-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>45</td>
@@ -961,8 +984,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="39" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></td>
+                <tr data-price="39" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$39 Rooftop Bottomless Brunch For Two">$39 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/bourbon-street-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>39</td>
@@ -972,8 +995,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 NYT Praised 2Hour Bottomless Brunch For 2">$29 NYT Praised 2Hour Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/jalao-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -983,8 +1006,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="Washington Heights" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Radio Restaurant</a></td>
+                <tr data-price="29" data-neighborhood="Washington Heights" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Radio Restaurant</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29: 2 Hour Bottomless Brunch For Two">$29: 2 Hour Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/radio-restaurant-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -994,8 +1017,8 @@
                     <td>Washington Heights</td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 Bottomless Jazz Brunch For Two">$29 Bottomless Jazz Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/the-ivy-room-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -1005,8 +1028,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Queens">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Queens" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 90m Rooftop Bottomless Brunch For Two">$59 90m Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lighthouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -1016,8 +1039,8 @@
                     <td></td>
                     <td>Queens</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Bottomless Brunch for Two, East Village">$49 Bottomless Brunch for Two, East Village</td>
                     <td><a href="https://pulsd.com/new-york/promotions/h-and-h-cantina-bottomless-brunch-restaurant-east-village-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -1027,8 +1050,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Epic 90 Minute Bottomless Brunch For Two">$49 Epic 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pink-taco-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -1038,8 +1061,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 For A 2 Course Bottomless Brunch For Two">$29 For A 2 Course Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/pita-and-beyond-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -1049,8 +1072,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="89" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a></td>
+                <tr data-price="89" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$89 Caviar+Oysters Brunch For 2 &amp; Bubbly">$89 Caviar+Oysters Brunch For 2 &amp; Bubbly</td>
                     <td><a href="https://pulsd.com/new-york/promotions/number-one-caviar-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>89</td>
@@ -1060,8 +1083,8 @@
                     <td></td>
                     <td>Manhattan</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="Queens">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="Queens" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Gorgeous Bottomless Brunch for Two">$49 Gorgeous Bottomless Brunch for Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/lowkey-garden-lounge-bottomless-brunch" target="_blank">View</a></td>
                     <td>49</td>
@@ -1071,8 +1094,8 @@
                     <td></td>
                     <td>Queens</td>
                 </tr>
-                <tr data-price="49" data-neighborhood="" data-borough="">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></td>
+                <tr data-price="49" data-neighborhood="" data-borough="" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$49 Rooftop 90 Minute Bottomless Brunch For 2">$49 Rooftop 90 Minute Bottomless Brunch For 2</td>
                     <td><a href="https://pulsd.com/new-york/promotions/boathouse-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>49</td>
@@ -1082,8 +1105,8 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr data-price="29" data-neighborhood="" data-borough="Brooklyn">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></td>
+                <tr data-price="29" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$29 90 Minute Bottomless Brunch For Two">$29 90 Minute Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/guesthouse-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>29</td>
@@ -1093,8 +1116,8 @@
                     <td></td>
                     <td>Brooklyn</td>
                 </tr>
-                <tr data-price="59" data-neighborhood="" data-borough="Manhattan">
-                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a></td>
+                <tr data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
+                    <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a><span class="badge badge-existing">EXISTING</span></td>
                     <td class="truncate" title="$59 Rooftop Bottomless Brunch For Two">$59 Rooftop Bottomless Brunch For Two</td>
                     <td><a href="https://pulsd.com/new-york/promotions/highkey-rainforest-rooftop-bottomless-brunch-restaurant-nyc" target="_blank">View</a></td>
                     <td>59</td>
@@ -1109,9 +1132,9 @@
     </div>
 
     <div class="cards-container">
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMXm83Y9ZwokROLEYiGaLT7U" target="_blank">Members Only West Village</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">5 (32)</span>
             </div>
             <div class="card-deal">$49 Cocktail Brunch For Two, West Village</div>
@@ -1121,9 +1144,9 @@
             </div>
             <div class="card-address">53 W 8th Street, New York, NY 10011</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ20Lo8cdZwokRyW0EGwA-wwk" target="_blank">Tara Mór</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.9 (480)</span>
             </div>
             <div class="card-deal">$49 90Min Bottomless Brunch For Two, Chelsea</div>
@@ -1133,9 +1156,9 @@
             </div>
             <div class="card-address">150 West 30th Street, New York, NY 10001</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYcGyXqRZwokRAaRMRCbyK3Y" target="_blank">Leslie</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.9 (36)</span>
             </div>
             <div class="card-deal">$49 Cocktail Brunch For Two In Murray Hill</div>
@@ -1145,9 +1168,9 @@
             </div>
             <div class="card-address">514 3rd Ave, New York, NY 10016</div>
         </div>
-        <div class="card" data-price="99" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="99" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVfiHVG1ZwokROzwlNbvn0TI" target="_blank">Patiala Indian Grill &amp; Bar</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.8 (3954)</span>
             </div>
             <div class="card-deal">$99 4 Crs Bottomless Brunch For Two, Midtown</div>
@@ -1157,9 +1180,9 @@
             </div>
             <div class="card-address">240 W 35th Street, New York, NY 10001</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4w35kuNbwokRZiWBvg9LErk" target="_blank">Blackbird</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.8 (16)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, Williamsburg</div>
@@ -1169,9 +1192,9 @@
             </div>
             <div class="card-address">428 S 5th Street, Brooklyn, NY 11211</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-oPySxZwokRBTfrxwTdRo4" target="_blank">Lindens</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.8 (902)</span>
             </div>
             <div class="card-deal">$49 SoHo Cocktail Brunch For Two</div>
@@ -1181,9 +1204,9 @@
             </div>
             <div class="card-address">2 Renwick Street, New York, NY 10013</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8aHLpR9ZwokRvJa7UWwQWY8" target="_blank">House of Pasta</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.8 (338)</span>
             </div>
             <div class="card-deal">$39 Cocktail Brunch For Two, East Village</div>
@@ -1193,9 +1216,9 @@
             </div>
             <div class="card-address">511 E 12th Street, New York, NY 10009</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJT1BhMQpfwokRi3rOsB0QErg" target="_blank">Barkada Social Club</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.8 (100)</span>
             </div>
             <div class="card-deal">$39: 90 Minute Bottomless Brunch For Two</div>
@@ -1205,9 +1228,9 @@
             </div>
             <div class="card-address">33-05 Broadway, Astoria, NY 11106</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ3ej3nFVYwokRzAPIjwtNjg4" target="_blank">Amor Loco</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (4212)</span>
             </div>
             <div class="card-deal">$59 Fiesta Bottomless Brunch For Two</div>
@@ -1217,9 +1240,9 @@
             </div>
             <div class="card-address">134 W 46th Street, New York, NY 10036</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgRd23gFbwokRFaACKwWIF7E" target="_blank">Charm Restaurant</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (3588)</span>
             </div>
             <div class="card-deal">$59: 90 Minute Bottomless Brunch For Two</div>
@@ -1229,9 +1252,9 @@
             </div>
             <div class="card-address">448 Dean Street, Brooklyn, NY 11217</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8R5wA4RZwokRVizBFaqM9EA" target="_blank">Nar Restaurant</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (631)</span>
             </div>
             <div class="card-deal">$59 NY Times-Praised Cocktail Brunch For Two</div>
@@ -1241,9 +1264,9 @@
             </div>
             <div class="card-address">34 E 20th Street, New York, NY 10003</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6oErCtZwokRb93Ge4wsE1E" target="_blank">Great Jones Distilling Co.</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (691)</span>
             </div>
             <div class="card-deal">$49 Distillery Jazz &amp; Cocktail Brunch For Two</div>
@@ -1253,9 +1276,9 @@
             </div>
             <div class="card-address">686 Broadway, New York, NY 10012</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHzLX85FZwokRxM9KZpgq6Qk" target="_blank">Ways &amp; Means</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (88)</span>
             </div>
             <div class="card-deal">$49 Greenwich Village Bottomless Brunch For 2</div>
@@ -1265,9 +1288,9 @@
             </div>
             <div class="card-address">167 Bleecker Street, New York, NY, 10012</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Queens">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Queens" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJufkQ_9pfwokRe8KcMNHEBLI" target="_blank">Porta 23</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (162)</span>
             </div>
             <div class="card-deal">$49 90 Min Bottomless Brunch for Two, Astoria</div>
@@ -1277,9 +1300,9 @@
             </div>
             <div class="card-address">29-17 23rd Avenue, Queens, NY 11105</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ9Ys7ITRZwokRZNYotQuTh8w" target="_blank">Les Vagabonds</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (99)</span>
             </div>
             <div class="card-deal">$49 French-Style Cocktail Brunch For Two</div>
@@ -1289,9 +1312,9 @@
             </div>
             <div class="card-address">1070 1st Avenue, New York, NY 10022</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJwdUZEpJZwokRzXGd9L-ENg4" target="_blank">Sultan Mediterranean Cuisine</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (682)</span>
             </div>
             <div class="card-deal">$49 For A 2 Hour Bottomless Brunch for Two</div>
@@ -1301,9 +1324,9 @@
             </div>
             <div class="card-address">791 Lexington Avenue, New York NY 10065</div>
         </div>
-        <div class="card" data-price="42" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="42" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeRjfjoxZwokRNLbxJPsZE-k" target="_blank">Le Jardin Bistro</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJeRjfjoxZwokRNLbxJPsZE-k" target="_blank">Le Jardin Bistro</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (253)</span>
             </div>
             <div class="card-deal">$42 For A Cocktail Brunch For Two, LES</div>
@@ -1313,9 +1336,9 @@
             </div>
             <div class="card-address">95 Delancey Street, New York, NY 10002</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ8UqoBQBZwokR4_OGLJj9VPo" target="_blank">John Devoy&#x27;s</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (134)</span>
             </div>
             <div class="card-deal">$39 90min Bottomless Brunch For Two, Flatiron</div>
@@ -1325,9 +1348,9 @@
             </div>
             <div class="card-address">377 Park Avenue South, New York, NY 10016</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ4TY4of5ZwokR_cF3P9pBENw" target="_blank">Kamisama Ramen</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (319)</span>
             </div>
             <div class="card-deal">$39: 2 Course Dinner Or Brunch For Two w Sake</div>
@@ -1337,9 +1360,9 @@
             </div>
             <div class="card-address">230 E 14th Street, New York, NY 10003</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDXAddMlZwokRzNN6hu7bENc" target="_blank">Hi Sunny</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.7 (462)</span>
             </div>
             <div class="card-deal">$39 For A 3 Course Dinner Or Brunch For Two</div>
@@ -1349,9 +1372,9 @@
             </div>
             <div class="card-address">342 7th Avenue, New York, NY 10001</div>
         </div>
-        <div class="card" data-price="" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJQV4litZbwokRPc2qPtWjFsw" target="_blank">Skinos Mediterranean</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.6 (1746)</span>
             </div>
             <div class="card-deal">54% Off A 90 Minute Bottomless Brunch For Two</div>
@@ -1361,9 +1384,9 @@
             </div>
             <div class="card-address">123 Washington Street, New York, NY 10006</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJa128pIhZwokRnoPKJguYBCA" target="_blank">Balzem</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.6 (1534)</span>
             </div>
             <div class="card-deal">$59 90 Minute Bottomless Brunch For 2, Nolita</div>
@@ -1373,9 +1396,9 @@
             </div>
             <div class="card-address">202 Mott Street, New York, NY 10012</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJDxoRVI5fwokRe7CFVS6EWCI" target="_blank">Tootles &amp; French</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.6 (338)</span>
             </div>
             <div class="card-deal">$49 90Min Bottomless Brunch For Two, Astoria</div>
@@ -1385,9 +1408,9 @@
             </div>
             <div class="card-address">3615 Ditmars Boulevard , Astoria, NY 11105</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJYYVGLZNZwokRJGxEfwiqq4A" target="_blank">Oscar&#x27;s Place</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.6 (362)</span>
             </div>
             <div class="card-deal">$39 Boozy Brunch For 2, West Village</div>
@@ -1397,9 +1420,9 @@
             </div>
             <div class="card-address">466 Hudson Street , New York, NY 10014</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJW_42IpZZwokRIUPgfzLhxCg" target="_blank">Via 13</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (1225)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch for Two, West Village</div>
@@ -1409,9 +1432,9 @@
             </div>
             <div class="card-address">140 West 13th Street, New York, NY 10011</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJCcDXV4hZwokRhHninUj94_o" target="_blank">Lunella</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (2022)</span>
             </div>
             <div class="card-deal">$49 3 Course Bottomless Brunch For Two</div>
@@ -1421,9 +1444,9 @@
             </div>
             <div class="card-address">173 Mulberry Street, New York, NY 10013</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5cyRrlFYwokRFTRhsMQzm-E" target="_blank">Fusion HK</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (1013)</span>
             </div>
             <div class="card-deal">$39 Marvelous Cocktail Brunch For Two</div>
@@ -1433,9 +1456,9 @@
             </div>
             <div class="card-address">688 10th Avenue, New York, NY 10019</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJkb_VyABcwokRtZ1kyBrtV30" target="_blank">Ange Noir</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (439)</span>
             </div>
             <div class="card-deal">$39: 90 Minute Bottomless Brunch For Two</div>
@@ -1445,9 +1468,9 @@
             </div>
             <div class="card-address">247 Varet Street, Brooklyn, NY 11206</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJFfd0TolYwokRNGGQO3ualC4" target="_blank">Da Capo</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (505)</span>
             </div>
             <div class="card-deal">$39 For A Luxurious Brunch For Two</div>
@@ -1457,9 +1480,9 @@
             </div>
             <div class="card-address">322 Columbus Avenue, New York, NY 10023</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJKTBsN1dYwokRVtIJyHOh84Y" target="_blank">Bombay Grill House</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (1371)</span>
             </div>
             <div class="card-deal">$39 For A Bottomless Brunch For Two, Midtown</div>
@@ -1469,9 +1492,9 @@
             </div>
             <div class="card-address">764 9th Avenue, New York, NY 10019</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJXV940sNdwokR7Z56ISzYiiQ" target="_blank">CZEN Restaurant</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.5 (1169)</span>
             </div>
             <div class="card-deal">$29 For A Bottomless Brunch For Two, Brooklyn</div>
@@ -1481,9 +1504,9 @@
             </div>
             <div class="card-address">4410 Avenue H, Brooklyn, NY 11234</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHbDNDHxZwokRxYe2RtH9WEI" target="_blank">Creatures Rooftop</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHbDNDHxZwokRxYe2RtH9WEI" target="_blank">Creatures Rooftop</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (251)</span>
             </div>
             <div class="card-deal">$59 Rooftop Bottomless Brunch For 2, Chelsea</div>
@@ -1493,9 +1516,9 @@
             </div>
             <div class="card-address">518 W 27th Street, New York, NY 10001</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJafe8xpxZwokRMi8VezCpLWs" target="_blank">Mamazul</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1274)</span>
             </div>
             <div class="card-deal">$59 Bottomless Brunch For Two, NoMad</div>
@@ -1505,9 +1528,9 @@
             </div>
             <div class="card-address">1155 Broadway, New York, NY 10001</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ60c5xqVZwokRv6aAYl8hT6s" target="_blank">Bazar NoMad</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1226)</span>
             </div>
             <div class="card-deal">$59 90m Bottomless Brunch For Two. NoMad</div>
@@ -1517,9 +1540,9 @@
             </div>
             <div class="card-address">31 W 26th Street, New York, NY 10010</div>
         </div>
-        <div class="card" data-price="55" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="55" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh-ZRBb9YwokRSMkUC8lETk4" target="_blank">Pil Pil</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1343)</span>
             </div>
             <div class="card-deal">$55 Spanish Style Bottomless Brunch For Two</div>
@@ -1529,9 +1552,9 @@
             </div>
             <div class="card-address">265 E 78th Street, New York, NY 10075</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB9j7w5JZwokRoGHDQhoKU20" target="_blank">Casa Andrea</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (268)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, Williamsburg</div>
@@ -1541,9 +1564,9 @@
             </div>
             <div class="card-address">318 Grand Street , Brooklyn, NY 11211</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="Williamsburg" data-borough="Brooklyn">
+        <div class="card" data-price="49" data-neighborhood="Williamsburg" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJn0_pmCpZwokRAnOcDOHTook" target="_blank">Republic Latin Fusion</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1494)</span>
             </div>
             <div class="card-deal">$49 For A 90 Minute Bottomless Brunch For Two</div>
@@ -1553,9 +1576,9 @@
             </div>
             <div class="card-address">181 N 10th Street, Brooklyn, NY 11211</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgWBWFaBZwokRfOWdBPY5Y0o" target="_blank">The Stand</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1686)</span>
             </div>
             <div class="card-deal">$49 Gourmet 90 Min Bottomless Brunch For Two</div>
@@ -1565,9 +1588,9 @@
             </div>
             <div class="card-address">116 East 16th Street, New York, NY, 10003</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJVW-L45FZwokRjQ6Hizt0OdQ" target="_blank">Madam Ji Ki Shaadi</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (1007)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, G Village</div>
@@ -1577,9 +1600,9 @@
             </div>
             <div class="card-address">154 Bleecker Street , New York, NY 10012</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJPw_XFmNbwokRgp3j3Ku1ph8" target="_blank">MamaSushi</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (238)</span>
             </div>
             <div class="card-deal">$49 2Hr Bottomless Brunch For 2, Williamsburg</div>
@@ -1589,9 +1612,9 @@
             </div>
             <div class="card-address">391 Hooper Street, Brooklyn, NY 11211</div>
         </div>
-        <div class="card" data-price="45" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="45" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJr2lx0_xYwokR8TKjMpDfSKI" target="_blank">Bistango At The Kimberly Hotel</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (626)</span>
             </div>
             <div class="card-deal">$45 Luxe Cocktail Brunch For 2, Midtown</div>
@@ -1601,9 +1624,9 @@
             </div>
             <div class="card-address">145 East 50th Street, New York, NY 10022</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMT4J9YxZwokRdsL4E3FCm4o" target="_blank">Jane Doe</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (423)</span>
             </div>
             <div class="card-deal">$39 Bottomless Brunch For Two, Midtown</div>
@@ -1613,9 +1636,9 @@
             </div>
             <div class="card-address">12 West 44th St, New York, NY. 10036</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJMZp8OMRbwokRj7Ky0oSz8RA" target="_blank">Recreation</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (330)</span>
             </div>
             <div class="card-deal">$39 Brunch For Two &amp; Cocktail Trees &amp; More</div>
@@ -1625,9 +1648,9 @@
             </div>
             <div class="card-address">26 Ann Street, New York, NY 10038</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJO-K7_39ZwokROvz-ULpMp34" target="_blank">Mexiterranean Grill</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.4 (123)</span>
             </div>
             <div class="card-deal">$29 For A 2 Course Bottomless Brunch For Two</div>
@@ -1637,9 +1660,9 @@
             </div>
             <div class="card-address">1365 1st Avenue, New York, NY 10021</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ06Eo6ZNZwokR_ngr5nAD7do" target="_blank">Tio Pepe</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (647)</span>
             </div>
             <div class="card-deal">$49 Greenwich Village Bottomless Brunch For 2</div>
@@ -1649,9 +1672,9 @@
             </div>
             <div class="card-address">168 West 4th Street, New York, NY 10014</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJgW6HQC5fwokR42jmVsRBi_g" target="_blank">Dive Bar LIC</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (445)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, LIC</div>
@@ -1661,9 +1684,9 @@
             </div>
             <div class="card-address">33-10 36th Avenue, Long Island City, NY 11106</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ5dru_nVZwokRarWwk6cjQZk" target="_blank">Ichibantei</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (673)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, East Village</div>
@@ -1673,9 +1696,9 @@
             </div>
             <div class="card-address">100 3rd Avenue, New York, NY 10003</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJB6L7g-9YwokRTm44C_ToKdw" target="_blank">Amali</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (551)</span>
             </div>
             <div class="card-deal">$49 Upper East Side Cocktail Brunch For Two</div>
@@ -1685,9 +1708,9 @@
             </div>
             <div class="card-address">115 E 60th Street, New York, NY 10022</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJdTrzacBYwokR6DHjw1ICQ7k" target="_blank">A La Turka</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (1149)</span>
             </div>
             <div class="card-deal">$39 Bottomless Brunch For Two, UES</div>
@@ -1697,9 +1720,9 @@
             </div>
             <div class="card-address">1417 2nd Avenue, New York, NY 10021</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJl5_OCABZwokRkvjEfEkyuZo" target="_blank">The Otter</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (89)</span>
             </div>
             <div class="card-deal">$39 Glamorous Cocktail Brunch For Two In SoHo</div>
@@ -1709,9 +1732,9 @@
             </div>
             <div class="card-address">58 Thompson Street , New York, NY 10012</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJoQZ9QABZwokRAV-9s9mE0oA" target="_blank">Au Bar 56</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (109)</span>
             </div>
             <div class="card-deal">$39 For A 2 Hour Bottomless Brunch For Two</div>
@@ -1721,9 +1744,9 @@
             </div>
             <div class="card-address">235 W 56th Street, New York, NY 10019</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ7xXhQOFbwokRNqSumbuRZCo" target="_blank">Mexico 2000</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (748)</span>
             </div>
             <div class="card-deal">$39 90m Bottomless Brunch For 2, Williamsburg</div>
@@ -1733,9 +1756,9 @@
             </div>
             <div class="card-address">369 Broadway, Brooklyn, NY 11211</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6o1fl9XwokRcJ2k4m-_g5k" target="_blank">Madd Hatter</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.3 (3341)</span>
             </div>
             <div class="card-deal">$29 2Crs Boozy Cocktail Brunch For 2, Hoboken</div>
@@ -1745,9 +1768,9 @@
             </div>
             <div class="card-address">221 Washington Street, Hoboken, NJ 07030</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ0Q7xqoBZwokRkrPoL2Es1X0" target="_blank">Elsie Rooftop</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (1604)</span>
             </div>
             <div class="card-deal">$59 Rooftop Bottomless Brunch For Two</div>
@@ -1757,9 +1780,9 @@
             </div>
             <div class="card-address">1412 Broadway, 25th Floor, New York, NY 10018</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJG9u1qKtZwokR28mb77l_8Jc" target="_blank">Lagos</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (2612)</span>
             </div>
             <div class="card-deal">$49 For A 90 Minute Bottomless Brunch for Two</div>
@@ -1769,9 +1792,9 @@
             </div>
             <div class="card-address">727 7th Avenue, New York, NY 10019</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJzyOU_BBawokRj4LQDcuFZkQ" target="_blank">Clinton Hall FiDi</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (1906)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, FiDi</div>
@@ -1781,9 +1804,9 @@
             </div>
             <div class="card-address">90 Washington Street, New York, NY 10006</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJm-vmZ5ZZwokR7AGwkewhZjY" target="_blank">Clinton Hall 36th Street</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (795)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, Midtown</div>
@@ -1793,9 +1816,9 @@
             </div>
             <div class="card-address">16 W 36th Street, New York, NY 10018</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJaVwcHeNYwokRwKSg3P_3-fc" target="_blank">Clinton Hall</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (648)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch For Two, Midtown</div>
@@ -1805,9 +1828,9 @@
             </div>
             <div class="card-address">230 E 51st Street, New York, NY 10022</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJv-yiA51ZwokRfkf4YagKlPs" target="_blank">La Palapa</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (781)</span>
             </div>
             <div class="card-deal">$49 For A 90 Minute Bottomless Brunch For Two</div>
@@ -1817,9 +1840,9 @@
             </div>
             <div class="card-address">77 St. Marks Place, New York, NY 10003</div>
         </div>
-        <div class="card" data-price="45" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="45" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJN2DMVolYwokRZ3RY3IbatuA" target="_blank">Pappardella</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (1585)</span>
             </div>
             <div class="card-deal">$45 Cocktail Brunch For Two, UWS</div>
@@ -1829,9 +1852,9 @@
             </div>
             <div class="card-address">316 Columbus Avenue, New York, NY</div>
         </div>
-        <div class="card" data-price="39" data-neighborhood="" data-borough="">
+        <div class="card" data-price="39" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJHTgcB-BhwokRX4X5whEgijg" target="_blank">Bourbon Street</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (2420)</span>
             </div>
             <div class="card-deal">$39 Rooftop Bottomless Brunch For Two</div>
@@ -1841,9 +1864,9 @@
             </div>
             <div class="card-address">40-12 Bell Boulevard, Bayside, NY 11361</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Jalao</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (1085)</span>
             </div>
             <div class="card-deal">$29 NYT Praised 2Hour Bottomless Brunch For 2</div>
@@ -1853,9 +1876,9 @@
             </div>
             <div class="card-address">2420 Amsterdam Avenue, New York, NY 10033</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="Washington Heights" data-borough="Manhattan">
+        <div class="card" data-price="29" data-neighborhood="Washington Heights" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Radio Restaurant</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6rqPh_0wokRYx9DPUPrCJs" target="_blank">Radio Restaurant</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (1085)</span>
             </div>
             <div class="card-deal">$29: 2 Hour Bottomless Brunch For Two</div>
@@ -1865,9 +1888,9 @@
             </div>
             <div class="card-address">2420 Amsterdam Avenue, New York, NY 10033</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJD9KyfW1ZwokRzBn50hfrqfI" target="_blank">The Ivy Room</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.2 (131)</span>
             </div>
             <div class="card-deal">$29 Bottomless Jazz Brunch For Two</div>
@@ -1877,9 +1900,9 @@
             </div>
             <div class="card-address">420 Park Ave South, New York, NY 10016</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Queens">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Queens" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnduXzuVfwokRk2VE0PeUdmM" target="_blank">Lighthouse Rooftop</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.1 (878)</span>
             </div>
             <div class="card-deal">$59 90m Rooftop Bottomless Brunch For Two</div>
@@ -1889,9 +1912,9 @@
             </div>
             <div class="card-address">45-15 37th Street, Queens, NY 11101</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJh_aRQHJZwokRUwOFiLymiZI" target="_blank">H&amp;H Cantina</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.1 (16)</span>
             </div>
             <div class="card-deal">$49 Bottomless Brunch for Two, East Village</div>
@@ -1901,9 +1924,9 @@
             </div>
             <div class="card-address">103 1st Avenue, New York, NY 10003</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJz_FvxaxZwokRArGOxX89Z0I" target="_blank">Pink Taco</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.1 (1368)</span>
             </div>
             <div class="card-deal">$49 Epic 90 Minute Bottomless Brunch For Two</div>
@@ -1913,9 +1936,9 @@
             </div>
             <div class="card-address">7 Times Square, New York, NY 10036</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnWerUIlZwokRhcxFGy7MgEM" target="_blank">Pita &amp; Beyond</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4.1 (222)</span>
             </div>
             <div class="card-deal">$29 For A 2 Course Bottomless Brunch For Two</div>
@@ -1925,9 +1948,9 @@
             </div>
             <div class="card-address">417 3rd Avenue, New York, NY 10016</div>
         </div>
-        <div class="card" data-price="89" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="89" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ2WPZKQlbwokRP85eL6NuRwE" target="_blank">Number One Caviar</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4 (120)</span>
             </div>
             <div class="card-deal">$89 Caviar+Oysters Brunch For 2 &amp; Bubbly</div>
@@ -1937,9 +1960,9 @@
             </div>
             <div class="card-address">14 Wall Street, New York, NY 10005</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="Queens">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="Queens" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJq6XOXS9fwokR40Kx0KrHhf0" target="_blank">Lowkey Garden Lounge</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4 (443)</span>
             </div>
             <div class="card-deal">$49 Gorgeous Bottomless Brunch for Two</div>
@@ -1949,9 +1972,9 @@
             </div>
             <div class="card-address">70-15 Austin Street, Queens, NY 11375</div>
         </div>
-        <div class="card" data-price="49" data-neighborhood="" data-borough="">
+        <div class="card" data-price="49" data-neighborhood="" data-borough="" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJfUhLwslfwokRqaOntngqnRE" target="_blank">Boathouse Rooftop</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4 (108)</span>
             </div>
             <div class="card-deal">$49 Rooftop 90 Minute Bottomless Brunch For 2</div>
@@ -1961,9 +1984,9 @@
             </div>
             <div class="card-address">32-72 Steinway Street, Astoria, NY 11103</div>
         </div>
-        <div class="card" data-price="29" data-neighborhood="" data-borough="Brooklyn">
+        <div class="card" data-price="29" data-neighborhood="" data-borough="Brooklyn" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJP4wdOFZZwokRGUUMsXcwWv0" target="_blank">GuestHouse</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">4 (137)</span>
             </div>
             <div class="card-deal">$29 90 Minute Bottomless Brunch For Two</div>
@@ -1973,9 +1996,9 @@
             </div>
             <div class="card-address">265 Graham Avenue, Brooklyn, NY 11206</div>
         </div>
-        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan">
+        <div class="card" data-price="59" data-neighborhood="" data-borough="Manhattan" data-status="existing">
             <div class="card-header">
-                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a></span>
+                <span class="card-name"><a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJnT4Nc_pbwokRJP-nF525duk" target="_blank">Highkey Rainforest Rooftop</a><span class="badge badge-existing">EXISTING</span></span>
                 <span class="card-rating">3.9 (702)</span>
             </div>
             <div class="card-deal">$59 Rooftop Bottomless Brunch For Two</div>
@@ -1995,6 +2018,8 @@
         const cards = document.querySelectorAll('.cards-container .card');
         const filterHasPrice = document.getElementById('filterHasPrice');
         const filterNoPrice = document.getElementById('filterNoPrice');
+        const filterNew = document.getElementById('filterNew');
+        const filterExisting = document.getElementById('filterExisting');
         const neighborhoodFiltersContainer = document.getElementById('neighborhoodFilters');
 
         // Build neighborhood data grouped by borough
@@ -2077,6 +2102,8 @@
 
             const showHasPrice = filterHasPrice.checked;
             const showNoPrice = filterNoPrice.checked;
+            const showNew = filterNew.checked;
+            const showExisting = filterExisting.checked;
 
             // Build set of selected neighborhoods and boroughs
             const selectedNeighborhoods = new Set();
@@ -2100,10 +2127,12 @@
                 const price = element.dataset.price;
                 const neighborhood = element.dataset.neighborhood;
                 const borough = element.dataset.borough || 'Other';
+                const status = element.dataset.status;
                 const hasPrice = price !== '';
 
                 const priceRangeOk = !hasPrice || parseInt(price) <= maxPrice;
                 const priceExistsOk = (hasPrice && showHasPrice) || (!hasPrice && showNoPrice);
+                const statusOk = (status === 'new' && showNew) || (status === 'existing' && showExisting);
 
                 // Location filter: check neighborhood first, fall back to borough
                 let locationOk = false;
@@ -2113,7 +2142,7 @@
                     locationOk = true;
                 }
 
-                return priceRangeOk && priceExistsOk && locationOk;
+                return priceRangeOk && priceExistsOk && locationOk && statusOk;
             }
 
             rows.forEach(row => {
@@ -2139,6 +2168,8 @@
         slider.addEventListener('input', applyFilters);
         filterHasPrice.addEventListener('change', applyFilters);
         filterNoPrice.addEventListener('change', applyFilters);
+        filterNew.addEventListener('change', applyFilters);
+        filterExisting.addEventListener('change', applyFilters);
         applyFilters();
     </script>
 </body>
