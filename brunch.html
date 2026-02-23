@@ -379,7 +379,7 @@
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 22, 2026 at 07:20 PM EST<br>
+    <div class="timestamp">Last updated: February 22, 2026 at 07:23 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -2216,11 +2216,12 @@
         orderedBoroughs.forEach(borough => {
             const clr = colorClass[borough] || 'clr-other';
             const count = boroughCounts[borough] || 0;
-            activeBoroughs.add(borough);
+            const isDefault = borough === 'Manhattan';
+            if (isDefault) activeBoroughs.add(borough);
 
             // Tab button
             const tab = document.createElement('div');
-            tab.className = `borough-tab active ${clr}`;
+            tab.className = `borough-tab ${isDefault ? 'active' : ''} ${clr}`;
             tab.dataset.borough = borough;
             tab.innerHTML = `${borough}<span class="tab-count">(${count})</span>`;
             tab.addEventListener('click', () => toggleBorough(borough));
@@ -2247,10 +2248,10 @@
                 const srCount = subregionCounts[key] || 0;
                 if (srCount === 0) continue; // Skip subregions with no data
 
-                activeSubregions.add(key);
+                if (isDefault) activeSubregions.add(key);
 
                 const chip = document.createElement('div');
-                chip.className = 'subregion-chip active';
+                chip.className = `subregion-chip ${isDefault ? 'active' : ''}`;
                 chip.dataset.key = key;
                 chip.dataset.borough = borough;
                 chip.innerHTML = `${subregion} <span class="chip-count">${srCount}</span>`;
@@ -2262,9 +2263,9 @@
             const otherKey = borough + '::Other';
             const otherCount = subregionCounts[otherKey] || 0;
             if (otherCount > 0) {
-                activeSubregions.add(otherKey);
+                if (isDefault) activeSubregions.add(otherKey);
                 const chip = document.createElement('div');
-                chip.className = 'subregion-chip active';
+                chip.className = `subregion-chip ${isDefault ? 'active' : ''}`;
                 chip.dataset.key = otherKey;
                 chip.dataset.borough = borough;
                 chip.innerHTML = `Other <span class="chip-count">${otherCount}</span>`;
