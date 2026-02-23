@@ -115,38 +115,133 @@
         .badge-existing {
             color: #f39c12;
         }
-        .borough-group {
+        .borough-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
             margin-bottom: 12px;
         }
-        .borough-header {
+        .borough-tab {
+            padding: 8px 18px;
+            border-radius: 20px;
             font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            background: white;
+            color: #666;
+            transition: all 0.2s ease;
+            user-select: none;
+            position: relative;
+        }
+        .borough-tab:hover {
+            border-color: #bbb;
+        }
+        .borough-tab.active {
+            color: white;
+            border-color: transparent;
+        }
+        .borough-tab .tab-count {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-left: 4px;
+        }
+        .borough-tab.active.clr-manhattan { background: #3498db; }
+        .borough-tab.active.clr-brooklyn { background: #27ae60; }
+        .borough-tab.active.clr-queens { background: #e67e22; }
+        .borough-tab.active.clr-bronx { background: #9b59b6; }
+        .borough-tab.active.clr-staten-island { background: #e74c3c; }
+        .borough-tab.active.clr-other { background: #95a5a6; }
+        .subregion-panel {
+            display: none;
+            padding: 12px 0;
+        }
+        .subregion-panel.open {
+            display: block;
+        }
+        .subregion-borough-label {
+            font-weight: 600;
+            font-size: 13px;
             color: #2c3e50;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+        }
+        .subregion-actions {
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .subregion-actions a {
             cursor: pointer;
+            color: #3498db;
+            text-decoration: none;
         }
-        .borough-header input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
+        .subregion-actions a:hover {
+            text-decoration: underline;
         }
-        .neighborhood-list {
+        .subregion-chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px 16px;
-            margin-left: 22px;
-            font-size: 13px;
+            gap: 8px;
         }
-        .neighborhood-list label {
-            display: flex;
+        .subregion-chip {
+            display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
             cursor: pointer;
+            border: 1.5px solid #ddd;
+            background: white;
+            color: #555;
+            transition: all 0.15s ease;
+            user-select: none;
         }
-        .neighborhood-list input[type="checkbox"] {
-            width: 14px;
-            height: 14px;
+        .subregion-chip:hover {
+            border-color: #aaa;
+            background: #f5f5f5;
+        }
+        .subregion-chip.active {
+            background: #eef6ff;
+            border-color: #3498db;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        .subregion-chip .chip-count {
+            background: #e0e0e0;
+            color: #666;
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .subregion-chip.active .chip-count {
+            background: #3498db;
+            color: white;
+        }
+        .clr-brooklyn .subregion-chip.active {
+            background: #eefaf3;
+            border-color: #27ae60;
+        }
+        .clr-brooklyn .subregion-chip.active .chip-count {
+            background: #27ae60;
+        }
+        .clr-queens .subregion-chip.active {
+            background: #fef5ec;
+            border-color: #e67e22;
+        }
+        .clr-queens .subregion-chip.active .chip-count {
+            background: #e67e22;
+        }
+        .clr-bronx .subregion-chip.active {
+            background: #f5eef8;
+            border-color: #9b59b6;
+        }
+        .clr-bronx .subregion-chip.active .chip-count {
+            background: #9b59b6;
         }
         /* Table styles - desktop */
         .table-container {
@@ -274,7 +369,7 @@
 </head>
 <body>
     <h1><a href="index.html">🍽️ Pulsd NYC Listings</a></h1>
-    <div class="timestamp">Last updated: February 22, 2026 at 06:48 PM EST<br>
+    <div class="timestamp">Last updated: February 22, 2026 at 07:07 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -303,7 +398,8 @@
         </div>
         <div class="filter-section">
             <label class="filter-label">Neighborhoods</label>
-            <div id="neighborhoodFilters"></div>
+            <div class="borough-tabs" id="boroughTabs"></div>
+            <div id="subregionPanels"></div>
         </div>
         <div class="row-count">Showing <span id="visibleCount">151</span> of 151 listings</div>
     </div>
@@ -3814,81 +3910,238 @@
         const filterNoPrice = document.getElementById('filterNoPrice');
         const filterNew = document.getElementById('filterNew');
         const filterExisting = document.getElementById('filterExisting');
-        const neighborhoodFiltersContainer = document.getElementById('neighborhoodFilters');
 
-        // Build neighborhood data grouped by borough
-        const boroughData = {};
+        // Canonical neighborhood structure
+        const NYC_NEIGHBORHOODS = {"Manhattan": {"Downtown": ["Battery Park City", "Chelsea", "West Chelsea", "Chinatown", "Civic Center", "East Village", "Financial District", "Fulton/Seaport", "Flatiron", "NoMad", "Gramercy Park", "Greenwich Village", "Noho", "Little Italy", "Lower East Side", "Two Bridges", "Nolita", "Soho", "Hudson Square", "Stuyvesant Town/PCV", "Tribeca", "West Village"], "Midtown": ["Central Park South", "Midtown", "Midtown East", "Kips Bay", "Murray Hill", "Sutton Place", "Turtle Bay", "Beekman", "Midtown South", "Midtown West", "Hell's Kitchen", "Hudson Yards", "Roosevelt Island"], "Upper East Side": ["Upper East Side", "Carnegie Hill", "Lenox Hill", "Upper Carnegie Hill", "Yorkville"], "Upper Manhattan": ["Central Harlem", "South Harlem", "East Harlem", "Hamilton Heights", "Inwood", "Marble Hill", "Morningside Heights", "Washington Heights", "Fort George", "Hudson Heights", "West Harlem", "Manhattanville"], "Upper West Side": ["Upper West Side", "Lincoln Square", "Manhattan Valley"]}, "Brooklyn": {"Bay Ridge / Southwest Brooklyn": ["Bath Beach", "Bay Ridge", "Fort Hamilton", "Bensonhurst", "Dyker Heights"], "Bedford-Stuyvesant Area": ["Bedford-Stuyvesant", "Ocean Hill", "Stuyvesant Heights", "Crown Heights", "Weeksville"], "Boerum Hill / Carroll Gardens / Cobble Hill": ["Boerum Hill", "Carroll Gardens", "Cobble Hill", "Columbia St Waterfront District", "Red Hook"], "Borough Park / Flatbush": ["Borough Park", "Mapleton", "Flatbush", "Midwood", "Kensington", "Ocean Parkway"], "Brooklyn Heights / DUMBO / Downtown": ["Brooklyn Heights", "DUMBO", "Vinegar Hill", "Downtown Brooklyn", "Fort Greene", "Clinton Hill"], "Brownsville / East New York": ["Brownsville", "East New York", "City Line", "Cypress Hills", "New Lots", "Starrett City"], "Bushwick / Williamsburg": ["Bushwick", "Williamsburg", "East Williamsburg"], "Canarsie / Flatlands / Marine Park": ["Canarsie", "Flatlands", "Marine Park", "Bergen Beach", "Mill Basin", "Old Mill Basin", "Gerritsen Beach", "Gravesend", "Seagate"], "Coney Island / Brighton Beach": ["Coney Island", "Brighton Beach", "Sheepshead Bay", "Homecrest", "Madison", "Manhattan Beach"], "Crown Heights / Prospect Heights": ["Prospect Heights", "Prospect Lefferts Gardens", "Prospect Park South", "Windsor Terrace"], "Ditmas Park / Sunset Park": ["Ditmas Park", "Fiske Terrace", "Greenwood", "Sunset Park"], "East Flatbush / Farragut": ["East Flatbush", "Farragut", "Wingate"], "Gowanus / Park Slope": ["Gowanus", "Park Slope"], "Greenpoint": ["Greenpoint"]}, "Queens": {"Astoria / Long Island City": ["Astoria", "Ditmars-Steinway", "Long Island City", "Hunters Point", "Sunnyside"], "Bayside / Northeast Queens": ["Bayside", "Bay Terrace (Queens)", "Douglaston", "Little Neck", "Oakland Gardens", "Whitestone", "Beechhurst", "Malba", "College Point", "Clearview"], "Briarwood / Hillcrest": ["Briarwood", "Hillcrest", "Auburndale"], "Flushing / North Queens": ["Flushing", "East Flushing", "Murray Hill (Queens)", "Fresh Meadows", "North Corona", "Corona"], "Forest Hills / Rego Park": ["Forest Hills", "Rego Park", "Kew Gardens", "Kew Gardens Hills"], "Hollis / Jamaica": ["Jamaica", "Jamaica Estates", "Jamaica Hills", "Hollis", "St. Albans", "Cambria Heights", "Queens Village", "Springfield Gardens", "South Jamaica"], "Howard Beach / Ozone Park": ["Howard Beach", "Hamilton Beach", "Lindenwood", "Old Howard Beach", "Ramblersville", "Rockwood Park", "Ozone Park", "South Ozone Park"], "Jackson Heights / Elmhurst / Ridgewood": ["Jackson Heights", "Elmhurst", "East Elmhurst", "Maspeth", "Middle Village", "Glendale", "Ridgewood", "Woodhaven", "Woodside"], "Laurelton / Rosedale / Southeast Queens": ["Laurelton", "Rosedale", "Floral Park", "Glen Oaks", "Bellerose", "Brookville", "New Hyde Park", "Pomonok", "Richmond Hill", "South Richmond Hill"], "Rockaway Peninsula": ["Arverne", "Bayswater", "Belle Harbor", "Breezy Point", "Broad Channel", "Edgemere", "Far Rockaway", "Hammels", "Neponsit", "Rockaway Park"]}};
+
+        // Build reverse lookup: neighborhood name -> subregion name
+        const neighborhoodToSubregion = {};
+        const neighborhoodToBorough = {};
+        for (const [borough, subregions] of Object.entries(NYC_NEIGHBORHOODS)) {
+            for (const [subregion, hoods] of Object.entries(subregions)) {
+                for (const hood of hoods) {
+                    neighborhoodToSubregion[hood] = subregion;
+                    neighborhoodToBorough[hood] = borough;
+                }
+            }
+        }
+
+        // Count listings per subregion from actual data
+        const subregionCounts = {};
+        const boroughCounts = {};
+        const unmatchedByBorough = {};
+
         rows.forEach(row => {
-            const borough = row.dataset.borough || 'Other';
             const neighborhood = row.dataset.neighborhood;
-            if (!boroughData[borough]) boroughData[borough] = new Set();
-            if (neighborhood) boroughData[borough].add(neighborhood);
+            const borough = row.dataset.borough || 'Other';
+            boroughCounts[borough] = (boroughCounts[borough] || 0) + 1;
+
+            if (neighborhood && neighborhoodToSubregion[neighborhood]) {
+                const sr = neighborhoodToSubregion[neighborhood];
+                const key = borough + '::' + sr;
+                subregionCounts[key] = (subregionCounts[key] || 0) + 1;
+            } else if (neighborhood) {
+                // Neighborhood exists but not in our mapping — count under "Other" subregion
+                const key = borough + '::Other';
+                subregionCounts[key] = (subregionCounts[key] || 0) + 1;
+                if (!unmatchedByBorough[borough]) unmatchedByBorough[borough] = new Set();
+                unmatchedByBorough[borough].add(neighborhood);
+            } else {
+                // No neighborhood at all
+                const key = borough + '::Other';
+                subregionCounts[key] = (subregionCounts[key] || 0) + 1;
+            }
         });
 
-        // Sort boroughs: Manhattan, Brooklyn, Queens, then Others alphabetically
+        // Active subregions (selected = true by default)
+        const activeSubregions = new Set();
+        const activeBoroughs = new Set();
+
+        // Color classes
+        const colorClass = {
+            'Manhattan': 'clr-manhattan',
+            'Brooklyn': 'clr-brooklyn',
+            'Queens': 'clr-queens',
+            'Bronx': 'clr-bronx',
+            'Staten Island': 'clr-staten-island',
+        };
+
+        // Build UI
         const boroughOrder = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'];
-        const sortedBoroughs = Object.keys(boroughData).sort((a, b) => {
-            const aIdx = boroughOrder.indexOf(a);
-            const bIdx = boroughOrder.indexOf(b);
-            if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
-            if (aIdx !== -1) return -1;
-            if (bIdx !== -1) return 1;
-            return a.localeCompare(b);
+        const tabsContainer = document.getElementById('boroughTabs');
+        const panelsContainer = document.getElementById('subregionPanels');
+
+        // Collect boroughs that have data
+        const boroughsWithData = new Set();
+        rows.forEach(row => boroughsWithData.add(row.dataset.borough || 'Other'));
+
+        const orderedBoroughs = boroughOrder.filter(b => boroughsWithData.has(b));
+        boroughsWithData.forEach(b => {
+            if (!orderedBoroughs.includes(b)) orderedBoroughs.push(b);
         });
 
-        // Build checkbox UI
-        sortedBoroughs.forEach(borough => {
-            const div = document.createElement('div');
-            div.className = 'borough-group';
+        orderedBoroughs.forEach(borough => {
+            const clr = colorClass[borough] || 'clr-other';
+            const count = boroughCounts[borough] || 0;
+            activeBoroughs.add(borough);
 
-            const neighborhoods = Array.from(boroughData[borough]).sort();
-            const borgId = 'borough_' + borough.replace(/\s+/g, '_');
+            // Tab button
+            const tab = document.createElement('div');
+            tab.className = `borough-tab active ${clr}`;
+            tab.dataset.borough = borough;
+            tab.innerHTML = `${borough}<span class="tab-count">(${count})</span>`;
+            tab.addEventListener('click', () => toggleBorough(borough));
+            tabsContainer.appendChild(tab);
 
-            // Borough header with checkbox
-            const header = document.createElement('label');
-            header.className = 'borough-header';
-            header.innerHTML = `<input type="checkbox" id="${borgId}" checked> ${borough}`;
-            div.appendChild(header);
+            // Subregion panel
+            const panel = document.createElement('div');
+            panel.className = `subregion-panel ${clr}`;
+            panel.id = 'panel_' + borough.replace(/\s+/g, '_');
 
-            // Neighborhood checkboxes (only if there are neighborhoods)
-            if (neighborhoods.length > 0) {
-                const list = document.createElement('div');
-                list.className = 'neighborhood-list';
-                neighborhoods.forEach(n => {
-                    const nId = 'nb_' + n.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
-                    const label = document.createElement('label');
-                    label.innerHTML = `<input type="checkbox" id="${nId}" data-borough="${borough}" data-neighborhood="${n}" checked> ${n}`;
-                    list.appendChild(label);
-                });
-                div.appendChild(list);
+            // Header with select all/none
+            const header = document.createElement('div');
+            header.className = 'subregion-borough-label';
+            header.innerHTML = `${borough} areas <span class="subregion-actions"><a data-action="all" data-borough="${borough}">All</a> / <a data-action="none" data-borough="${borough}">None</a></span>`;
+            panel.appendChild(header);
+
+            // Chips container
+            const chipsDiv = document.createElement('div');
+            chipsDiv.className = 'subregion-chips';
+
+            const subregions = NYC_NEIGHBORHOODS[borough] || {};
+            for (const [subregion, hoods] of Object.entries(subregions)) {
+                const key = borough + '::' + subregion;
+                const srCount = subregionCounts[key] || 0;
+                if (srCount === 0) continue; // Skip subregions with no data
+
+                activeSubregions.add(key);
+
+                const chip = document.createElement('div');
+                chip.className = 'subregion-chip active';
+                chip.dataset.key = key;
+                chip.dataset.borough = borough;
+                chip.innerHTML = `${subregion} <span class="chip-count">${srCount}</span>`;
+                chip.addEventListener('click', () => toggleSubregion(key));
+                chipsDiv.appendChild(chip);
             }
 
-            neighborhoodFiltersContainer.appendChild(div);
+            // Add "Other" chip if there are unmatched neighborhoods in this borough
+            const otherKey = borough + '::Other';
+            const otherCount = subregionCounts[otherKey] || 0;
+            if (otherCount > 0) {
+                activeSubregions.add(otherKey);
+                const chip = document.createElement('div');
+                chip.className = 'subregion-chip active';
+                chip.dataset.key = otherKey;
+                chip.dataset.borough = borough;
+                chip.innerHTML = `Other <span class="chip-count">${otherCount}</span>`;
+                chip.addEventListener('click', () => toggleSubregion(otherKey));
+                chipsDiv.appendChild(chip);
+            }
+
+            panel.appendChild(chipsDiv);
+            panelsContainer.appendChild(panel);
         });
 
-        // Borough checkbox toggles all its neighborhoods
-        document.querySelectorAll('.borough-header input').forEach(cb => {
-            cb.addEventListener('change', function() {
-                const boroughName = this.id.replace('borough_', '').replace(/_/g, ' ');
-                const neighborhoodCbs = document.querySelectorAll(`.neighborhood-list input[data-borough="${boroughName}"]`);
-                neighborhoodCbs.forEach(ncb => ncb.checked = this.checked);
+        // Select all/none handlers
+        document.querySelectorAll('.subregion-actions a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const borough = link.dataset.borough;
+                const action = link.dataset.action;
+                const panel = document.getElementById('panel_' + borough.replace(/\s+/g, '_'));
+                panel.querySelectorAll('.subregion-chip').forEach(chip => {
+                    if (action === 'all') {
+                        chip.classList.add('active');
+                        activeSubregions.add(chip.dataset.key);
+                    } else {
+                        chip.classList.remove('active');
+                        activeSubregions.delete(chip.dataset.key);
+                    }
+                });
                 applyFilters();
             });
         });
 
-        // Neighborhood checkbox updates borough checkbox state
-        document.querySelectorAll('.neighborhood-list input').forEach(cb => {
-            cb.addEventListener('change', function() {
-                const boroughName = this.dataset.borough;
-                const borgCb = document.getElementById('borough_' + boroughName.replace(/\s+/g, '_'));
-                const neighborhoodCbs = document.querySelectorAll(`.neighborhood-list input[data-borough="${boroughName}"]`);
-                const allChecked = Array.from(neighborhoodCbs).every(ncb => ncb.checked);
-                const someChecked = Array.from(neighborhoodCbs).some(ncb => ncb.checked);
-                borgCb.checked = allChecked;
-                borgCb.indeterminate = someChecked && !allChecked;
-                applyFilters();
+        function toggleBorough(borough) {
+            const tab = tabsContainer.querySelector(`[data-borough="${borough}"]`);
+            const panel = document.getElementById('panel_' + borough.replace(/\s+/g, '_'));
+
+            if (activeBoroughs.has(borough)) {
+                activeBoroughs.delete(borough);
+                tab.classList.remove('active');
+                // Deactivate all subregions for this borough
+                panel.querySelectorAll('.subregion-chip').forEach(chip => {
+                    chip.classList.remove('active');
+                    activeSubregions.delete(chip.dataset.key);
+                });
+                panel.classList.remove('open');
+            } else {
+                activeBoroughs.add(borough);
+                tab.classList.add('active');
+                // Activate all subregions for this borough
+                panel.querySelectorAll('.subregion-chip').forEach(chip => {
+                    chip.classList.add('active');
+                    activeSubregions.add(chip.dataset.key);
+                });
+                // Close other panels, open this one
+                panelsContainer.querySelectorAll('.subregion-panel').forEach(p => p.classList.remove('open'));
+                panel.classList.add('open');
+            }
+            applyFilters();
+        }
+
+        function toggleSubregion(key) {
+            const chip = document.querySelector(`[data-key="${key}"]`);
+            if (activeSubregions.has(key)) {
+                activeSubregions.delete(key);
+                chip.classList.remove('active');
+            } else {
+                activeSubregions.add(key);
+                chip.classList.add('active');
+            }
+
+            // Update borough tab state
+            const borough = key.split('::')[0];
+            const panel = document.getElementById('panel_' + borough.replace(/\s+/g, '_'));
+            const allChips = panel.querySelectorAll('.subregion-chip');
+            const anyActive = Array.from(allChips).some(c => c.classList.contains('active'));
+            const tab = tabsContainer.querySelector(`[data-borough="${borough}"]`);
+            if (anyActive) {
+                activeBoroughs.add(borough);
+                tab.classList.add('active');
+            } else {
+                activeBoroughs.delete(borough);
+                tab.classList.remove('active');
+            }
+
+            applyFilters();
+        }
+
+        // Allow clicking borough tabs to expand/collapse their panel
+        tabsContainer.querySelectorAll('.borough-tab').forEach(tab => {
+            tab.addEventListener('dblclick', () => {
+                const borough = tab.dataset.borough;
+                const panel = document.getElementById('panel_' + borough.replace(/\s+/g, '_'));
+                if (panel.classList.contains('open')) {
+                    panel.classList.remove('open');
+                } else {
+                    panelsContainer.querySelectorAll('.subregion-panel').forEach(p => p.classList.remove('open'));
+                    panel.classList.add('open');
+                }
             });
         });
+
+        // Open Manhattan panel by default if it has data
+        const defaultPanel = document.getElementById('panel_Manhattan');
+        if (defaultPanel) defaultPanel.classList.add('open');
+
+        function getSubregionKey(neighborhood, borough) {
+            if (neighborhood && neighborhoodToSubregion[neighborhood]) {
+                return borough + '::' + neighborhoodToSubregion[neighborhood];
+            }
+            return borough + '::Other';
+        }
 
         function applyFilters() {
             const maxPrice = parseInt(slider.value);
@@ -3898,22 +4151,6 @@
             const showNoPrice = filterNoPrice.checked;
             const showNew = filterNew.checked;
             const showExisting = filterExisting.checked;
-
-            // Build set of selected neighborhoods and boroughs
-            const selectedNeighborhoods = new Set();
-            const selectedBoroughs = new Set();
-
-            document.querySelectorAll('.neighborhood-list input:checked').forEach(cb => {
-                selectedNeighborhoods.add(cb.dataset.neighborhood);
-            });
-
-            // Check borough-level (for entries without neighborhood)
-            document.querySelectorAll('.borough-header input').forEach(cb => {
-                if (cb.checked || cb.indeterminate) {
-                    const boroughName = cb.id.replace('borough_', '').replace(/_/g, ' ');
-                    selectedBoroughs.add(boroughName);
-                }
-            });
 
             let visible = 0;
 
@@ -3928,13 +4165,9 @@
                 const priceExistsOk = (hasPrice && showHasPrice) || (!hasPrice && showNoPrice);
                 const statusOk = (status === 'new' && showNew) || (status === 'existing' && showExisting);
 
-                // Location filter: check neighborhood first, fall back to borough
-                let locationOk = false;
-                if (neighborhood && selectedNeighborhoods.has(neighborhood)) {
-                    locationOk = true;
-                } else if (!neighborhood && selectedBoroughs.has(borough)) {
-                    locationOk = true;
-                }
+                // Location filter: map neighborhood to subregion key and check
+                const srKey = getSubregionKey(neighborhood, borough);
+                const locationOk = activeSubregions.has(srKey);
 
                 return priceRangeOk && priceExistsOk && locationOk && statusOk;
             }
