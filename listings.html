@@ -369,7 +369,7 @@
 </head>
 <body>
     <h1><a href="index.html">🍽️ Pulsd NYC Listings</a></h1>
-    <div class="timestamp">Last updated: February 22, 2026 at 07:07 PM EST<br>
+    <div class="timestamp">Last updated: February 22, 2026 at 07:13 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -3917,37 +3917,54 @@
         // Build reverse lookup: neighborhood name -> subregion name
         const neighborhoodToSubregion = {};
         const neighborhoodToBorough = {};
+        const knownNames = []; // for fuzzy matching
         for (const [borough, subregions] of Object.entries(NYC_NEIGHBORHOODS)) {
             for (const [subregion, hoods] of Object.entries(subregions)) {
                 for (const hood of hoods) {
                     neighborhoodToSubregion[hood] = subregion;
                     neighborhoodToBorough[hood] = borough;
+                    knownNames.push({ lower: hood.toLowerCase(), name: hood });
                 }
             }
+        }
+
+        // Fuzzy match: check if any known name is a substring of the input (or vice versa)
+        const fuzzyCache = {};
+        function fuzzyMatchNeighborhood(name) {
+            if (fuzzyCache[name] !== undefined) return fuzzyCache[name];
+            const lower = name.toLowerCase();
+            for (const entry of knownNames) {
+                if (entry.lower.includes(lower) || lower.includes(entry.lower)) {
+                    fuzzyCache[name] = entry.name;
+                    return entry.name;
+                }
+            }
+            fuzzyCache[name] = null;
+            return null;
+        }
+
+        // Resolve a neighborhood name to its canonical form (exact, then fuzzy)
+        function resolveNeighborhood(name) {
+            if (!name) return null;
+            if (neighborhoodToSubregion[name]) return name;
+            return fuzzyMatchNeighborhood(name);
         }
 
         // Count listings per subregion from actual data
         const subregionCounts = {};
         const boroughCounts = {};
-        const unmatchedByBorough = {};
 
         rows.forEach(row => {
             const neighborhood = row.dataset.neighborhood;
             const borough = row.dataset.borough || 'Other';
             boroughCounts[borough] = (boroughCounts[borough] || 0) + 1;
 
-            if (neighborhood && neighborhoodToSubregion[neighborhood]) {
-                const sr = neighborhoodToSubregion[neighborhood];
+            const resolved = resolveNeighborhood(neighborhood);
+            if (resolved && neighborhoodToSubregion[resolved]) {
+                const sr = neighborhoodToSubregion[resolved];
                 const key = borough + '::' + sr;
                 subregionCounts[key] = (subregionCounts[key] || 0) + 1;
-            } else if (neighborhood) {
-                // Neighborhood exists but not in our mapping — count under "Other" subregion
-                const key = borough + '::Other';
-                subregionCounts[key] = (subregionCounts[key] || 0) + 1;
-                if (!unmatchedByBorough[borough]) unmatchedByBorough[borough] = new Set();
-                unmatchedByBorough[borough].add(neighborhood);
             } else {
-                // No neighborhood at all
                 const key = borough + '::Other';
                 subregionCounts[key] = (subregionCounts[key] || 0) + 1;
             }
@@ -4137,8 +4154,9 @@
         if (defaultPanel) defaultPanel.classList.add('open');
 
         function getSubregionKey(neighborhood, borough) {
-            if (neighborhood && neighborhoodToSubregion[neighborhood]) {
-                return borough + '::' + neighborhoodToSubregion[neighborhood];
+            const resolved = resolveNeighborhood(neighborhood);
+            if (resolved && neighborhoodToSubregion[resolved]) {
+                return borough + '::' + neighborhoodToSubregion[resolved];
             }
             return borough + '::Other';
         }
