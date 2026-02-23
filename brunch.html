@@ -48,7 +48,7 @@
             -webkit-appearance: none;
             height: 8px;
             border-radius: 4px;
-            background: #e0e0e0;
+            background: linear-gradient(to right, #3498db 100%, #e0e0e0 100%);
             outline: none;
         }
         .price-slider::-webkit-slider-thumb {
@@ -68,6 +68,16 @@
             cursor: pointer;
             border: none;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .price-slider::-moz-range-progress {
+            background: #3498db;
+            height: 8px;
+            border-radius: 4px;
+        }
+        .price-slider::-moz-range-track {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
         }
         .price-display {
             font-weight: 600;
@@ -369,7 +379,7 @@
 </head>
 <body>
     <h1><a href="index.html">🥞 Pulsd NYC Brunch Listings</a></h1>
-    <div class="timestamp">Last updated: February 22, 2026 at 07:13 PM EST<br>
+    <div class="timestamp">Last updated: February 22, 2026 at 07:20 PM EST<br>
     <em>Note: This page updates weekly. Google ratings shown may differ from current values.</em></div>
 
     <div class="filter-container">
@@ -2367,9 +2377,15 @@
             return borough + '::Other';
         }
 
+        function updateSliderFill() {
+            const pct = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+            slider.style.background = `linear-gradient(to right, #3498db ${pct}%, #e0e0e0 ${pct}%)`;
+        }
+
         function applyFilters() {
             const maxPrice = parseInt(slider.value);
             priceValue.textContent = maxPrice;
+            updateSliderFill();
 
             const showHasPrice = filterHasPrice.checked;
             const showNoPrice = filterNoPrice.checked;
